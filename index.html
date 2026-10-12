@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<title>AI时代不可替代的个人天赋测试</title>
+<style>
+/* 一栏居中（最宽 560px）。每屏一题；结果页 = 人设卡 + 天赋地形图（雷达+高低条）+ 若干短卡。 */
+/* 莫兰迪紫：灰调、低饱和 */
+:root{--bg:#f4f2f5;--surface:#fbfafb;--fg:#3a3545;--muted:#8a8496;--line:rgba(90,75,115,.16);--accent:#877aa0;--accent2:#6f6389;--accent-fg:#fbfafb;--soft:#ece9f0;--good:#8fa593;--low:#7f93a6;
+--mink:#6b5f84;--mpaper:#fbfafb;--mvisor:#3a3545;--mglow:#877aa0;--mwater:#cfc6dc;--mlatte:#cfc6dc;--shadow:0 4px 14px -8px rgba(90,75,115,.25);
+--serif:-apple-system,BlinkMacSystemFont,"PingFang SC","Source Han Sans SC","Noto Sans SC","Microsoft YaHei","Helvetica Neue",system-ui,sans-serif;--sans:var(--serif)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a22;--surface:#26232e;--fg:#e9e5ee;--muted:#a39dae;--line:rgba(233,229,238,.13);--accent:#b3a6cc;--accent2:#7d70a0;--accent-fg:#1c1a22;--soft:#302c3a;--good:#a5bca8;--low:#93a6ba;--mink:#d3c9e3;--mpaper:#2d2938;--mvisor:#15131a;--mglow:#b3a6cc;--mwater:#8478a6;--mlatte:#cfc6dc;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1a22;--surface:#26232e;--fg:#e9e5ee;--muted:#a39dae;--line:rgba(233,229,238,.13);--accent:#b3a6cc;--accent2:#7d70a0;--accent-fg:#1c1a22;--soft:#302c3a;--good:#a5bca8;--low:#93a6ba;--mink:#d3c9e3;--mpaper:#2d2938;--mvisor:#15131a;--mglow:#b3a6cc;--mwater:#8478a6;--mlatte:#cfc6dc;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:radial-gradient(1100px 500px at 10% -10%,rgba(135,122,160,.14),transparent 60%),radial-gradient(900px 500px at 100% 0%,rgba(207,198,220,.35),transparent 60%),radial-gradient(800px 400px at 50% 100%,rgba(180,200,190,.12),transparent 60%),var(--bg);background-color:var(--bg);color:var(--fg);font:16px/1.7 var(--sans);padding-inline:16px;padding-block:14px 40px}
+main,#brand,footer{max-width:560px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);line-height:1.3;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.8rem,5.6vw,2.2rem);font-weight:900}h2{font-size:1.3rem}h3{font-size:1.05rem}
+p{margin:.5em 0}
+.muted{color:var(--muted);font-size:.85rem}
+.kicker{font-size:.74rem;letter-spacing:.18em;color:var(--accent);font-weight:700;text-transform:uppercase}
+.bar{height:6px;background:var(--line);margin:0 0 20px;border-radius:3px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--mlatte),var(--accent));border-radius:3px;transition:width .4s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 8px rgba(135,122,160,.4)}
+button{font:inherit;cursor:pointer}
+.stage{font-size:.8rem;color:var(--muted);letter-spacing:.06em}
+.stem{font-family:var(--serif);font-size:1.3rem;line-height:1.55;margin:6px 0 10px}
+.ins{font-size:.92rem;color:var(--accent);font-weight:700;margin:0 0 12px;min-height:1.6em}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opts button{text-align:left;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:14px;padding:12px 14px;font-size:1rem;line-height:1.5;transition:transform .08s,border-color .15s;box-shadow:var(--shadow);display:flex;gap:10px;align-items:flex-start}.opts button:hover{border-color:var(--accent)}.lt{flex:none;width:26px;height:26px;border-radius:7px;background:var(--soft);color:var(--accent2);font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,Consolas,monospace;margin-top:1px}.opts button.b .lt{background:var(--accent-fg);color:var(--accent)}.opts button.w .lt{background:var(--low);color:var(--bg)}.ot{min-width:0}
+.opts button:active{transform:scale(.98)}
+.opts button.b{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:var(--accent);color:#fffaf1}.opts button.b .mk{background:#fffaf1;color:var(--accent2)}
+.opts button.w{background:var(--soft);border:1.5px dashed var(--low);color:var(--muted)}
+.opts button.sk{border-style:dotted;color:var(--muted);font-size:.92rem}
+.opts button.sk.on{background:var(--soft);border-style:solid;color:var(--fg)}
+.opts button:disabled{opacity:.45;cursor:not-allowed}
+.mk{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:0 8px;margin-right:8px;background:var(--accent-fg);color:var(--accent);vertical-align:1px}
+.w .mk{background:var(--low);color:var(--bg)}
+.cta{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fffaf1;border:0;border-radius:999px;padding:13px 28px;font-weight:800;margin-top:18px;font-size:1.05rem;box-shadow:0 14px 30px -14px rgba(90,75,115,.35);transition:transform .15s}.cta:hover:not(:disabled){transform:translateY(-2px)}
+.cta:disabled{opacity:.4;cursor:not-allowed}
+.ghost{background:var(--surface);border:1.5px solid var(--line);color:var(--fg);border-radius:999px;padding:10px 18px;margin-top:12px;margin-right:8px}
+.navrow{display:flex;gap:10px;margin-top:18px}.navrow .ghost{flex:1;margin:0}
+.navrow .cta{flex:1;margin:0;padding:11px 18px;font-size:1rem}
+.ghost:disabled{opacity:.35;cursor:not-allowed}
+input.code{width:100%;font:inherit;font-size:1.3rem;letter-spacing:.3em;text-align:center;background:var(--surface);color:var(--fg);border:1.5px solid var(--line);border-radius:14px;padding:12px}
+.err{color:var(--accent);min-height:1.5em;font-size:.9rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:14px 0;box-shadow:var(--shadow);animation:slideUp .5s ease both}
+.card h3{margin-bottom:6px}
+.hero{background:linear-gradient(150deg,var(--accent) 0%,var(--accent2) 100%);color:#fffaf1;border-radius:24px;padding:20px 20px 24px;margin:10px 0 6px;position:relative;overflow:hidden;box-shadow:0 18px 36px -18px rgba(90,75,115,.35)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}.hero>*{position:relative}.hero .hm{display:flex;justify-content:center;margin:-4px 0 4px}.hero .hm svg{width:clamp(140px,38vw,178px);height:auto;filter:drop-shadow(0 6px 14px rgba(255,255,255,.35))}
+.hero .kicker{color:#fffaf1;opacity:.85}
+.hero h1{font-size:1.9rem;margin:6px 0 4px}
+.hero .sub{font-size:1.02rem;opacity:.92;margin:0 0 12px}
+.hero p.s{font-family:var(--serif);font-size:1.1rem;line-height:1.75;margin:0}
+.hero .shape{display:inline-block;margin-top:14px;border:1px solid currentColor;border-radius:999px;padding:0 12px;font-size:.82rem;opacity:.95}
+.radar{width:100%;max-width:460px;display:block;margin:0 auto}
+.radar .tr2{fill:var(--muted)}
+.radar text{font-family:var(--sans);fill:var(--fg)}
+.row{display:grid;grid-template-columns:6.4em 1fr 2.6em;gap:8px;align-items:center;font-size:.92rem;margin:7px 0}
+.row .tr{height:10px;background:var(--soft);border-radius:5px;overflow:hidden}.row .tr i{display:block;height:100%;background:linear-gradient(90deg,var(--mlatte),var(--accent))}
+.row.lo .tr i{background:var(--low)}.row.mid .tr i{background:var(--muted)}
+.row.na .tr{background:transparent;border:1px dashed var(--line)}.lv.na{color:var(--muted);border:1px dashed var(--line)}
+.tag.off{opacity:.55;border-style:dashed}
+.lv{font-size:.78rem;font-weight:700;text-align:center;border-radius:999px;padding:0 4px}
+.lv.hi{background:var(--accent);color:var(--accent-fg)}.lv.mid{border:1px solid var(--line);color:var(--muted)}.lv.lo{background:var(--low);color:var(--bg)}
+.tag{display:inline-block;font-size:.75rem;border:1px solid var(--line);border-radius:999px;padding:0 9px;color:var(--muted);margin:2px 4px 2px 0}
+.tag.hit{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.tens{display:grid;grid-template-columns:5.2em 1fr 5.2em;gap:8px;align-items:center;font-size:.85rem;margin:12px 0 2px}
+.tens .tk{position:relative;height:6px;background:var(--soft);border-radius:3px}
+.tens .tk i{position:absolute;top:-6px;width:18px;height:18px;border-radius:50%;background:var(--accent);margin-left:-9px}
+.tens span:last-child{text-align:right}
+.q{border-left:3px solid var(--accent);padding:2px 0 2px 10px;margin:8px 0;font-size:.92rem}.q .o{color:var(--muted);font-size:.8rem}
+.fg p{margin:8px 0}.fg b{display:block;font-size:.85rem;color:var(--muted);margin-bottom:2px}.fg .src{font-size:.8rem;color:var(--muted)}
+.bh{margin:18px 0 4px;font-size:1rem}
+.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 0;background:var(--bg);margin-bottom:8px}
+.jump a{flex:1;white-space:nowrap;text-align:center;padding:7px 10px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:.9rem;cursor:pointer;color:var(--fg)}
+#t1,#t2,#t3,#t4,#t5{scroll-margin-top:56px}
+.fb{margin:12px 0}.fn b{font-size:1rem}.fn em{font-style:normal;font-size:.75rem;color:var(--muted);margin-left:8px;padding:1px 7px;border-radius:999px;background:var(--soft)}
+.fb .tr{display:block;height:9px;border-radius:5px;background:var(--soft);margin:5px 0 3px;overflow:hidden}.fb .tr i{display:block;height:100%;background:var(--accent);border-radius:5px}
+.ft{font-size:.82rem;color:var(--fg);margin-top:4px;padding:6px 8px;border-radius:8px;background:var(--soft)}
+.fw{font-size:.85rem;color:var(--muted)}
+.jb{display:flex;gap:10px;align-items:flex-start;margin:10px 0}.bd{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.mls .ml{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:.88rem}.mls .ml b{flex:none;width:5.5em}.mls .ml span{color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 12px}.mls .ml i{font-style:normal;white-space:nowrap}.mls .ml.hi b{color:var(--accent)}
+.fh{display:flex;align-items:baseline;gap:10px;margin:2px 0}.fh b{font-size:1.15rem}.fh span{color:var(--muted);font-size:.9rem}
+.who{font-size:.9rem;color:var(--muted);margin:2px 0 6px}
+.pts{margin:8px 0;padding-left:1.1em}.pts li{margin:6px 0;line-height:1.55}
+.cmp{display:grid;gap:6px;margin:10px 0;padding:10px;border-radius:10px;background:var(--soft)}.cmp div{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.cmp em{font-style:normal;font-size:.8rem;color:var(--muted);width:100%}.cmp i{font-style:normal;font-size:.85rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line)}.cmp i.on{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.src{font-size:.78rem;color:var(--muted)}
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:.82rem;color:var(--muted);margin:10px 0}.lg b{display:inline-block;width:1.6em;color:var(--fg)}
+.say{font-size:.92rem;color:var(--muted);margin:2px 0 8px}
+.cl{border-top:1px dashed var(--line);padding-top:8px;margin-top:8px;font-size:.92rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px}.btns .ghost{margin:0}
+.out{white-space:pre-wrap}
+details{margin:14px 0}summary{cursor:pointer;color:var(--muted);padding:6px 0}
+#brand{display:flex;align-items:center;gap:10px;padding:6px 0 12px}#brand .nm{font-weight:800;letter-spacing:.06em;font-size:.95rem}#brand .tg{margin-left:auto;font-size:.68rem;letter-spacing:.16em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 10px}
+footer{text-align:center;font-size:.75rem;color:var(--muted);padding-top:28px;letter-spacing:.04em}
+.mugbox{display:flex;justify-content:center;margin:6px 0 2px}.mugbox svg{width:clamp(150px,44vw,190px);height:auto;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(135,122,160,.35))}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0}.pills span{font-size:.78rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:1px 12px;color:var(--muted)}
+.tc{text-align:center}.hl{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.loading{position:fixed;inset:0;z-index:1000;background:rgba(244,242,245,.94);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .loading{background:rgba(28,26,34,.94)}}:root[data-theme="dark"] .loading{background:rgba(28,26,34,.94)}
+.loading.show{opacity:1;pointer-events:auto}.loading svg{width:160px;height:160px;animation:bounce 1.2s ease-in-out infinite}
+.pop{position:fixed;inset:0;z-index:2000;background:rgba(40,34,52,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.pbox{background:var(--surface);border-radius:20px;padding:14px;max-width:420px;width:100%;max-height:100%;overflow:auto;text-align:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+.pbox img{display:block;width:100%;height:auto;border-radius:12px;-webkit-touch-callout:default;user-select:auto}
+.pbox .ph{font-size:.88rem;color:var(--muted);margin:10px 0 6px}.pbox .pb{display:flex;gap:8px;justify-content:center}.pbox .pb .cta,.pbox .pb .ghost{margin:6px 0 0;flex:1}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}.led{animation:blink 1.6s ease-in-out infinite}
+#app{animation:fadein .45s ease}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+@media (max-width:520px){h1{font-size:1.75rem}.hero h1{font-size:1.6rem}}
+</style>
+
+<header id="brand"></header>
+<main id="app"></main>
+<footer>© 马克杯刻度 ｜ 原创测试，未经授权禁止转载</footer>
+<div class="loading" id="loading" aria-hidden="true"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* 想放自己的账号 / 商品 / 链接：填这里，结果页和分享图会自动出现。link 留空则不显示按钮。 */
+const CTA={title:'转给朋友，看看 TA 的 AI 天赋',text:'你的 AI 天赋图长这样，TA 的会是什么形状？发给 TA 测测，看看你们俩“抢不走”的地方一不一样。',link:''};
+const SLOGAN='AI 越来越能干，你哪里抢不走？测一测就知道';
+const CODE='3431'; /* 兑换码；留空则不显示兑换码页。纯前端校验，只是门槛，不是加密 */
+const K=['A','B','C','D','E','F','G','H','I'], N=K.length;
+
+/* ===== 9 个维度 =====
+   做法：把盖洛普优势识别器(34 主题)、加德纳多元智能、霍兰德兴趣、VIA 品格优势、大五人格里反复出现的特质，
+   对着世界经济论坛《2025 未来就业报告》的技能榜归并成 9 类。归并是人工做的，不是官方换算。 */
+const AB={
+ A:{n:'好奇洞察',role:'探路的人',p:'爱追问、爱琢磨，能看出别人没注意到的地方',
+  wef:'好奇心与终身学习：在报告的核心技能前十里。本测试只测“好奇、追问”这一半，没有专门测“学得多快”',ai:'AI 工具换得比谁都快。肯追问、学得快的人，更容易一直跟得上。',
+  up:'每次学新东西，写下一句“我原来以为……，其实……”。',exp:'本周挑一个你不懂的领域，追问 5 个“为什么”，再把答案讲给朋友听。',job:'用户研究、内容策划、咨询、产品经理、分析师这类要不停学新东西的工作',
+  valley:'你不太爱追问和到处看，更习惯用已经知道的办法。稳，但容易错过新变化。每周花半小时，专门去看一个自己不熟的领域。'},
+ B:{n:'分析拆解',role:'拆题的人',p:'把复杂的事拆成几块，先想清楚再动手，找出真正的症结',
+  wef:'分析性思维：报告里雇主排名第一，约七成雇主把它列为核心技能',ai:'AI 很会算、很会答，但把大问题拆对、检查它答得对不对，还得有人来。',
+  up:'拿到大问题，先写“它由哪三块组成”。',exp:'本周选一件让你烦的事，拆成三块，只处理最小的那一块。',job:'数据分析、运营、财务、项目管理、工程这类要把复杂事拆清楚的工作',
+  valley:'你不太爱把事拆开分析，更凭感觉和经验。快，但出了错很难说清错在哪。重要的事，花五分钟写下“它由哪几块组成”。'},
+ C:{n:'创意构想',role:'点子多的人',p:'能想出别人想不到的办法，把已有的东西换个玩法',
+  wef:'创造性思维：报告里雇主排名第四，需求上升',ai:'AI 能批量出方案，但“想要一个什么样的新东西”，还得有人拿主意。',
+  up:'每天写下一个“如果换种做法会怎样”。',exp:'本周把一件日常的事换一种做法，比如换条路线、换种说法，记下哪个更好。',job:'内容创作、设计、策划、品牌、广告、游戏这类要不断出新点子的工作',
+  valley:'你不太靠“想新办法”解决问题，更习惯用成熟的做法。可靠，只是遇到没人做过的事容易卡住。可以找个点子多的人搭档，或者让 AI 先给你十个方向。'},
+ D:{n:'判断拍板',role:'敢拍板的人',p:'信息不全时，也能判断往哪走，定了就推进',
+  wef:'与“韧性、灵活与敏捷”（报告里排名第二）相邻：局面不明时能先定、能调整',ai:'AI 擅长从旧数据里找规律。没有数据的新局面，得有人下判断。',
+  up:'做决定时写下：我押什么，什么证据会让我改主意。',exp:'记下 5 个预测，一周后对账。',job:'选品、投研、风控、增长、创业这类要在信息不全时拍板的工作',
+  valley:'信息不全时你不太愿意先押一个方向，倾向于再等等、再问问。稳，但有时会错过窗口。给自己一条规则：小事 5 分钟内必须定，大事设一个最晚期限。'},
+ E:{n:'共情倾听',role:'懂人的人',p:'听得出话外音，让对方觉得被理解、被接住',
+  wef:'共情与积极倾听：在报告的核心技能前十里',ai:'人想要的是“有人在乎我”，这件事很难外包给机器。',
+  up:'说话前先复述一遍对方的意思，对方点头了再往下说。',exp:'本周和一个最近话变少的人聊 10 分钟，只听，不给建议。',job:'咨询、HR、客服、教学辅导、护理、用户运营这类靠理解人推进的工作',
+  valley:'你不太爱花力气揣摩别人心里怎么想，更习惯直接说事。效率高，但有时对方是被你“说赢了”，没有被你“说服”。重要的事，多问一句“你怎么看”。'},
+ F:{n:'说服协调',role:'组局的人',p:'把想法不同的人拉到一起，让对方愿意点头',
+  wef:'领导力与社会影响：报告里雇主排名第三',ai:'AI 能写出漂亮的话，但让一群人真的愿意往一个方向走，靠的是人对人的信任。',
+  up:'提要求前先想：对方会得到什么。',exp:'本周促成一件需要两方让步的小事（比如把两个人的时间对上），记下你是怎么说的。',job:'销售、商务、项目协调、活动组织、社群运营这类要把人组织起来的工作',
+  valley:'你不太爱去说服、协调别人，倾向于自己做好自己的那份。省心，但需要多人配合的事容易卡在“没人推”。可以先从推动一件小事开始练。'},
+ G:{n:'担当韧性',role:'兜底的人',p:'事交给你就做到底；出了岔子，你扛得住，也肯认',
+  wef:'韧性、灵活与敏捷：报告里雇主排名第二。本测试主要测其中“扛责任、扛得住”的部分，“灵活应变”没有专门的题。（报告同时说，“可靠与细致”这类执行型品质的重要性在下降）',ai:'AI 不会被追责。出了事，最后总要有个人站出来，也得有人在变动里扛得住。',
+  up:'主动认领那些没人认领的模糊责任，并写明边界。',exp:'选一件小事，写明“出了问题算我的”，事后复盘。',job:'项目负责人、客户成功、带小团队、运营负责人这类要对结果兜底的工作',
+  valley:'“出了事算我的”不是你最想抢的位置。这不是缺点，只是别在没想清楚的时候被推去当那个兜底的人。要接责任，先问清楚边界。'},
+ H:{n:'动手现场',role:'实干的人',p:'自己上手练、做，到了现场凭感觉就知道哪里不对',
+  wef:'“手工灵巧、耐力与精度”：报告里预计需求下降最多的一项',ai:'软件替代不了到现场动手。不过雇主调查预计这类技能的需求在降，别指望它单独撑起竞争力。',
+  up:'一项技能练到身体会了才算学会。',exp:'每天 20 分钟做一件需要手的事，不看屏幕，持续一周。',job:'医护、烘焙烹饪、设计落地、运动教练、线下活动执行这类要到现场动手的工作',
+  valley:'你更习惯在脑子里和纸面上解决问题，不太靠手和现场。可以找个爱动手的搭档，也可以让 AI 帮你把流程理出来。'},
+ I:{n:'内在方向',role:'有主心骨的人',p:'知道自己要什么、在乎什么，不容易被别人带跑',
+  wef:'动机与自我认知：报告里雇主排名第五',ai:'AI 能执行任何目标，但“什么值得做”得你自己想。',
+  up:'定期问自己：这件事我还想做吗。',exp:'列出本周三件事，标出哪件是你真想做的，哪件只是“应该做”。',job:'内容创作、独立创作、副业、品牌这类要自己找方向的事',
+  valley:'“我到底想要什么”不是你最常琢磨的问题，你更容易把别人的需要当成自己的目标。每个月问自己一次：这件事，没人看见我还想做吗。'}
+};
+/* ===== 每个维度和 AI 时代的关系；名言只放查得到出处的（大意是我翻的，英文/中文原文在 o 里）===== */
+const AIW={
+ A:{why:'AI 几乎什么都能答，缺的往往是“问什么”。肯追问、会观察的人，更容易发现真正的问题。',q:null},
+ B:{why:'现在跟 AI 打交道，主要靠把需求说清楚；说得清楚，前提是你先把事拆清楚。AI 算得快，但“拆对问题、检查它答得对不对”还得人来。',
+  q:{t:'现在最火的新编程语言是英语。',o:'The hottest new programming language is English.',who:'安德烈·卡帕西',src:'2023 年初的一条推文'}},
+ C:{why:'AI 一口气能给你一百个方案，但挑哪个、值不值得做、怎么换个玩法，还得有人拿主意。',q:null},
+ D:{why:'AI 擅长处理有大量旧数据、能打分的事。没有标准答案、需要有人先押一个方向的时候，还得靠人。',
+  q:{t:'普通人用不到一秒钟的思考就能做的脑力活，我们大概都能把它自动化。',o:'If a typical person can do a mental task with less than one second of thought, we can probably automate it',who:'吴恩达',src:'《哈佛商业评论》2016 年文章 “What Artificial Intelligence Can and Can’t Do Right Now”'}},
+ E:{why:'AI 可以回答情绪问题，但人想要的是“有人真的在乎我”。接收结果的永远是人，懂人的人会越来越难被替代。',
+  q:{t:'人工智能里没有什么是“人造”的。它由人启发、由人创造，最重要的是，它影响的是人。',o:'There’s nothing artificial about AI. It’s inspired by people, created by people, and most importantly it has an impact on people.',who:'李飞飞',src:'2018 年美国国会听证会发言'}},
+ F:{why:'AI 能替你写出漂亮的话，但让一群利益不同的人真的点头，靠的是信任和当面的来回。',q:null},
+ G:{why:'AI 不会被追责。系统越强，出了事就越需要有人站出来，也需要有人在变动里扛得住。',
+  q:{t:'我离开，是为了能直说 AI 的危险，不用顾虑这会对谷歌有什么影响。',o:'I left so that I could talk about the dangers of AI without considering how this impacts Google.',who:'杰弗里·辛顿',src:'2023 年离开谷歌后的推文'}},
+ H:{why:'软件替代不了到现场动手，机器人的手和脚也仍是难题。但要看清：世界经济论坛的雇主调查预计，“手工灵巧、耐力与精度”这类技能的需求在下降，别指望它单独撑起竞争力。',
+  q:{t:'让计算机在智力测验上表现得像成年人，相对容易。（而给它幼儿那样的感知和行动能力，却很难。）',o:'comparatively easy to make computers exhibit adult level performance on intelligence tests',who:'汉斯·莫拉维克',src:'《Mind Children》1988 年，第 15 页；括号里的后半句是大意转述，不是原文'}},
+ I:{why:'AI 能执行任何目标，但“什么值得做”得你自己想。目标一旦便宜，想清楚要什么，就成了稀缺的那一步。',
+  q:{t:'这一波浪潮里，我们的出发点，就不是趁机赚一笔，而是走到技术的前沿。',o:'',who:'梁文锋',src:'《暗涌》采访',zh:1}}
+};
+
+/* 几组拉扯 */
+const TENS=[
+ {x:'B',y:'C',l:'拆开看清楚',r:'造点新的',tl:'你习惯先把事拆清楚、看明白。好处是稳，要防的是想得太细、迟迟不造新东西。',tm:'拆和造你拿得差不多平：既能看清问题，也能想出新办法。',tr:'你更爱想新点子、换玩法。好处是灵活，要防的是点子多、落地少。'},
+ {x:'B',y:'H',l:'先想清楚',r:'先动手',tl:'你习惯先把事想透再动手。好处是少返工，要防的是想太久。',tm:'想和做你能平衡着来。',tr:'你习惯先动手，在做的过程里想清楚。好处是快，要防的是做了半天才发现方向错了。'},
+ {x:'E',y:'F',l:'先听对方',r:'先推动事',tl:'你习惯先听、先懂对方。好处是人愿意跟你说实话，要防的是该推的时候没推。',tm:'听和推你拿得平：既能懂人，也能把人带到一起。',tr:'你更擅长把人拉到一起、把事推下去。好处是快，要防的是没听清对方就往前走。'},
+ {x:'D',y:'G',l:'敢拍板',r:'肯兜底',tl:'你更擅长“定”：先押一个方向。要留意定了以后，后果有没有人接。',tm:'敢定也肯担，这两样你拿得差不多平。',tr:'你更擅长“担”：事交给你，你会负责到底。要留意别总是替别人的决定收拾。'},
+ {x:'E',y:'I',l:'更看重人',r:'更看重自己的心意',tl:'做事时你先想到人：他们怎么想、愿不愿意。要留意别把自己真正想要的压没了。',tm:'为人和为己，你拿捏得挺平。',tr:'做事时你先问自己想不想。你有主心骨，要留意别人的感受也得照顾到。'}
+];
+
+/* ===== 经典理论的轴和特质，以及它们各自对应本测试的哪几个维度（人工归并）。d=对应的维度；items=该理论里的具体特质，后面是对应的维度（空=本测试没覆盖）===== */
+const FW=[
+ {id:'cl',short:'优势识别器',name:'盖洛普优势识别器',groups:[
+  {n:'战略思维',d:['A','B','C'],items:[['分析','B'],['思维','B'],['审慎','B'],['理念','C'],['搜集','A'],['战略','D']]},
+  {n:'影响力',d:['D','F'],items:[['行动','D'],['自信','D'],['沟通','F'],['取悦','F']]},
+  {n:'关系建立',d:['E'],items:[['共情','E'],['个别','E'],['包容','E'],['和谐','F']]},
+  {n:'执行力',d:['G','I','H'],items:[['责任','G'],['排难','G'],['统率','G'],['统筹','G'],['信仰','I']]}]},
+ {id:'gd',short:'多元智能',name:'加德纳多元智能',groups:[
+  {n:'逻辑—数学',d:['B']},{n:'身体—动觉',d:['H']},{n:'人际',d:['E','F']},{n:'内省',d:['I']}]},
+ {id:'hl',short:'霍兰德',name:'霍兰德职业兴趣',groups:[
+  {n:'实用型 R',d:['H']},{n:'研究型 I',d:['A','B']},{n:'艺术型 A',d:['C']},{n:'社会型 S',d:['E']},{n:'企业型 E',d:['D','F']},{n:'传统型 C',d:['G']}]},
+ {id:'bf',short:'大五人格',name:'大五人格',groups:[
+  {n:'开放性',d:['A','C']},{n:'尽责性',d:['B','G']},{n:'外向性',d:['D','F']},{n:'宜人性',d:['E']}]},
+ {id:'via',short:'VIA 品格优势',name:'VIA 品格优势',groups:[
+  {n:'智慧与知识',d:['A','B','C'],items:[['创造力','C'],['好奇心','A'],['判断力','B'],['洞察','A']]},
+  {n:'勇气',d:['D','G'],items:[['勇敢','D'],['毅力','G'],['正直','G']]},
+  {n:'仁爱',d:['E'],items:[['爱','E'],['善良','E'],['社交智慧','E']]},
+  {n:'正义',d:['F','G'],items:[['团队合作','F'],['领导力','G']]},
+  {n:'超越',d:['I'],items:[['意义感','I']]}]}
+];
+/* 某一维度在各理论里对应哪些特质（由 FW 生成，保证页面前后一致）*/
+function xl(k){return FW.map(f=>{
+ const items=f.groups.flatMap(g=>(g.items||[]).filter(i=>i[1]===k).map(i=>i[0]));
+ const axes=f.groups.filter(g=>g.d.includes(k)).map(g=>g.n);
+ const s=items.length?items.join('、'):axes.join('、');return s?`${f.short}：${s}`:null}).filter(Boolean)}
+
+/* ===== AI 圈的人物：按公开经历和公开发言，粗略标出每个人最突出的 3 个维度（权重 1 / .8 / .6）。
+   只比做事风格，不比成就，也不代表本人真实性格。fact 只写公开可查的经历 ===== */
+const FIGS=[
+ {n:'伊尔亚·苏茨克维',en:'Ilya Sutskever',tag:'押对方向的研究者',top:['D','I','A'],fact:'AlexNet（2012 年让图像识别突然变准的模型）的作者之一，OpenAI 联合创始人。2024 年离开 OpenAI，创办 SSI（一家只做安全超级智能的公司），专心做这一件事。',pts:["创办 SSI，只做“安全的超级智能”；2026 年 7 月获英伟达 50 亿美元投资", "认为光堆规模不够了，要回到研究", "想要像“很想上手干的 15 岁少年”那样，边做边学的 AI"],src:"The Decoder 转述的 Dwarkesh Patel 访谈；StartupHub 2026 年 8 月报道"},
+ {n:'安德烈·卡帕西',en:'Andrej Karpathy',tag:'爱动手也爱讲给别人听',top:['H','A','F'],fact:'在斯坦福教过深度学习课，做过特斯拉的自动驾驶视觉，2025 年提出“vibe coding”（用大白话让 AI 写代码）这个说法。2026 年 5 月他宣布加入 Anthropic，在负责“预训练”（给模型打基础的第一步训练）的团队里带一支用 Claude 加速预训练研究的新团队。',pts:["2026 年 5 月加入 Anthropic，带新团队用 Claude 加速预训练研究", "判断 AI 智能体还要“大约十年”才好用", "自己办的学校 Eureka Labs 暂时搁置，说以后会回来"],src:"他 2026 年 5 月 19 日的 X 帖子（LetsDataScience 转述）；2025 年 10 月 Dwarkesh Patel 播客"},
+ {n:'杰弗里·辛顿',en:'Geoffrey Hinton',tag:'琢磨“大脑怎么学习”几十年的人',top:['A','I','D'],fact:'几十年琢磨大脑和神经网络，2023 年离开谷歌后公开谈 AI 的风险，2024 年获诺贝尔物理学奖。',pts:["2026 年 9 月在国会山给参议员做闭门简报，提醒 AI 可能自己生出“想把人类除掉”的子目标", "认为国会大概只有一年时间立安全规则", "说过软件工程“只需要很少的人”，“当水管工是个好选择”"],src:"Fortune 2026 年 9 月 26 日；Fortune 2025 年 12 月 28 日；Legal Cheek 2025 年 6 月"},
+ {n:'戴密斯·哈萨比斯',en:'Demis Hassabis',tag:'把玩游戏、神经科学和 AI 拧在一起的人',top:['B','A','C'],fact:'从少年国际象棋高手，到做游戏，再到读神经科学博士，创办 DeepMind，AlphaFold 让他拿了 2024 年诺贝尔化学奖。2026 年 8 月，他卸下 DeepMind 首席执行官一职，改任董事长和 Alphabet 首席科学家，把更多精力放到 AGI 战略和科学应用上。',pts:["2026 年 8 月卸任 DeepMind 首席执行官，改任董事长和 Alphabet 首席科学家", "预计 AGI（能力接近人的通用 AI）在 2030 年前后到来", "劝年轻人学会“怎么学”：抓基础，别追热点"],src:"Axios 2026 年 5 月；Fortune 2026 年 8 月 5 日；Fast Company（谷歌 I/O 2026）；2025 年 3 月剑桥访谈"},
+ {n:'李飞飞',en:'Fei-Fei Li',tag:'先看见“缺什么”，再回头看人的人',top:['E','A','I'],fact:'发起 ImageNet，用大规模数据集推动了计算机视觉的突破；共同领导斯坦福以人为本 AI 研究院。2024 年共同创办 World Labs，做让 AI 理解三维空间的“空间智能”，2026 年 2 月融资 10 亿美元。',pts:["创办 World Labs；2025 年 11 月发布 Marble，2026 年 9 月发布 Atlas", "立场：AI 要增强人，而不是取代人", "说开放、好奇、愿意学“永远不过时”，要养成“完整的人，而不是机器”"],src:"TIME100 AI 2026；SiliconANGLE 2026 年 9 月 1 日；Atlassian 博客 2024 年 6 月"},
+ {n:'吴恩达',en:'Andrew Ng',tag:'把 AI 教给几百万人的人',top:['F','B','A'],fact:'联合创办 Coursera，创办 DeepLearning.AI，曾领导谷歌大脑，也当过百度首席科学家。他常说“AI 是新电力”，致力于让更多人学会用它。',pts:["2026 年 5 月把“AI 抢光工作”的说法叫作“jobpocalypse”（就业末日），更看好 AI 工程岗位会增多", "说缺的是有 AI 技能的人，不是岗位", "8 月 Forbes 的文章归纳，最吃香的是用好编程智能体、把握要做什么"],src:"The Developer Story 2026 年 5 月；Forbes 2026 年 8 月 16 日（技能的表述是作者归纳）"},
+ {n:'黄仁勋',en:'Jensen Huang',tag:'早早下注、一路扛过来的人',top:['D','G','F'],fact:'1993 年创办英伟达，多年投入 CUDA 这类当时看不到回报的方向，AI 浪潮来的时候，他的算力已经备好了。',pts:["2026 年 4 月：大多数人更可能把工作丢给会用 AI 的人", "英伟达在找“AI 的资深使用者”", "1 月的报道里说，建数据中心会带来大量水管工、电工等高薪技工岗位"],src:"Fortune 2026 年 4 月 22 日；CNBC 2026 年 1 月 22 日报道"},
+ {n:'梁文锋',en:'Liang Wenfeng',tag:'不急着变现、先走到前沿的人',top:['I','A','H'],fact:'创办幻方量化，后来做出 DeepSeek。他在《暗涌》的采访里说，出发点不是趁机赚一笔，而是走到技术的前沿；日常仍然自己看论文、写代码。',pts:["2026 年 7 月的投资人交流会上说，初衷还是追求 AGI（通用人工智能）", "说“人才不是瓶颈”，希望员工一半时间自己探索", "早先说过，核心技术岗位以应届和毕业一两年的人为主"],src:"蓝鲸 TMT／投资界 2026 年 7 月 23 日转载；《暗涌》访谈（虎嗅转载）"},
+ {n:'达里奥·阿莫迪',en:'Dario Amodei',tag:'把风险想清楚才往前走的人',top:['B','I','G'],fact:'曾任 OpenAI 研究副总裁，2021 年和同事创办 Anthropic，把安全放在公司的核心，也常写长文谈 AI 的风险和机会。',pts:["2026 年 1 月长文：一到五年内，一半入门级白领岗位会消失", "建议企业把人调去做新的事，别只想着少用人", "2024 年的长文写：意义“主要来自人与人的关系”"],src:"Fortune 2026 年 1 月 27 日；《Machines of Loving Grace》"},
+ {n:'萨姆·奥尔特曼',en:'Sam Altman',tag:'把人、钱和算力拉到一起的人',top:['F','D','C'],fact:'做过 Y Combinator 总裁，后来带领 OpenAI，擅长把资源、人才和资金聚到同一个方向上。',pts:["2026 年 5 月说，自己先前预言 AI 会抹掉整类入门白领工作，现在“很高兴看错了”，短期冲击比他预想的轻", "说人们更愿意和人打交道", "10 月：“我们还没有解决对齐问题”，OpenAI 今年不上市"],src:"TechSpot 2026 年 5 月 27 日；Time 2026 年 5 月 26 日；Fortune 2026 年 10 月 5 日"},
+ {n:'杨立昆',en:'Yann LeCun',tag:'敢唱反调的老派研究者',top:['D','B','A'],fact:'图灵奖得主，公开坚持“只靠大语言模型，走不到人类水平的智能”，长期主张开放研究。后来离开 Meta，创办 AMI Labs。',pts:["离开 Meta 创办 AMI Labs，2026 年 3 月融资 10.3 亿美元", "坚持只靠大语言模型走不到人类水平，要做“世界模型”（让 AI 理解现实世界怎么运转）", "“AI 不是在取代人，而是给人一套电动工具”，人是 AI 的“老板”"],src:"TechCrunch 2026 年 3 月 9 日；Windows Central 转述 2025 年 3 月 GTC"},
+ {n:'杰夫·迪恩',en:'Jeff Dean',tag:'把大系统一点点搭起来的人',top:['H','B','G'],fact:'MapReduce、TensorFlow 等基础系统的主要作者之一，做了 27 年谷歌人，是谷歌首席科学家。2026 年 8 月他离开谷歌，和桑杰·格玛瓦特、奥里奥尔·温亚尔斯、郭·乐等老同事创办 Discovery Loop，要用 AI 把机器学习、科学和工程研究自动化，谷歌是创始投资方。',pts:["2026 年 8 月离开谷歌，创办 Discovery Loop，用 AI 自动化科研和工程", "说小公司能让所有人盯着同一个使命", "预计一年内，AI 能到“初级软件工程师”的水平"],src:"Fortune 2026 年 8 月 5 日；The Hans India 2026 年 8 月 20 日；Sequoia 播客"},
+ {n:'约书亚·本吉奥',en:'Yoshua Bengio',tag:'从发明者转向守门人的人',top:['I','E','A'],fact:'图灵奖得主，近年把研究重心放到 AI 的安全和社会风险上，2025 年 6 月创办非营利组织 LawZero。',pts:["2025 年 6 月创办 LawZero；2026 年 9 月获加拿大和德国 3 亿加元支持", "说“安全本身就是一项核心能力”", "认为爱、承担责任、人与人的连接会更值钱"],src:"BetaKit 2026 年 9 月 16 日；Business Insider 2025 年 12 月 22 日"},
+ {n:'穆斯塔法·苏莱曼',en:'Mustafa Suleyman',tag:'从青年热线走到 AI 圈的人',top:['E','F','G'],fact:'十几岁时就和朋友办了面向年轻穆斯林的电话咨询热线，后来联合创办 DeepMind 和 Inflection AI，并出版《浪潮将至》谈 AI 治理。',pts:["2026 年 2 月：白领的大多数任务，12 到 18 个月内会被 AI 自动化", "6 月澄清：说的是“任务”，不是“工作”", "写《浪潮将至》，谈如何“遏制”这波技术"],src:"Fortune 2026 年 2 月 13 日；Windows Central 2026 年 6 月 10 日"},
+ {n:'李开复',en:'Kai-Fu Lee',tag:'把技术讲给产业听的人',top:['F','D','A'],fact:'曾任谷歌中国区负责人、微软研究院的管理者，后来创办创新工场和零一万物，写过《AI·未来》。',pts:["2026 年 9 月：“AI 没有办法承担责任”", "最终的判断和责任，要由人来担", "2018 年 TED：“比失业更严重的是意义的丧失”"],src:"人民财讯 2026 年 9 月 10 日（腾讯新闻）；复旦大学发展研究院访谈；2018 年 TED（创新工场博客转述）"},
+ {n:'伊恩·古德费洛',en:'Ian Goodfellow',tag:'一杯啤酒想出新点子，当晚就写代码的人',top:['C','H','A'],fact:'GAN（生成对抗网络）的提出者。据《麻省理工科技评论》报道，他在酒吧里想到让两个网络互相对抗，朋友们不信，他回家连夜写代码，第一次就跑通了。',pts:["希望机器学习在大家依赖它之前，就尽可能安全", "用逼真的对抗样本训练系统，让它学会识别攻击", "2018 年说，机器学习还没好到能用来发起攻击，还有时间做准备"],src:"MIT Technology Review 2018 年 3 月"}
+];
+const FW_=[1,.8,.6];
+function match(r){
+ const mean=r.order.reduce((s,k)=>s+r.raw[k],0)/N;
+ const u=K.map(k=>r.raw[k]-mean);
+ const un=Math.sqrt(u.reduce((s,x)=>s+x*x,0))||1;
+ const sc=FIGS.map(f=>{const w=K.map(k=>{const i=f.top.indexOf(k);return i<0?0:FW_[i]});const wm=w.reduce((a,b)=>a+b,0)/N;const wc=w.map(x=>x-wm);
+  const wn=Math.sqrt(wc.reduce((s,x)=>s+x*x,0));return{f,s:u.reduce((s,x,i)=>s+x*wc[i],0)/(un*wn)}}).sort((a,b)=>b.s-a.s);
+ const f=sc[0].f,f2=sc[1].f;
+ const share=f.top.filter(k=>r.rank[k]<4);
+ const gap=f.top.filter(k=>r.rank[k]>=4).sort((a,b)=>r.rank[b]-r.rank[a])[0];
+ const mine=r.order.slice(0,3).find(k=>!f.top.includes(k));
+ let why=share.length?`你们的共同点：${share.map(k=>AB[k].n).join('、')}。`:`你们没有重合的最强项，像在整体轮廓：都不是“样样平均”，而是有自己偏的那几项。`;
+ if(gap)why+=`TA 还多一手「${AB[gap].n}」，你这一项偏低，想补的话可以${AB[gap].up.replace(/。$/,'')}。`;
+ if(mine)why+=`你多的一手是「${AB[mine].n}」。`;
+ return{f,f2,why}
+}
+
+/* ===== 题目：18 道生活情境 + 6 道自然倾向题；每题 4 个选项 = 4 个不同维度 ===== */
+const ABQ=[
+ {
+  "stem": "合租室友总在半夜打游戏，你第二天要早起上班，气氛越来越僵。",
+  "opts": {
+   "G": [
+    "我来开口，约他把合租公约写下来，谈崩了算我的",
+    "法学"
+   ],
+   "E": [
+    "先单独找他聊，问他最近是不是遇到什么事",
+    "心理咨询"
+   ],
+   "C": [
+    "想个有意思的办法：比如立个“晚上十点后静音”的约定，谁破例谁请全屋喝奶茶",
+    "设计思维"
+   ],
+   "I": [
+    "先想想：我图的是睡个好觉，还是跟他处好关系",
+    "存在主义"
+   ]
+  }
+ },
+ {
+  "stem": "几个朋友约周末聚餐，群里聊了两天，还没定下去哪吃。",
+  "opts": {
+   "D": [
+    "再聊也聊不拢，我直接订一家，到点大家来就行",
+    "复杂系统科学"
+   ],
+   "F": [
+    "私下问每个人最忌讳什么，挑让最少人难受的",
+    "谈判学"
+   ],
+   "H": [
+    "先去那一带逛一圈，看人多不多、闻着香不香，凭现场感觉选",
+    "现象学"
+   ],
+   "I": [
+    "这顿饭想好好聊天，我就选安静好看的那家",
+    "美学"
+   ]
+  }
+ },
+ {
+  "stem": "认识五年的朋友来借两万块，说是周转几个月。你拿得出，但心里有点拿不准。",
+  "opts": {
+   "D": [
+    "按他过去借还的习惯，只借我能接受不还的那个数",
+    "行为经济学"
+   ],
+   "F": [
+    "先说好规矩：我可以借，但写张借条，约好几号还，大家都放心",
+    "合同法"
+   ],
+   "A": [
+    "先问清楚：钱是用来干嘛的，打算什么时候周转回来，再决定借不借",
+    "新闻学"
+   ],
+   "I": [
+    "想想自己愿不愿意做那种朋友有难就伸手的人",
+    "文学"
+   ]
+  }
+ },
+ {
+  "stem": "你们三个人合做的项目，周五要交，只剩三天。分工早就定好了，各人的部分也交上来了，但 PPT 风格完全不一样，内容也对不上，整合和上台汇报没人认领。",
+  "opts": {
+   "A": [
+    "先挨个翻一遍，看看每版到底卡在哪、为什么对不上，再决定怎么整",
+    "系统工程"
+   ],
+   "G": [
+    "我来整合，最后我汇报，出问题我担",
+    "管理学"
+   ],
+   "F": [
+    "挨个私聊，问大家各自的版本是怎么想的、哪里不愿意改",
+    "组织行为学"
+   ],
+   "C": [
+    "把三版里各自最好的点子拆出来，重新拼成一版新的",
+    "创意写作"
+   ]
+  }
+ },
+ {
+  "stem": "闺蜜刚失恋，半夜给你发了十条语音，最后一条说她想现在就去找前任问清楚。",
+  "opts": {
+   "D": [
+    "先判断她是想发泄，还是真的要去，再决定怎么回",
+    "认知心理学"
+   ],
+   "G": [
+    "想方设法拦住她：今晚不许去，我守着她，明天她还想问清楚，我陪她去",
+    "行动哲学"
+   ],
+   "E": [
+    "先安静听完，不打断，不给建议",
+    "临床心理学"
+   ],
+   "H": [
+    "打车过去，带上吃的，坐在她身边",
+    "医学/护理学"
+   ]
+  }
+ },
+ {
+  "stem": "爸妈的手机用了五年，卡得不行，但他们总说还能用，舍不得换。",
+  "opts": {
+   "A": [
+    "先留意爸妈平时拿手机干嘛，最卡最烦的是哪一步，再挑",
+    "设计学"
+   ],
+   "F": [
+    "用他们听得懂的话劝：换了以后视频通话不卡，能天天看到我",
+    "传播学"
+   ],
+   "H": [
+    "带爸妈去店里亲手试，哪部拿着顺手、好按再定",
+    "人机交互"
+   ],
+   "E": [
+    "先陪他们坐下聊聊，听听这部手机陪了他们多少事，再说换不换",
+    "人格心理学"
+   ]
+  }
+ },
+ {
+  "stem": "你妹妹在备考，这次模拟考考砸了，她把自己关在房间里，说不想考了。",
+  "opts": {
+   "A": [
+    "先发条微信，不提考试，等她回了再慢慢问：是题太难，还是怕让家里失望，还是真不想考了",
+    "发展心理学"
+   ],
+   "G": [
+    "我是她哥哥或姐姐，这时候我得在：她想放弃算我没陪好，我陪她熬过这段",
+    "职业社会学"
+   ],
+   "E": [
+    "什么都不问，坐到她旁边陪她待一会儿，她想说的时候再说",
+    "社会工作"
+   ],
+   "I": [
+    "不劝她，先帮她想清楚她自己想要什么，再照着那个帮她",
+    "AI 对齐"
+   ]
+  }
+ },
+ {
+  "stem": "领导点名让你负责今年的部门年会，时间和预算都很紧，大家在群里都不太积极。",
+  "opts": {
+   "B": [
+    "先私下问问大家想要什么样的年会，把意见理成一页",
+    "信息论"
+   ],
+   "H": [
+    "先自己动手搭个样：把场地和流程做个小样，让大家看着具体，再分工",
+    "政治学"
+   ],
+   "F": [
+    "一个个私聊，先约几个人吃顿饭，让大家先热起来",
+    "社会学"
+   ],
+   "C": [
+    "想个让人愿意来的新点子：不做节目，改成每人带一样自己的拿手小吃",
+    "策展学"
+   ]
+  }
+ },
+ {
+  "stem": "部门来了个新人，总出错，大家都有点烦，也没人指定谁来带他。",
+  "opts": {
+   "A": [
+    "先问问他：是没听懂，还是不好意思问？",
+    "语言学/语用学"
+   ],
+   "I": [
+    "先想想：我愿不愿意当那种愿意带新人的同事，愿意我就带",
+    "外交学"
+   ],
+   "E": [
+    "约个午饭聊聊他的想法，让他觉得有人撑腰",
+    "教育学"
+   ],
+   "H": [
+    "坐到他旁边，手把手做一遍给他看",
+    "手工艺研究"
+   ]
+  }
+ },
+ {
+  "stem": "朋友拉你一起做个副业账号，刚开头，需要你投钱、投时间。",
+  "opts": {
+   "B": [
+    "先算账：投入多少、几个月回本，算得过来才做",
+    "数学"
+   ],
+   "D": [
+    "我见过几个类似的号，都没做起来，这个套路过时了，不碰",
+    "历史学"
+   ],
+   "C": [
+    "先拍几条不一样的试试：换三种选题和封面，看哪种有人看，再决定做不做",
+    "实验设计"
+   ],
+   "I": [
+    "算算它要占掉我多少个周末，值不值得拿休息来换",
+    "价格理论"
+   ]
+  }
+ },
+ {
+  "stem": "爷爷生病了，医生说可以手术但有风险。你爸和叔叔姑姑为要不要做吵了起来。",
+  "opts": {
+   "B": [
+    "先把医生的话问明白：手术到底能换来什么，风险有多大",
+    "认识论"
+   ],
+   "A": [
+    "先去查这种手术做完后恢复得怎么样，再找做过的病友聊聊",
+    "流行病学"
+   ],
+   "E": [
+    "单独问问爷爷怎么想，也留意家人嘴上说的和真正怕的是不是一回事",
+    "进化心理学"
+   ],
+   "I": [
+    "问问大家：要是爷爷自己选，他最想怎么过接下来的日子",
+    "心灵哲学"
+   ]
+  }
+ },
+ {
+  "stem": "你和朋友旅行时迷了路，手机没信号。",
+  "opts": {
+   "B": [
+    "先停下来，想想最后一个确定的地点，再商量：先找路，还是先找有信号的地方",
+    "认知科学"
+   ],
+   "C": [
+    "不光看地图，想点别的招：爬到高处找信号，或者顺着有人烟的方向走、问路过的人",
+    "应急管理"
+   ],
+   "E": [
+    "给大家鼓劲，让最累的人走中间，先保住士气",
+    "体育教练学"
+   ],
+   "H": [
+    "走一段就找个标志物对一下方向",
+    "机器人学"
+   ]
+  }
+ },
+ {
+  "stem": "手里有两个 offer，一个稳，一个有意思，家里和朋友意见各不相同。",
+  "opts": {
+   "B": [
+    "先问自己：我到底想过什么样的五年",
+    "科学哲学"
+   ],
+   "D": [
+    "谁也预测不准，我选一个选错了也能掉头的",
+    "未来学"
+   ],
+   "F": [
+    "把我的想法讲清楚，让家里和朋友理解我为什么这么选",
+    "博弈论"
+   ],
+   "C": [
+    "先别二选一：看能不能折中，比如先上稳的班，把有意思的那个当副业试着做",
+    "设计思维"
+   ]
+  }
+ },
+ {
+  "stem": "你负责的部门活动，开始前一天场地突然被取消了。",
+  "opts": {
+   "B": [
+    "先捋一下：这次活动最不能丢的是什么，再想怎么补",
+    "语言哲学"
+   ],
+   "H": [
+    "先找块空地，用手边的东西现场布置，边做边改",
+    "戏剧/表演学"
+   ],
+   "G": [
+    "我拍板：现在起换方案，出了问题我承担",
+    "军事学"
+   ],
+   "C": [
+    "把“场地没了”当个机会：换成户外或者线上，临时想个更有意思的玩法",
+    "创造力研究"
+   ]
+  }
+ },
+ {
+  "stem": "周五快下班了，领导又改了需求，这已经是这个月第三次了。",
+  "opts": {
+   "A": [
+    "他到底想要啥我猜不出来，不猜了，直接问他要什么结果",
+    "可计算性/复杂性"
+   ],
+   "D": [
+    "算算这次加班能换到什么，不值就去谈排期",
+    "劳动经济学"
+   ],
+   "G": [
+    "这是我负责的活，我亲自找领导对齐，谈不成我自己去找上级",
+    "进化生物学"
+   ],
+   "F": [
+    "拉个需求变更流程，写下来让大家都认",
+    "制度经济学"
+   ]
+  }
+ },
+ {
+  "stem": "你用 AI 写了份方案，读起来头头是道，但你隐约觉得其中一个结论不对劲。方案要署你的名交上去。",
+  "opts": {
+   "G": [
+    "署我的名，我就自己逐条核一遍，错在哪我认",
+    "法学"
+   ],
+   "F": [
+    "拿去问最懂行的同事，听听他怎么看",
+    "传播学"
+   ],
+   "B": [
+    "打开原始数据，亲手算一遍",
+    "手工艺研究"
+   ],
+   "I": [
+    "先问自己：这个结论我自己真信吗？不信就重写",
+    "存在主义"
+   ]
+  }
+ },
+ {
+  "stem": "你接手了一个没有交接文档的老表格，前任已经离职，明天就要用。",
+  "opts": {
+   "B": [
+    "先弄清这个表到底是为了解决什么问题，再看细节",
+    "科学哲学"
+   ],
+   "D": [
+    "先猜最可能出问题的三个地方，一个个验证",
+    "刑侦学"
+   ],
+   "H": [
+    "直接上手用一遍，在用的过程里摸出规律",
+    "人类学"
+   ],
+   "C": [
+    "不想照着旧的凑合，我按自己用着顺手的重新搭一个新表格",
+    "艺术理论"
+   ]
+  }
+ },
+ {
+  "stem": "你刚到一个新团队，有条没人告诉你的潜规矩，你第一周就踩了雷。",
+  "opts": {
+   "A": [
+    "先搞清楚这里的规矩是怎么运作的，别靠瞎猜",
+    "语言学/语用学"
+   ],
+   "E": [
+    "留意前辈们说话的语气和表情，感觉得出谁说话有分量、哪些话题不能碰",
+    "社会语言学"
+   ],
+   "G": [
+    "主动去认个错，把话说开，把事补上",
+    "外交学"
+   ],
+   "F": [
+    "找个靠谱的前辈请教，让他带我入圈",
+    "教育学"
+   ]
+  }
+ }
+];
+
+const PQ=[
+ {
+  "stem": "没人要求、也没有奖励，你还是会自己一遍遍去做的事，更像是：",
+  "opts": {
+   "C": "有个想法就想先做出个小样看看：画一画、写一写、搭一搭",
+   "E": "琢磨身边的人，想办法让大家处得更好、一起把事干成",
+   "H": "亲手做点东西、练一个动作，练到手上越来越顺",
+   "I": "想自己真正想要什么，然后一点点往那个方向走"
+  }
+ },
+ {
+  "stem": "第一次碰一件完全不会的新事，你上手最快的往往是：",
+  "opts": {
+   "B": "先弄明白这事到底在解决什么，再动手",
+   "A": "找到做得最好的人，跟着学、请他指点",
+   "H": "不看说明，直接上手，在做的过程里摸出门道",
+   "I": "只要我真的想学，别人觉得难的我也进步得快"
+  }
+ },
+ {
+  "stem": "做哪种事，你不觉得累、时间过得特别快？",
+  "opts": {
+   "B": "把一团乱的东西理出头绪，重新把问题问对",
+   "D": "信息很少、却要自己拿主意往哪走的时候",
+   "C": "天马行空地想点子、涂涂画画写写，一晃就是半天",
+   "I": "做的事刚好是自己真心在乎的，哪怕没人看"
+  }
+ },
+ {
+  "stem": "别人遇到难办的事，最常来找你的原因更像是：",
+  "opts": {
+   "A": "你总能一下指出：这事真正的问题是什么",
+   "D": "你敢给判断，哪怕没有十足把握",
+   "G": "你答应的事靠谱，出了问题你也不推",
+   "C": "你总能冒出别人想不到的办法"
+  }
+ },
+ {
+  "stem": "来到一个没有说明书、没人告诉你目标的新环境（陌生的游戏、新的城市、刚入职的新团队），你先做的是：",
+  "opts": {
+   "B": "先弄清这里的规则和目标到底是什么",
+   "A": "先到处转转、看看问问，把这里有什么都摸一遍",
+   "G": "先接一件具体的事，做出点结果让人认可",
+   "F": "先认识几个人，打听这里的门道"
+  }
+ },
+ {
+  "stem": "未来几年，你最想练到很强的是：",
+  "opts": {
+   "D": "没有标准答案时，也能拿定主意的判断力",
+   "G": "别人愿意把重要的事交给我、我也接得住的靠谱",
+   "F": "让人愿意相信我、跟着我的天赋",
+   "E": "能听懂别人没说出口的话，让人愿意跟我说心里话"
+  }
+ }
+];
+
+const SKIPS=['我戴耳塞忍着，不跟他说','别人定哪我去哪，我不操心','我不借，直接说手头不方便','先看别人怎么说，等有人安排我再动','我回个“抱抱”，明早再聊','我直接买：挑一部我觉得好的，买回来帮他们设置好','她需要我自然会来找我，我不主动问',null,'随大流，我不主动带他','我不投，直接婉拒','听医生和家里人的，我不表态','跟着大家走，我不抢着拿主意',null,null,'按他说的改，我不多说',null,'照着旧样子用，我不动它','低调观察，别人怎么做我怎么做'];
+const OPEN=14; /* 固定开场题：最贴近打工人的日常 */
+const MAXSKIP=3; /* 部分情境题多一个“都不是，我会：……”：选它这题不计分，最多 3 题。你是负责人、不能不管的题不给这个选项 */
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const TIE=shuffle(K);
+const QS=(()=>{
+ const sc=shuffle(ABQ.map((q,i)=>({kind:'ab',src:i,stem:q.stem,opts:q.opts,skip:SKIPS[i]||null})));
+ const k=sc.findIndex(x=>x.src===OPEN);if(k>0)sc.unshift(sc.splice(k,1)[0]);
+ const pt=shuffle(PQ.map((q,i)=>{const o={};Object.keys(q.opts).forEach(x=>o[x]=[q.opts[x],null]);return{kind:'pt',src:i,stem:q.stem,opts:o,skip:null}}));
+ return [...sc,...pt].map((q,i)=>({...q,qi:i,order:shuffle(Object.keys(q.opts))}));
+})();
+const NQ=QS.length;
+const fresh=()=>QS.map(()=>({b:null,w:null,skip:false}));
+let ans=fresh(),R=null;
+const PAGES=[...(CODE?[{t:'gate'}]:[]),{t:'intro'},...QS.map(q=>({t:'q',q})),{t:'result'}];
+let pi=0;
+const skipCount=()=>ans.filter(a=>a.skip).length;
+const done=q=>{const a=ans[q.qi];return a.skip||a.b};
+
+/* ===== 计分：最像我 +1，最不像我 −1，除以它出现的次数 → 每个维度 −1 ~ +1 ===== */
+function compute(){
+ const z=()=>Object.fromEntries(K.map(k=>[k,0]));
+ const m=z(),l=z(),n=z();const best=[];let used=0;
+ QS.forEach((q,i)=>{const a=ans[i];if(a.skip||!a.b)return;used++;
+  Object.keys(q.opts).forEach(k=>n[k]++);m[a.b]++;if(a.w)l[a.w]++;
+  if(q.kind==='ab')best.push({k:a.b,d:q.opts[a.b][1]})});
+ const raw={},val={};
+ K.forEach(k=>{raw[k]=n[k]?(m[k]-l[k])/n[k]:0;val[k]=Math.max(6,Math.min(100,Math.round(50+raw[k]*70)))});
+ const order=K.slice().sort((x,y)=>raw[y]-raw[x]||TIE.indexOf(x)-TIE.indexOf(y));
+ const rank={};order.forEach((k,i)=>rank[k]=i);
+ const lvl=k=>rank[k]<3?'hi':rank[k]>=N-3?'lo':'mid';
+ const t1=order[0],t2=order[1],t3=order[2],tl=order[N-1];
+ const spread=raw[t1]-raw[tl],g12=raw[t1]-raw[t2],g23=raw[t2]-raw[t3];
+ let shape;
+ if(spread<.4)shape=['均衡型','九项都差不多，没有特别突出的短板，也没有特别尖的长板。适合多场景切换，要靠经验把其中一两项磨尖。'];
+ else if(g12>=.2)shape=['单峰型','有一项明显高出一截。靠这一项吃饭最顺，别的地方可以找人搭档。'];
+ else if(g23>=.2)shape=['双峰型','两项并列领先，别的相对低。你的特点是这个组合，不是某一项。'];
+ else shape=['多峰型','前面几项都不低，没有特别尖的一个。适合需要多种能力配合的岗位，比如带小团队。'];
+ const tens=TENS.map(t=>{const d=raw[t.x]-raw[t.y];return{...t,pos:Math.max(6,Math.min(94,50-d*45)),txt:d>.15?t.tl:d<-.15?t.tr:t.tm}});
+ const dm={};best.forEach(x=>{(dm[x.d]=dm[x.d]||{d:x.d,k:x.k,c:0}).c++});
+ const discs=Object.values(dm).sort((a,b)=>b.c-a.c);
+ const rr={m,l,n,raw,val,order,rank,lvl,t1,t2,t3,tl,shape,tens,discs,used,title:AB[t1].role+' × '+AB[t2].role};rr.fig=match(rr);return rr
+}
+function sentence(r){return `你最突出的两个本事：${AB[r.t1].p}；${AB[r.t2].p}。`}
+
+/* ===== 雷达图（SVG，页面内）===== */
+
+
+/* ===== 适合学的学科 / 适合做的 AI 工作：每项标 3 个最相关的维度（权重 1/.8/.6）。
+   对应关系是按学科、岗位的内容粗略定的，只是方向，不是定论 ===== */
+const SUBJ=[
+ {n:'计算机科学与技术',g:'理工',top:['B','H','A']},{n:'数据科学与人工智能',g:'理工',top:['B','A','C']},
+ {n:'数学与统计',g:'理工',top:['B','I','A']},{n:'电子信息·机器人工程',g:'理工',top:['H','B','G']},
+ {n:'物理·化学·生物等基础科学',g:'理工',top:['A','B','H']},
+ {n:'认知科学·神经科学',g:'人文社科',top:['A','B','E']},{n:'心理学',g:'人文社科',top:['E','A','B']},
+ {n:'教育学',g:'人文社科',top:['E','F','I']},{n:'社会学·人类学',g:'人文社科',top:['A','E','F']},
+ {n:'哲学·伦理学',g:'人文社科',top:['I','B','A']},{n:'法学',g:'人文社科',top:['B','D','G']},
+ {n:'经济学·金融学',g:'管理经济',top:['B','D','A']},{n:'工商管理',g:'管理经济',top:['D','F','G']},
+ {n:'公共管理·政策研究',g:'管理经济',top:['D','F','G']},
+ {n:'新闻传播',g:'艺术传媒',top:['F','C','A']},{n:'设计学·交互设计',g:'艺术传媒',top:['C','E','H']},
+ {n:'艺术·影视·音乐',g:'艺术传媒',top:['C','H','I']},
+ {n:'临床医学·护理',g:'医学',top:['E','G','H']}];
+const JOBS=[
+ {n:'AI 研究员（大模型算法）',d:'提出新方法，做实验验证',top:['A','B','I'],f:'门槛高，多要硕士以上，看论文和项目经历。'},
+ {n:'机器学习工程师',d:'把模型训练好、部署成能用的系统',top:['B','H','G'],f:'偏算力和分布式方向，要扎实的工程和系统基础。'},
+ {n:'智能体应用开发工程师',d:'用大模型搭能自己规划、办事的应用',top:['B','H','C'],f:'今年增长最快的技术岗，9 月被列为国家新工种。要会 Python、RAG（让模型先查资料再回答）和大模型框架，多数岗位要求有项目经验。'},
+ {n:'AI 产品经理',d:'想清楚“做什么”，带团队落地',top:['D','E','F'],f:'需求翻倍增长。要懂大模型能擅长什么、不擅长什么，会用 Python 或 SQL 做简单演示。'},
+ {n:'AI 产品·交互设计师',d:'设计人和 AI 怎么打交道',top:['C','E','H'],f:'懂 AI 的设计师在大厂招聘里更吃香，产品类岗位一半以上和 AI 相关。'},
+ {n:'数据标注·AI 训练师',d:'给 AI 的资料做标注、质检、出题，教它分对错',top:['B','G','E'],f:'基础标注岗位多数本科或大专就能投；高阶的专项标注和“AI 出题专家”要硕士和法律、医学、金融等专业底子。人社部有“人工智能训练师”职业，分四级，大专可考。'},
+ {n:'AI 安全研究',d:'找出模型会出什么问题，想办法管住',top:['I','B','A'],f:'国内的“模型安全红队”“AI 风险顾问”已被列为新职业方向，但还没有国家职业标准。'},
+ {n:'AI 治理·政策·伦理',d:'制定规则，平衡各方利益',top:['I','D','E']},
+ {n:'前线部署工程师（FDE）',d:'驻到客户那里，把 AI 用进真实业务（FDE：Forward Deployed Engineer）',top:['F','E','H'],f:'大厂开始大量招，多要有工程或交付经验，应届生不太好进。'},
+ {n:'AI 内容·创意总监',d:'用 AI 出内容，自己把关品味',top:['C','F','H'],f:'更看重品味和把关，一般要先有做内容的经验。传媒行业今年春招出现了 AIGC（AI 生成内容）导演、AI 音频编剧、AI 生图师、AI 抽卡师（AI 视频生成）等新岗位，多在民营影视和短剧公司。'},
+ {n:'AI 教育·学习设计',d:'设计 AI 时代怎么教、怎么学',top:['E','F','C']},
+ {n:'AI 客户成功·运营',d:'带客户用好 AI，出了问题兜住',top:['E','G','F']},
+ {n:'机器人·具身智能工程',d:'让 AI 动手干物理世界的活',top:['H','B','A'],f:'算法岗多要硕士，看真机项目经历。新人能进的是数据采集员，多是零工。9 月“具身智能机器人应用技术员”被列入人社部新职业。'},
+ {n:'行业专家 + AI（医疗 / 法律 / 金融）',d:'懂行业，让 AI 干活，自己对结果负责',top:['G','D','E'],f:'制造、财务、法律等行业经验，是转进 AI 岗位最值钱的门票。刚毕业的人要先靠实习和项目攒出第一份经验。'},
+ {n:'AI 业务负责人·创业',d:'选方向、搭团队、扛结果',top:['D','F','I']},
+ {n:'具身数据采集员·质检',d:'穿戴设备做动作、录数据，或审核数据好不好',top:['H','G','B'],f:'新人最容易进的入口：穿上设备做动作录数据，或者审核数据质量，培训很短就能试岗。多是零工，签约前要看清合同。'},
+ {n:'大模型评测·安全',d:'给大模型出题、打分、找漏洞',top:['B','A','G'],f:'大厂有“大模型安全工程师”岗，要求本科以上、有内容安全或 AI 安全经验；标注专场招聘会里也有模型评测岗。'},
+ {n:'AI 内容创作（生图·视频·AIGC）',d:'用 AI 做图、做视频、做短剧',top:['C','H','A'],f:'今年春招出现了 AI 生图师、AI 抽卡师（AI 视频生成）、AIGC（AI 生成内容）导演等岗位，AI 剪辑师需求大涨，多在民营影视和短剧公司。'},
+ {n:'自由职业·一人公司',d:'一个人靠 AI 工具接活、做小生意',top:['I','D','C']},
+ {n:'读研·深造',d:'先把专业底子打深，再进 AI 方向',top:['A','B','I'],f:'AI 岗位要求里本科占四分之三，硕士占五分之一；算法和具身智能的技术岗多要硕士。'}];
+function wvec(top){const w=K.map(k=>{const i=top.indexOf(k);return i<0?0:FW_[i]});const m=w.reduce((a,b)=>a+b,0)/N;return w.map(x=>x-m)}
+function userVec(r){const m=r.order.reduce((s,k)=>s+r.raw[k],0)/N;return K.map(k=>r.raw[k]-m)}
+const dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),nrm=a=>Math.sqrt(dot(a,a))||1;
+function rankFit(r,list){const u=userVec(r),un=nrm(u);
+ return list.map((it,i)=>{const w=wvec(it.top);const s=dot(u,w)/(un*nrm(w));
+  const hit=it.top.filter(k=>r.rank[k]<4);
+  return{it,i,s,why:hit.length?hit.map(k=>AB[k].n).join(' · '):AB[it.top[0]].n}}).sort((a,b)=>b.s-a.s)}
+function fitBars(list,n){const mx=list[0].s,mn=list[list.length-1].s;
+ return list.slice(0,n).map(o=>{const t=(o.s-mn)/((mx-mn)||1),w=Math.round(30+70*t*t*t);
+  return `<div class="fb"><div class="fn"><b>${esc(o.it.n)}</b>${o.it.g?`<em>${esc(o.it.g)}</em>`:''}</div><span class="tr"><i style="width:${w}%"></i></span><div class="fw">${esc(o.why)}</div></div>`}).join('')}
+/* 岗位地图：横轴 = 和人打交道 ↔ 和技术打交道；纵轴 = 探方向、出点子 ↔ 拍板、扛结果。9 项各归一边 */
+function xy(v){const g=ks=>ks.reduce((s,k)=>s+v[K.indexOf(k)],0)/ks.length;
+ const n=nrm(v);return[(g(['B','H'])-g(['E','F']))/n,(g(['A','C','I'])-g(['D','G']))/n]}
+function jobMap(r,ranked){
+ const W=360,H=330,cx=W/2,cy=H/2,ax=W/2-74,ay=H/2-46;
+ const pts=JOBS.map((j,i)=>({i,p:xy(wvec(j.top))})),me=xy(userVec(r));
+ const all=pts.map(o=>o.p).concat([me]),mx=Math.max(...all.map(p=>Math.abs(p[0])),.01),my=Math.max(...all.map(p=>Math.abs(p[1])),.01);
+ const P=pts.map(o=>({i:o.i,x:cx+o.p[0]/mx*ax,y:cy-o.p[1]/my*ay}));
+ for(let t=0;t<60;t++)for(let a=0;a<P.length;a++)for(let b=a+1;b<P.length;b++){const dx=P[b].x-P[a].x,dy=P[b].y-P[a].y,d=Math.hypot(dx,dy)||.1;if(d<22){const f=(22-d)/2/d;P[a].x-=dx*f;P[a].y-=dy*f;P[b].x+=dx*f;P[b].y+=dy*f}}
+ const top=new Set(ranked.slice(0,5).map(o=>o.i)),mex=cx+me[0]/mx*ax,mey=cy-me[1]/my*ay;
+ let s=`<svg class="radar" viewBox="0 0 ${W} ${H}" role="img" aria-label="AI 岗位的位置图，星号是你">`;
+ s+=`<rect x="8" y="8" width="${W-16}" height="${H-16}" rx="10" fill="none" stroke="var(--line)"/><line x1="${cx}" y1="14" x2="${cx}" y2="${H-14}" stroke="var(--line)" stroke-dasharray="3 4"/><line x1="14" y1="${cy}" x2="${W-14}" y2="${cy}" stroke="var(--line)" stroke-dasharray="3 4"/>`;
+ s+=`<text x="${cx}" y="26" text-anchor="middle" font-size="12" class="tr2">探方向 · 出点子</text><text x="${cx}" y="${H-14}" text-anchor="middle" font-size="12" class="tr2">拍板 · 扛结果</text>`;
+ s+=`<text x="16" y="${cy-8}" font-size="12" class="tr2">和人</text><text x="16" y="${cy+8}" font-size="12" class="tr2">打交道</text><text x="${W-16}" y="${cy-8}" text-anchor="end" font-size="12" class="tr2">和技术</text><text x="${W-16}" y="${cy+8}" text-anchor="end" font-size="12" class="tr2">事情打交道</text>`;
+ P.forEach(o=>{const t=top.has(o.i);s+=`<circle cx="${o.x.toFixed(1)}" cy="${o.y.toFixed(1)}" r="10" fill="${t?'var(--accent)':'var(--surface)'}" stroke="${t?'var(--accent)':'var(--muted)'}" stroke-width="1.5"/><text x="${o.x.toFixed(1)}" y="${(o.y+4).toFixed(1)}" text-anchor="middle" font-size="11" font-weight="700" fill="${t?'var(--accent-fg)':'var(--fg)'}">${o.i+1}</text>`});
+ const st=[0,1,2,3,4].map(i=>{const a=-Math.PI/2+i*2*Math.PI/5;return[(mex+Math.cos(a)*(i%2?0:0)).toFixed(1)]});
+ const star=(c,R,rr)=>Array.from({length:10},(_,i)=>{const a=-Math.PI/2+i*Math.PI/5,q=i%2?rr:R;return(c[0]+Math.cos(a)*q).toFixed(1)+','+(c[1]+Math.sin(a)*q).toFixed(1)}).join(' ');
+ s+=`<polygon points="${star([mex,mey],15,6.5)}" fill="var(--good)" stroke="var(--surface)" stroke-width="2"/><text x="${mex.toFixed(1)}" y="${(mey+28).toFixed(1)}" text-anchor="middle" font-size="13" font-weight="800" fill="var(--good)">你</text>`;
+ return s+'</svg>'}
+function radarClean(r,sz=400){
+ const c=sz/2,Rr=sz/2-84,st=2*Math.PI/N;
+ const P=(i,v)=>{const a=-Math.PI/2+i*st;return[c+Math.cos(a)*Rr*v/100,c+Math.sin(a)*Rr*v/100]};
+ const poly=v=>K.map((k,i)=>P(i,v).map(x=>x.toFixed(1)).join(',')).join(' ');
+ let s=`<svg class="radar" viewBox="0 0 ${sz} ${sz}" role="img" aria-label="九项 AI 天赋的雷达图">`;
+ [25,50,75,100].forEach(v=>{s+=`<polygon points="${poly(v)}" fill="none" stroke="var(--line)"/>`});
+ K.forEach((k,i)=>{const[x,y]=P(i,100);s+=`<line x1="${c}" y1="${c}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--line)"/>`});
+ s+=`<polygon points="${K.map((k,i)=>P(i,r.val[k]).map(x=>x.toFixed(1)).join(',')).join(' ')}" fill="var(--accent)" fill-opacity=".28" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>`;
+ K.forEach((k,i)=>{const[x,y]=P(i,r.val[k]),l=r.lvl(k);s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${l==='hi'?5.5:4}" fill="${l==='lo'?'var(--low)':'var(--accent)'}"/>`;
+  const a=-Math.PI/2+i*st,lx=c+Math.cos(a)*(Rr+14),ly=c+Math.sin(a)*(Rr+14);
+  const an=Math.cos(a)>.3?'start':Math.cos(a)<-.3?'end':'middle',dy=Math.sin(a)<-.5?-5:Math.sin(a)>.5?16:5;
+  s+=`<text x="${lx.toFixed(1)}" y="${(ly+dy).toFixed(1)}" text-anchor="${an}" font-size="15" font-weight="${l==='hi'?800:500}">${esc(AB[k].n)}</text>`});
+ return s+'</svg>'}
+function basicAxes(r){
+ const nm={'逻辑—数学':'逻辑数学','身体—动觉':'身体动觉','人际':'人际','内省':'内省','实用型 R':'实用','研究型 I':'研究','艺术型 A':'艺术','社会型 S':'社会','企业型 E':'企业','传统型 C':'条理','开放性':'开放','尽责性':'尽责','外向性':'外向','宜人性':'宜人'};
+ const out=[];
+ FW.forEach(f=>f.groups.forEach(g=>{if(g.items||!g.d.length||!nm[g.n])return;out.push({n:nm[g.n],v:Math.round(g.d.reduce((a,k)=>a+r.val[k],0)/g.d.length)})}));
+ const sorted=[...out].sort((a,b)=>b.v-a.v),t=Math.ceil(out.length/3);
+ out.forEach(o=>{const i=sorted.indexOf(o);o.l=i<t?'hi':i>=out.length-t?'lo':'mid'});return out}
+function basicRadar(r,sz=360){
+ const ax=basicAxes(r),n=ax.length,c=sz/2,Rr=sz/2-48,st=2*Math.PI/n;
+ const P=(i,v)=>{const a=-Math.PI/2+i*st;return[c+Math.cos(a)*Rr*v/100,c+Math.sin(a)*Rr*v/100]};
+ const poly=v=>ax.map((o,i)=>P(i,v).map(x=>x.toFixed(1)).join(',')).join(' ');
+ let s=`<svg class="radar" style="max-width:340px" viewBox="0 0 ${sz} ${sz}" role="img" aria-label="十四种基础天赋的雷达图">`;
+ [25,50,75,100].forEach(v=>{s+=`<polygon points="${poly(v)}" fill="none" stroke="var(--line)"/>`});
+ ax.forEach((o,i)=>{const[x,y]=P(i,100);s+=`<line x1="${c}" y1="${c}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--line)"/>`});
+ s+=`<polygon points="${ax.map((o,i)=>P(i,o.v).map(x=>x.toFixed(1)).join(',')).join(' ')}" fill="var(--accent)" fill-opacity=".16" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>`;
+ ax.forEach((o,i)=>{const[x,y]=P(i,o.v);s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${o.l==='hi'?4.5:3}" fill="${o.l==='lo'?'var(--low)':'var(--accent)'}"/>`;
+  const a=-Math.PI/2+i*st,lx=c+Math.cos(a)*(Rr+10),ly=c+Math.sin(a)*(Rr+10);
+  const an=Math.cos(a)>.3?'start':Math.cos(a)<-.3?'end':'middle',dy=Math.sin(a)<-.5?-4:Math.sin(a)>.5?14:5;
+  s+=`<text x="${lx.toFixed(1)}" y="${(ly+dy).toFixed(1)}" text-anchor="${an}" font-size="13.5" font-weight="${o.l==='hi'?800:500}">${esc(o.n)}</text>`});
+ return s+'</svg>'}
+function traitsBy(){
+ const nm={'逻辑—数学':'逻辑数学','身体—动觉':'身体动觉','实用型 R':'实用','研究型 I':'研究','艺术型 A':'艺术','社会型 S':'社会','企业型 E':'企业','传统型 C':'条理','开放性':'开放','尽责性':'尽责','外向性':'外向','宜人性':'宜人'};
+ const by={};K.forEach(k=>by[k]=[]);
+ const add=(k,n)=>{if(!by[k].includes(n))by[k].push(n)};
+ FW.forEach(f=>f.groups.forEach(g=>{
+  if(g.items)g.items.forEach(([n,d])=>{if(d)add(d,n)});
+  else if(g.d.length)g.d.forEach(d=>add(d,nm[g.n]||g.n))}));
+ return by}
+function radarSVG(r,sz=460){
+ const c=sz/2,Rr=74,Ra=108,Rb=120,st=2*Math.PI/N,by=traitsBy();
+ const P=(i,v)=>{const a=-Math.PI/2+i*st;return[c+Math.cos(a)*Rr*v/100,c+Math.sin(a)*Rr*v/100]};
+ const poly=v=>K.map((k,i)=>P(i,v).map(x=>x.toFixed(1)).join(',')).join(' ');
+ const pt=(a,R)=>[c+Math.cos(a)*R,c+Math.sin(a)*R];
+ let s=`<svg class="radar" viewBox="0 0 ${sz} ${sz}" role="img" aria-label="九个维度的高低雷达图，外环是每一项对应的基础天赋">`;
+ /* 外环：每个维度一段，深浅随高低 */
+ K.forEach((k,i)=>{const a0=-Math.PI/2+(i-.5)*st+.02,a1=-Math.PI/2+(i+.5)*st-.02,l=r.lvl(k);
+  const [x0,y0]=pt(a0,Ra),[x1,y1]=pt(a1,Ra),[x2,y2]=pt(a1,Rb),[x3,y3]=pt(a0,Rb);
+  const op=l==='hi'?.85:l==='mid'?.35:.18,col=l==='lo'?'var(--low)':'var(--accent)';
+  s+=`<path d="M${x0.toFixed(1)},${y0.toFixed(1)} A${Ra},${Ra} 0 0 1 ${x1.toFixed(1)},${y1.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)} A${Rb},${Rb} 0 0 0 ${x3.toFixed(1)},${y3.toFixed(1)}Z" fill="${col}" fill-opacity="${op}"/>`});
+ [25,50,75,100].forEach(v=>{s+=`<polygon points="${poly(v)}" fill="none" stroke="var(--line)" stroke-width="1"/>`});
+ K.forEach((k,i)=>{const[x,y]=P(i,100);s+=`<line x1="${c}" y1="${c}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--line)"/>`});
+ s+=`<polygon points="${K.map((k,i)=>P(i,r.val[k]).map(x=>x.toFixed(1)).join(',')).join(' ')}" fill="var(--accent)" fill-opacity=".28" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>`;
+ K.forEach((k,i)=>{const[x,y]=P(i,r.val[k]);s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.lvl(k)==='hi'?5:3.5}" fill="${r.lvl(k)==='lo'?'var(--low)':'var(--accent)'}"/>`;
+  const a=-Math.PI/2+i*st,cs=Math.cos(a),sn=Math.sin(a);
+  /* 维度名：放在环外第一行，加粗；下面接基础天赋 */
+  const [lx,ly]=pt(a,Rb+12);
+  const an=cs>.3?'start':cs<-.3?'end':'middle';
+  const names=by[k],lines=[];for(let j=0;j<names.length;j+=2)lines.push(names.slice(j,j+2).join(' '));
+  const all=[{t:AB[k].n,b:1},...lines.map(t=>({t,b:0}))],lh=16;
+  const y0=sn<-.5?ly-(all.length-1)*lh:sn>.5?ly+8:ly-(all.length-1)*lh/2+4;
+  all.forEach((o,j)=>{s+=`<text x="${lx.toFixed(1)}" y="${(y0+j*lh).toFixed(1)}" text-anchor="${an}" font-size="${o.b?15:13}" font-weight="${o.b&&r.lvl(k)==='hi'?800:o.b?600:400}" ${o.b?'':'class="tr2"'}>${esc(o.t)}</text>`})});
+ return s+'</svg>'
+}
+
+/* ===== 分享图（canvas，保存用）===== */
+async function shareCanvas(r){
+ const cs=getComputedStyle(document.documentElement),g=n=>cs.getPropertyValue(n).trim();
+ const W=750,H=1270,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+ const F='"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif',S='"Noto Serif SC","Songti SC",serif';
+ x.fillStyle=g('--bg');x.fillRect(0,0,W,H);
+ {const gr=x.createLinearGradient(0,0,W,330);gr.addColorStop(0,g('--accent'));gr.addColorStop(1,g('--accent2'));x.fillStyle=gr;x.fillRect(0,0,W,330);
+  x.strokeStyle='rgba(255,255,255,.07)';x.lineWidth=1;for(let i=0;i<W;i+=22){x.beginPath();x.moveTo(i,0);x.lineTo(i,330);x.stroke()}for(let i=0;i<330;i+=22){x.beginPath();x.moveTo(0,i);x.lineTo(W,i);x.stroke()}
+  try{const svg=mug({cap:true,face:'happy',c:mugC()}).replace('<svg','<svg xmlns="http://www.w3.org/2000/svg" width="160" height="176"');
+   const im=new Image();im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);await new Promise((res,rej)=>{im.onload=res;im.onerror=rej});x.drawImage(im,630,10,100,110)}catch(e){}}
+ x.fillStyle='#fffaf1';x.textBaseline='alphabetic';
+ x.font=`700 24px ${F}`;x.fillText('我的AI 天赋',50,70);
+ {let fs=52;x.font=`900 ${fs}px ${S}`;const w0=x.measureText(r.title).width;if(w0>520){fs=Math.floor(52*520/w0);x.font=`900 ${fs}px ${S}`}x.fillText(r.title,50,150)}
+ x.font=`500 28px ${F}`;x.fillText(`${AB[r.t1].n} × ${AB[r.t2].n}`,50,200);
+ x.font=`500 26px ${S}`;
+ const wrap=(t,fx,fy,mw,lh,max)=>{let line='',y=fy,n=0;for(const ch of t){if(x.measureText(line+ch).width>mw){x.fillText(line,fx,y);y+=lh;line=ch;if(++n>=max)return y}else line+=ch}x.fillText(line,fx,y);return y+lh};
+ wrap(sentence(r),50,250,650,38,2);
+ const c=W/2,cy=650,Rr=205,st=2*Math.PI/N;
+ const P=(i,v)=>{const a=-Math.PI/2+i*st;return[c+Math.cos(a)*Rr*v/100,cy+Math.sin(a)*Rr*v/100]};
+ x.strokeStyle=g('--line');x.lineWidth=2;
+ [25,50,75,100].forEach(v=>{x.beginPath();K.forEach((k,i)=>{const[a,b]=P(i,v);i?x.lineTo(a,b):x.moveTo(a,b)});x.closePath();x.stroke()});
+ K.forEach((k,i)=>{const[a,b]=P(i,100);x.beginPath();x.moveTo(c,cy);x.lineTo(a,b);x.stroke()});
+ x.beginPath();K.forEach((k,i)=>{const[a,b]=P(i,r.val[k]);i?x.lineTo(a,b):x.moveTo(a,b)});x.closePath();
+ x.globalAlpha=.28;x.fillStyle=g('--accent');x.fill();x.globalAlpha=1;x.strokeStyle=g('--accent');x.lineWidth=5;x.lineJoin='round';x.stroke();
+ K.forEach((k,i)=>{const[a,b]=P(i,r.val[k]);x.fillStyle=r.lvl(k)==='lo'?g('--low'):g('--accent');x.beginPath();x.arc(a,b,r.lvl(k)==='hi'?10:7,0,7);x.fill();
+  const an=-Math.PI/2+i*st,lx=c+Math.cos(an)*(Rr+20),ly=cy+Math.sin(an)*(Rr+20);
+  x.fillStyle=g('--fg');x.font=`${r.lvl(k)==='hi'?700:400} 25px ${F}`;x.textAlign=Math.cos(an)>.3?'left':Math.cos(an)<-.3?'right':'center';
+  x.fillText(AB[k].n,lx,ly+(Math.sin(an)<-.5?-6:Math.sin(an)>.5?24:9));x.textAlign='left'});
+ x.fillStyle=g('--fg');x.font=`700 28px ${S}`;x.textAlign='center';
+ x.fillText(`最高：${AB[r.t1].n}　最低：${AB[r.tl].n}`,c,990);
+ x.fillStyle=g('--muted');x.font=`400 24px ${F}`;x.fillText(r.shape[0]+'　·　九项之间的相对高低，不跟别人比',c,1035);
+ x.fillStyle=g('--fg');x.font=`700 28px ${S}`;x.fillText(`AI 圈里最像我的人：${r.fig.f.n}`,c,1100);
+ x.fillStyle=g('--accent');x.font=`700 30px ${S}`;x.fillText(SLOGAN,c,1180);
+ x.fillStyle=g('--muted');x.font=`400 22px ${F}`;x.fillText('AI时代不可替代的个人天赋测试',c,1225);
+ return cv
+}
+
+
+/* ===== 科技感马克杯 IP：杯身带刻度，visor 屏幕当脸，电路纹，LED ===== */
+let _mid=0;
+const PROPS={
+ A:'<circle cx="14" cy="68" r="9" fill="none"/><path d="M20,75 L20,90"/>',
+ B:'<circle cx="18" cy="68" r="6" fill="none"/><circle cx="18" cy="68" r="2"/><path d="M18,57 V60 M18,76 V79 M7,68 H10 M26,68 H29 M10,60 l2,2 M24,74 l2,2 M26,60 l-2,2 M10,76 l2,-2"/><path d="M20,90 L18,79"/>',
+ C:'<circle cx="18" cy="64" r="9" fill="none"/><rect x="14" y="73" width="8" height="6" rx="1.5"/><path d="M20,79 L20,90"/>',
+ D:'<path d="M20,90 L20,54"/><path class="A" d="M20,54 L38,61 L20,68 Z"/>',
+ E:'<path class="A" d="M18,80 C4,70 6,58 14,58 C17,58 18,61 18,62 C18,61 19,58 22,58 C30,58 32,70 18,80 Z"/><path d="M20,90 L18,80"/>',
+ F:'<rect x="2" y="52" width="34" height="22" rx="8" fill="none"/><path d="M12,74 L10,82 L19,74"/><circle cx="12" cy="63" r="1.6"/><circle cx="19" cy="63" r="1.6"/><circle cx="26" cy="63" r="1.6"/><path d="M20,90 L10,82"/>',
+ G:'<path class="A" d="M18,54 L32,58 V70 C32,78 25,82 18,86 C11,82 4,78 4,70 V58 Z"/>',
+ H:'<path d="M20,90 L20,66"/><rect class="A" x="9" y="56" width="22" height="10" rx="2"/>',
+ I:'<circle cx="18" cy="68" r="11" fill="none"/><path class="A" d="M18,59 L22,68 L18,77 L14,68 Z"/><path d="M20,90 L18,79"/>'};
+function mug(o={}){
+ const id='mg'+(++_mid),C=o.c||{ink:'var(--mink)',paper:'var(--mpaper)',visor:'var(--mvisor)',glow:'var(--mglow)',water:'var(--mwater)',acc:'var(--accent)',latte:'var(--mlatte)'};
+ const st=(f,s,w)=>`style="${f?`fill:${f};`:''}${s?`stroke:${s};`:''}${w?`stroke-width:${w};`:''}stroke-linecap:round;stroke-linejoin:round"`;
+ const face=o.face==='happy'
+  ?`<path d="M60,100 q4,-6 8,0 M84,100 q4,-6 8,0" ${st('none',C.ink,3)}/><path d="M68,108 q8,8 16,0" ${st('none',C.ink,3)}/>`
+  :o.face==='blink'
+  ?`<path d="M60,100 h8" ${st('none',C.ink,3)}/><circle cx="88" cy="100" r="3.6" ${st(C.ink)}/><path d="M69,108 q7,5 14,0" ${st('none',C.ink,3)}/>`
+  :`<circle cx="64" cy="100" r="3.6" ${st(C.ink)}/><circle cx="88" cy="100" r="3.6" ${st(C.ink)}/><path d="M69,108 q7,6 14,0" ${st('none',C.ink,3)}/>`;
+ const cap=o.cap?`<path d="M76,30 L120,44 L76,58 L32,44 Z" ${st(C.ink,C.ink,2)}/><path d="M54,50 L98,50 L96,64 Q76,69 56,64 Z" ${st(C.ink,C.ink,2)}/><path d="M76,44 Q112,47 114,60" ${st('none',C.latte,2)}/><rect x="110" y="60" width="8" height="11" rx="2" ${st(C.latte)}/>`:'';
+ const pr=o.prop&&PROPS[o.prop]?`<path d="M40,112 Q27,110 21,97" ${st('none',C.ink,3)}/><g ${st('none',C.ink,3)}>${PROPS[o.prop].replace(/class="A"/g,`style="fill:${C.acc}"`)}</g><circle cx="20" cy="95" r="4.2" ${st(C.paper,C.ink,2.4)}/>`:'';
+ let ticks='';for(let i=0;i<4;i++){const y=82+i*20;ticks+=`<path d="M40,${y} H${i%2?49:57}" ${st('none',C.ink,i%2?1.6:2.4)}/>`}
+ return `<svg viewBox="0 0 160 176" role="img" aria-label="马克杯" ${o.cls?`class="${o.cls}"`:''}>
+ <defs>
+  <linearGradient id="${id}h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9d8"/><stop offset=".35" stop-color="#c4d9df"/><stop offset=".7" stop-color="#d0c7e4"/><stop offset="1" stop-color="#c6dccf"/></linearGradient>
+  <clipPath id="${id}"><path d="M42,66 V152 Q42,156 46,156 H106 Q110,156 110,152 V66 Z"/></clipPath>
+ </defs>
+ <ellipse cx="76" cy="168" rx="40" ry="5" ${st(C.ink)} opacity=".1"/>
+ <path d="M112,84 Q140,86 140,106 Q140,126 112,128" fill="none" stroke="url(#${id}h)" style="stroke-width:5;stroke-linecap:round"/>
+ <path d="M40,64 V152 Q40,158 46,158 H106 Q112,158 112,152 V64 Z" ${st(C.paper,C.ink,3.6)}/>
+ <g clip-path="url(#${id})"><rect x="40" y="64" width="72" height="94" fill="url(#${id}h)" opacity=".7"/><path d="M40,70 L66,64 L82,64 L40,100 Z M84,64 L96,64 L40,138 V118 Z" fill="#fff" opacity=".4"/></g>
+ <path d="M40,64 V152 Q40,158 46,158 H106 Q112,158 112,152 V64" fill="none" stroke="url(#${id}h)" style="stroke-width:1.6"/>
+ ${ticks}${face}${cap}${pr}
+ <path d="M24,120 l2,-5 l2,5 l5,2 l-5,2 l-2,5 l-2,-5 l-5,-2 Z" fill="url(#${id}h)" opacity=".9" ${o.prop?'style="display:none"':''}/></svg>`}
+const mugC=()=>{const cs=getComputedStyle(document.documentElement),g=n=>cs.getPropertyValue(n).trim();return{ink:g('--mink'),paper:g('--mpaper'),visor:g('--mvisor'),glow:g('--mglow'),water:g('--mwater'),acc:g('--accent'),latte:g('--mlatte')}};
+
+/* ===== 渲染 ===== */
+const BAR=()=>`<div class="bar"><i style="width:${Math.round(pi/(PAGES.length-1)*100)}%"></i></div>`;
+function go(d){pi=Math.max(0,Math.min(PAGES.length-1,pi+d));render();window.scrollTo(0,0)}
+function render(){
+ const p=PAGES[pi],A=$('#app');
+ $('#brand').innerHTML=mug({cap:true,face:'smile',cls:'lg0'}).replace('<svg','<svg width="38" height="42"')+'<span class="nm">马克杯 · 刻度</span><span class="tg">原创自测</span>';
+ $('#loading').innerHTML=mug({cap:true,face:'blink'});
+ if(p.t==='gate'){
+  A.innerHTML=`<div class="mugbox">${mug({cap:true,face:'smile'})}</div><p class="kicker tc">TALENT MAP</p><h1 class="tc">AI时代不可替代的<span class="hl">个人天赋</span>测试</h1><p class="tc">输入订单里的兑换码，开始测试。</p><input class="code" id="code" inputmode="numeric" autocomplete="off" placeholder="兑换码"><div class="err" id="cerr"></div><button class="cta" id="cok" style="width:100%">进入</button>`;
+  const chk=()=>{if($('#code').value.trim()===CODE)go(1);else $('#cerr').textContent='兑换码不对，再看看订单里的数字。'};
+  $('#cok').onclick=chk;$('#code').onkeydown=e=>{if(e.key==='Enter')chk()};return}
+ if(p.t==='intro'){
+  A.innerHTML=`<div class="mugbox">${mug({cap:true,face:'smile'})}</div><p class="kicker tc">AI 时代 · 抢不走的那部分</p><h1 class="tc">AI时代不可替代的<span class="hl">个人天赋</span>测试</h1><div class="pills"><span>${NQ} 道题</span><span>约 6 分钟</span><span>9 项 AI 天赋图</span></div>
+  <p>AI 越来越能干，哪些本事还得靠人？这个测试把经典天赋理论里反复出现的特质，对着 AI 时代雇主最看重的能力，归成 9 个维度：好奇洞察、分析拆解、创意构想、判断拍板、共情倾听、说服协调、担当韧性、动手现场、内在方向。你在哪几项高、哪几项低，会画成一张属于你的 AI 天赋图。</p>
+  <div class="card"><b>怎么答</b><p>一共 ${NQ} 道题，约 6 分钟。每道题有 4 个选项，选一个<b>最像你</b>的，再选一个<b>最不像你</b>的。没有对错，也没有好坏。“最不像你”可以不选，只选“最像你”也能做完；两个都选，结果会更准一些。</p>
+  <p>有些题多一个“都不是，我会：……”的选项，选它这题就不计分，最多 ${MAXSKIP} 题。其余照样选相对最像和最不像的两个。</p></div>
+  <p class="muted">这是一个帮你看清自己的小测试，不是诊断，也不是招聘评估。图里的高低是你自己九项之间的相对高低，不是跟别人比。</p>
+  <button class="cta" id="go">开始</button>`;$('#go').onclick=()=>go(1);return}
+ if(p.t==='q'){qView(p.q);return}
+ rView()
+}
+function qView(q){
+ const a=ans[q.qi],A=$('#app'),sk=skipCount();
+ const stage=q.kind==='ab'?'生活里的事':'关于你自己';
+ const ins=()=>a.skip?'这题你选了“都不是”，不计分。':!a.b?'① 先选一个“最像你”的':!a.w?'② 再选一个“最不像你”的（也可以不选，直接下一页）':'选好了。想改，点一下已选的那项取消再选。';
+ A.innerHTML=BAR()+`<div class="stage">${stage} · 第 ${q.qi+1} / ${NQ} 题</div><div class="stem">${esc(q.stem)}</div><p class="ins" id="ins">${ins()}</p><div class="opts" id="opts"></div>
+ <div class="navrow"><button class="ghost" id="prev">上一页</button><button class="cta" id="next">${q.qi===NQ-1?'看结果':'下一页'}</button></div>`;
+ const paint=()=>{
+  const o=$('#opts');o.innerHTML='';
+  q.order.forEach(k=>{const b=document.createElement('button');const cls=a.b===k?'b':a.w===k?'w':'';
+   b.className=cls;b.innerHTML=`<span class="lt">${'ABCD'[q.order.indexOf(k)]}</span><span class="ot">`+(cls==='b'?'<span class="mk">最像我</span>':cls==='w'?'<span class="mk">最不像我</span>':'')+esc(q.opts[k][0])+'</span>';
+   b.onclick=()=>{a.skip=false;
+    if(a.b===k)a.b=null;else if(a.w===k)a.w=null;else if(!a.b)a.b=k;else if(!a.w)a.w=k;
+    else{$('#ins').textContent='已经选满了。先点一下已选的那项取消，再重选。';return}
+    paint()};o.appendChild(b)});
+  if(q.skip){const b=document.createElement('button');b.className='sk'+(a.skip?' on':'');
+   b.textContent='都不是，我会：'+q.skip;b.disabled=!a.skip&&sk>=MAXSKIP;
+   b.onclick=()=>{if(a.skip){a.skip=false}else{a.skip=true;a.b=a.w=null}qView(q)};o.appendChild(b)}
+  $('#ins').textContent=ins();$('#next').disabled=!done(q);
+ };
+ $('#prev').onclick=()=>go(-1);$('#next').onclick=()=>{if(q.qi===NQ-1){R=compute();const L=$('#loading');L.classList.add('show');setTimeout(()=>{go(1);L.classList.remove('show')},1300)}else go(1)};
+ paint()
+}
+const aiBlock=k=>{const w=AIW[k],d=AB[k];return `<div class="cl"><b>${esc(d.n)}</b><p style="margin:2px 0">${esc(w.why)}</p>${w.q?`<div class="q">“${esc(w.q.t)}”<div class="o">${w.q.o?esc(w.q.o)+'<br>':''}—— ${esc(w.q.who)}，${esc(w.q.src)}${w.q.zh?'（中文原话）':'（中文为大意）'}</div></div>`:''}<p class="muted" style="margin:2px 0">雇主榜单对照：${esc(d.wef)}</p></div>`};
+function rView(){
+ R=compute();const r=R,A=$('#app');
+ const d1=AB[r.t1],d2=AB[r.t2],d3=AB[r.t3],dl=AB[r.tl];
+ const bars=r.order.map(k=>`<div class="row ${r.lvl(k)}"><span>${esc(AB[k].n)}</span><span class="tr"><i style="width:${r.val[k]}%"></i></span><span class="lv ${r.lvl(k)}">${{hi:'高',mid:'中',lo:'低'}[r.lvl(k)]}</span></div>`).join('');
+ const fwv=(()=>{
+  const nm={'语言':'语言智能','逻辑—数学':'逻辑—数学智能','空间':'空间智能','身体—动觉':'身体—动觉智能','音乐':'音乐智能','人际':'人际智能','内省':'内省智能','自然观察':'自然观察智能','实用型 R':'实用型兴趣','研究型 I':'研究型兴趣','艺术型 A':'艺术型兴趣','社会型 S':'社会型兴趣','企业型 E':'企业型兴趣','传统型 C':'传统型兴趣'};
+  const by={},off=new Set();K.forEach(k=>by[k]=new Set());
+  FW.forEach(f=>f.groups.forEach(g=>{
+   if(g.items)g.items.forEach(([n,d])=>{if(d)by[d].add(n);else off.add(n)});
+   else{const n=nm[g.n]||g.n;if(g.d.length)g.d.forEach(d=>by[d].add(n));else off.add(n)}}));
+  return r.order.map(k=>{const c=r.lvl(k);
+   return `<div class="row ${c}"><span>${esc(AB[k].n)}</span><span class="tr"><i style="width:${r.val[k]}%"></i></span><span class="lv ${c}">${{hi:'高',mid:'中',lo:'低'}[c]}</span></div><div style="margin:0 0 10px">${[...by[k]].map(n=>`<span class="tag ${c==='hi'?'hit':''}">${esc(n)}</span>`).join('')}</div>`}).join('')})();
+ const subj=rankFit(r,SUBJ),jobs=rankFit(r,JOBS);
+ const mapl=K.length&&r.order.map(k=>{const c=r.lvl(k);return `<div class="ml ${c}"><b>${esc(AB[k].n)}</b><span>${traitsBy()[k].map(t=>`<i>${esc(t)}</i>`).join('')}</span></div>`}).join('');
+ A.innerHTML=`
+ <nav class="jump" id="jump"><a data-t="t1">天赋圈</a><a data-t="t2">学什么</a><a data-t="t3">做什么</a><a data-t="t4">像谁</a><a data-t="t5">细读</a></nav>
+ <div class="card" id="t1"><h3>AI 天赋</h3><p class="say">AI 时代雇主看重的 9 项本事。${esc(r.shape[1])}</p>${radarClean(r)}${bars}
+  <p class="muted">长短是你自己九项之间的相对高低，不是跟别人比的分数。</p></div>
+ <div class="hero"><div class="hm">${mug({face:'happy',prop:r.t1,level:.5+.4*(r.val[r.t1]||50)/100})}</div><p class="kicker">你的AI 天赋</p><h1>${esc(r.title)}</h1><p class="sub">${esc(d1.n)} × ${esc(d2.n)}</p>
+  <p class="s">${esc(sentence(r))}</p><p class="s" style="margin-top:12px">放到 AI 圈里，你的做事风格最像 <b>${esc(r.fig.f.n)}</b>：${esc(r.fig.f.tag)}。</p><span class="shape">${esc(r.shape[0])}</span></div>
+ <p class="muted" style="text-align:center">${esc(SLOGAN)}</p>
+ <div class="card"><h3>基础天赋</h3><p class="say">更底层的 14 种天赋（心理学和职业测评里常见的特质），由上面九项换算而来。</p>${basicRadar(r)}
+  <p class="say" style="margin-top:10px">每一项 AI 天赋，靠这些基础天赋撑着：</p><div class="mls">${mapl}</div></div>
+ <div class="card" id="t2"><h3>适合学什么</h3><p class="say">和你的天赋最对路的学科，从上往下排。</p>${fitBars(subj,6)}
+  <p class="muted">也可以看看：${subj.slice(6,9).map(o=>esc(o.it.n)).join('、')}。</p></div>
+ <div class="card" id="t3"><h3>适合做什么 AI 工作</h3><p class="say">${JOBS.length} 个 AI 岗位和人生选择按“做事方式”摆在一张图上，星号是你，涂色的是最对路的 5 个。</p>${jobMap(r,jobs)}
+  ${jobs.slice(0,5).map(o=>`<div class="jb"><span class="bd">${o.i+1}</span><div><b>${esc(o.it.n)}</b><div class="fw">${esc(o.it.d)}</div>${o.it.f?`<div class="ft">${esc(o.it.f)}</div>`:''}</div></div>`).join('')}
+  <div class="lg">${jobs.slice(5).map(o=>`<span><b>${o.i+1}</b>${esc(o.it.n)}</span>`).join('')}</div></div>
+ <div id="t4">
+ <div class="card"><h3>AI 圈里，谁和你最像</h3><p class="fh"><b>${esc(r.fig.f.n)}</b><span>${esc(r.fig.f.en)}</span></p><p class="say">${esc(r.fig.f.tag)}</p>
+  <p class="who">${esc(r.fig.f.fact.split('。')[0])}。</p>
+  <ul class="pts">${r.fig.f.pts.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+  <div class="cmp"><div><em>你最突出</em>${r.order.slice(0,3).map(k=>`<i class="${r.fig.f.top.includes(k)?'on':''}">${esc(AB[k].n)}</i>`).join('')}</div><div><em>${esc(r.fig.f.n.split('·').pop())}</em>${r.fig.f.top.map(k=>`<i class="${r.order.slice(0,3).includes(k)?'on':''}">${esc(AB[k].n)}</i>`).join('')}</div></div>
+  <p class="src">出处：${esc(r.fig.f.src)}</p>
+  <p class="say">再像一点的另一位：${esc(r.fig.f2.n)}（${esc(r.fig.f2.tag)}）</p></div>
+ </div>
+ <div id="t5"></div>
+ <div class="card"><h3>细读你的天赋</h3>
+  ${r.order.slice(0,3).map(k=>{const d=AB[k],w=AIW[k];return `<div class="cl"><b>${esc(d.n)}</b><p>${esc(d.p)}。</p><p class="muted">放在 AI 时代看：${esc(w.why.split('。')[0])}。</p>${w.q?`<div class="q">“${esc(w.q.t)}”<div class="o">—— ${esc(w.q.who)}，${esc(w.q.src)}</div></div>`:''}</div>`}).join('')}
+  <div class="cl"><b>最不突出：${esc(dl.n)}</b><p class="muted">${esc(dl.valley.split('。')[0])}。可以找搭档补，也可以先从小事练起。</p></div></div>
+ <div class="card"><h3>你身上的拉扯</h3>${r.tens.map(t=>`<div class="tens"><span>${t.l}</span><span class="tk"><i style="left:${t.pos}%"></i></span><span>${t.r}</span></div>`).join('')}
+  ${[...r.tens].sort((a,b)=>Math.abs(b.pos-50)-Math.abs(a.pos-50)).slice(0,2).map(t=>`<p class="say">${esc(t.txt)}</p>`).join('')}</div>
+ <div class="card"><h3>${esc(CTA.title)}</h3><p>${esc(CTA.text)}</p>
+  <div class="btns"><button class="cta" id="shr" style="margin-top:6px">保存我的 AI 天赋图</button><button class="ghost" id="cpy">复制分享文案</button>${CTA.link?`<a class="ghost" style="text-decoration:none;color:inherit;display:inline-block" href="${esc(CTA.link)}" target="_blank" rel="noopener">了解更多</a>`:''}</div>
+  <p class="muted" id="shm"></p></div>
+ <div class="navrow"><button class="ghost" id="prev">上一页</button><button class="ghost" id="again">再测一遍</button></div>`;
+ $('#prev').onclick=()=>go(-1);
+ document.querySelectorAll('#jump a').forEach(el=>el.onclick=()=>{const t=document.getElementById(el.dataset.t);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
+ $('#again').onclick=()=>{ans=fresh();R=null;pi=PAGES.findIndex(p=>p.t==='intro');render();window.scrollTo(0,0)};
+ const text=`我的AI 天赋：${r.title}（${d1.n} × ${d2.n}）。最高「${d1.n}」，最低「${dl.n}」。AI 圈里最像我的是${r.fig.f.n}。\n${SLOGAN}`;
+ $('#cpy').onclick=async()=>{try{await navigator.clipboard.writeText(text);$('#shm').textContent='已复制，去发给朋友吧。'}catch(e){$('#shm').textContent='复制没成功，长按下面这段手动复制：\n'+text}};
+ $('#shr').onclick=async()=>{
+  const m=$('#shm');m.textContent='正在生成图片…';
+  try{
+   const cv=await shareCanvas(r);const url=cv.toDataURL('image/png');m.textContent='';
+   const ov=document.createElement('div');ov.className='pop';
+   ov.innerHTML=`<div class="pbox"><img alt="我的 AI 天赋图" src="${url}"><p class="ph">手机上：长按图片，选“保存图片”。<br>电脑上：点下面的按钮，或右键图片另存为。</p><div class="pb"><button class="cta" id="psv">保存图片</button><button class="ghost" id="pcl">关闭</button></div><p class="muted" id="pmsg"></p></div>`;
+   document.body.appendChild(ov);
+   const close=()=>ov.remove();$('#pcl').onclick=close;ov.onclick=e=>{if(e.target===ov)close()};
+   $('#psv').onclick=async()=>{
+    try{const blob=await new Promise(res=>cv.toBlob(res,'image/png'));const d=await window.claude?.use('downloads');if(!d)throw 0;await d.save({filename:'我的AI天赋图.png',data:blob});$('#pmsg').textContent='已保存。'}
+    catch(e){$('#pmsg').textContent='这里点不了保存，请直接长按上面的图片保存。'}};
+  }catch(e){m.textContent='图片没生成出来，请截图上面的 AI 天赋图发给朋友。'}};
+}
+render();
+</script>
+
+</body>
+</html>
