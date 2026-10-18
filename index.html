@@ -6,13 +6,14 @@
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
+<meta charset="utf-8">
 <title>AI时代不可替代的个人天赋测试</title>
 <style>
 /* 一栏居中（最宽 560px）。每屏一题；结果页 = 人设卡 + 天赋地形图（雷达+高低条）+ 若干短卡。 */
 /* 莫兰迪紫：灰调、低饱和 */
 :root{--bg:#f4f2f5;--surface:#fbfafb;--fg:#3a3545;--muted:#8a8496;--line:rgba(90,75,115,.16);--accent:#877aa0;--accent2:#6f6389;--accent-fg:#fbfafb;--soft:#ece9f0;--good:#8fa593;--low:#7f93a6;
 --mink:#6b5f84;--mpaper:#fbfafb;--mvisor:#3a3545;--mglow:#877aa0;--mwater:#cfc6dc;--mlatte:#cfc6dc;--shadow:0 4px 14px -8px rgba(90,75,115,.25);
---serif:-apple-system,BlinkMacSystemFont,"PingFang SC","Source Han Sans SC","Noto Sans SC","Microsoft YaHei","Helvetica Neue",system-ui,sans-serif;--sans:var(--serif)}
+--display:"Songti SC","STSong","Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","SimSun",Georgia,serif;--kai:"Kaiti SC","STKaiti","KaiTi","Noto Serif SC","Noto Serif CJK SC",serif;--serif:-apple-system,BlinkMacSystemFont,"PingFang SC","Source Han Sans SC","Noto Sans SC","Microsoft YaHei","Helvetica Neue",system-ui,sans-serif;--sans:var(--serif)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a22;--surface:#26232e;--fg:#e9e5ee;--muted:#a39dae;--line:rgba(233,229,238,.13);--accent:#b3a6cc;--accent2:#7d70a0;--accent-fg:#1c1a22;--soft:#302c3a;--good:#a5bca8;--low:#93a6ba;--mink:#d3c9e3;--mpaper:#2d2938;--mvisor:#15131a;--mglow:#b3a6cc;--mwater:#8478a6;--mlatte:#cfc6dc;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#1c1a22;--surface:#26232e;--fg:#e9e5ee;--muted:#a39dae;--line:rgba(233,229,238,.13);--accent:#b3a6cc;--accent2:#7d70a0;--accent-fg:#1c1a22;--soft:#302c3a;--good:#a5bca8;--low:#93a6ba;--mink:#d3c9e3;--mpaper:#2d2938;--mvisor:#15131a;--mglow:#b3a6cc;--mwater:#8478a6;--mlatte:#cfc6dc;color-scheme:dark}
 *{box-sizing:border-box}
@@ -48,12 +49,13 @@ input.code{width:100%;font:inherit;font-size:1.3rem;letter-spacing:.3em;text-ali
 .err{color:var(--accent);min-height:1.5em;font-size:.9rem}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:14px 0;box-shadow:var(--shadow);animation:slideUp .5s ease both}
 .card h3{margin-bottom:6px}
-.hero{background:linear-gradient(150deg,var(--accent) 0%,var(--accent2) 100%);color:#fffaf1;border-radius:24px;padding:20px 20px 24px;margin:10px 0 6px;position:relative;overflow:hidden;box-shadow:0 18px 36px -18px rgba(90,75,115,.35)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}.hero>*{position:relative}.hero .hm{display:flex;justify-content:center;margin:-4px 0 4px}.hero .hm svg{width:clamp(140px,38vw,178px);height:auto;filter:drop-shadow(0 6px 14px rgba(255,255,255,.35))}
+.hero{background:linear-gradient(150deg,var(--accent) 0%,var(--accent2) 100%);color:#fffaf1;border-radius:24px;padding:20px 20px 24px;margin:10px 0 6px;position:relative;overflow:hidden;box-shadow:0 18px 36px -18px rgba(90,75,115,.35)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}.hero>*{position:relative}.hero .hm{display:flex;justify-content:center;margin:-6px 0 0}.hero .hm svg{width:clamp(100px,25vw,128px);height:auto;filter:drop-shadow(0 6px 14px rgba(255,255,255,.35))}
 .hero .kicker{color:#fffaf1;opacity:.85}
 .hero h1{font-size:1.9rem;margin:6px 0 4px}
 .hero .sub{font-size:1.02rem;opacity:.92;margin:0 0 12px}
 .hero p.s{font-family:var(--serif);font-size:1.1rem;line-height:1.75;margin:0}
 .hero .shape{display:inline-block;margin-top:14px;border:1px solid currentColor;border-radius:999px;padding:0 12px;font-size:.82rem;opacity:.95}
+.hero .figin{background:rgba(255,255,255,.16);border-radius:14px;padding:12px 14px;margin:14px 0 4px;text-align:left}.hero .figin h4{font-size:.86rem;opacity:.85;margin:0 0 4px;font-weight:600;letter-spacing:.04em}.hero .figin .fh span{color:inherit;opacity:.8}.hero .figin .figt{margin:2px 0;font-size:1rem;color:inherit}.hero .figin .figc{margin:4px 0 0;font-size:.92rem;opacity:.95;color:inherit;background:none;border:0;padding:0}
 .radar{width:100%;max-width:460px;display:block;margin:0 auto}
 .radar .tr2{fill:var(--muted)}
 .radar text{font-family:var(--sans);fill:var(--fg)}
@@ -113,6 +115,144 @@ footer{text-align:center;font-size:.75rem;color:var(--muted);padding-top:28px;le
 #app{animation:fadein .45s ease}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 @media (max-width:520px){h1{font-size:1.75rem}.hero h1{font-size:1.6rem}}
+
+.scs{display:grid;gap:8px;margin-top:6px}.sc{display:grid;grid-template-columns:6.2em 1fr;gap:8px;font-size:.95rem;line-height:1.6}.sc b{font-weight:700;white-space:nowrap}
+.hero .sc{color:#fffaf1}.hero .sc span{opacity:.96}.card .sc{color:var(--fg)}
+.jc{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0;background:var(--surface)}.jc p{margin:6px 0 0;font-size:.92rem;line-height:1.6}
+.jh{display:flex;align-items:center;gap:8px;justify-content:space-between}.jh b{font-size:1.02rem}.tier{font-style:normal;font-size:.78rem;padding:1px 9px;border-radius:999px;background:var(--soft);color:var(--accent2);white-space:nowrap}
+.lb{display:inline-block;font-size:.76rem;font-weight:700;color:var(--accent2);margin-right:8px}
+details.more summary{cursor:pointer;color:var(--accent2);font-size:.9rem;margin:8px 0}
+
+/* ===== 视觉分区：颜色按“场景/层级”分，字多的地方用色块托住 ===== */
+:root{--cw:#7f8fb5;--cl:#7fa088;--cr:#bf9f78;--cq:#c28b9b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cw:#a3b3d6;--cl:#a3c0aa;--cr:#dcbe98;--cq:#dfadbb}}
+:root[data-theme="dark"]{--cw:#a3b3d6;--cl:#a3c0aa;--cr:#dcbe98;--cq:#dfadbb}
+.card h3{display:flex;align-items:center;gap:8px}.card h3:before{content:"";flex:none;width:5px;height:1.05em;border-radius:3px;background:linear-gradient(180deg,var(--accent),var(--accent2))}
+.sc{--c:var(--accent);padding:9px 12px;border-radius:12px;background:color-mix(in srgb,var(--c) 14%,var(--surface));border-left:4px solid var(--c);align-items:start}
+.sc{display:block}.sc b{display:block;margin-bottom:1px;font-size:.88rem;color:color-mix(in srgb,var(--c) 62%,var(--fg))}
+.sc-w{--c:var(--cw)}.sc-l{--c:var(--cl)}.sc-r{--c:var(--cr)}.sc-q{--c:var(--cq)}
+.hero .sc{background:rgba(255,255,255,.13);border-left-color:var(--c)}.hero .sc b{color:#fffaf1}
+.jc{--c:var(--accent2);border-left:5px solid var(--c);background:color-mix(in srgb,var(--c) 6%,var(--surface))}
+.jc.t3{--c:var(--accent2)}.jc.t2{--c:var(--cl)}.jc.t1{--c:var(--cr)}
+.jc .bd{background:var(--c);color:#fff}.jh{justify-content:flex-start}.jh .tier{margin-left:auto;background:color-mix(in srgb,var(--c) 18%,var(--surface));color:color-mix(in srgb,var(--c) 70%,var(--fg));font-weight:700}
+.jc p{padding:7px 10px;border-radius:10px;margin:8px 0 0}.jc .jy{background:color-mix(in srgb,var(--accent) 14%,var(--surface))}.jc .js{background:color-mix(in srgb,var(--cl) 16%,var(--surface))}
+.jc .lb{display:block;margin:0 0 2px;color:color-mix(in srgb,var(--accent2) 70%,var(--fg))}.jc .js .lb{color:color-mix(in srgb,var(--cl) 60%,var(--fg))}
+.fb{border-left:4px solid var(--cl);padding:4px 0 4px 10px;margin:12px 0}.fb.hd{border-left-color:var(--cr)}
+.rs{font-size:.88rem;margin-top:4px;padding:6px 10px;border-radius:10px;background:color-mix(in srgb,var(--cl) 14%,var(--surface))}.rs.w{background:color-mix(in srgb,var(--cr) 15%,var(--surface))}
+.fn em.wn{background:color-mix(in srgb,var(--cr) 24%,var(--surface));color:color-mix(in srgb,var(--cr) 55%,var(--fg));font-weight:700}
+p.co{padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--accent) 13%,var(--surface));border-left:4px solid var(--accent);font-size:.95rem;line-height:1.7}
+.card p.say b{color:var(--accent2)}
+details.more{margin-top:10px;padding:8px 12px;border-radius:12px;background:var(--soft)}
+.hero{background:linear-gradient(150deg,#877aa0 0%,#6f6389 100%)}
+
+.chap{display:flex;align-items:center;gap:10px;margin:30px 2px 4px;padding-bottom:8px;border-bottom:2px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.chap i{flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(150deg,var(--accent),var(--accent2));color:#fff;font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.chap b{font-size:1.2rem;font-family:var(--serif)}.chap span{margin-left:auto;font-size:.78rem;color:var(--muted);text-align:right}
+.hero{margin-top:12px}
+
+.hero .why{font-size:.92rem;line-height:1.7;margin:12px 0 6px;opacity:.92}
+.hero h1.long{font-family:var(--display);font-size:1.24rem;line-height:1.85;font-weight:700;margin:10px 0 12px;letter-spacing:.02em}
+.hero .life{font-family:var(--kai);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:12px 14px 14px;margin:16px 0 2px;background:rgba(255,255,255,.08)}
+.hero .life h3{font-family:var(--kai);font-size:1.05rem;font-weight:700;letter-spacing:.12em;margin:0 0 8px;text-align:center;color:#fffaf1}
+.hero .life .sc span{font-size:1rem;line-height:1.8}
+.hero p.s2{font-size:.9rem;line-height:1.7;opacity:.9;margin:0}
+
+/* ===== 仪表盘式重点呈现 ===== */
+:root{--t1:#ece7f6;--t2:#e2efe9;--t3:#f8e9f0;--t4:#e5edf8;--t1b:#6f6389;--t2b:#4f7d68;--t3b:#9c5f7c;--t4b:#4d6c99}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--t1:#322c42;--t2:#263630;--t3:#3a2a33;--t4:#26303f;--t1b:#c9bde3;--t2b:#9fd1b8;--t3b:#e2a9c3;--t4b:#9dbdea}}
+:root[data-theme="dark"]{--t1:#322c42;--t2:#263630;--t3:#3a2a33;--t4:#26303f;--t1b:#c9bde3;--t2b:#9fd1b8;--t3b:#e2a9c3;--t4b:#9dbdea}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0 4px}
+@media (min-width:560px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{border-radius:18px;padding:12px 13px 11px;background:var(--kb);border:1px solid rgba(90,75,115,.07);box-shadow:var(--shadow);min-width:0}
+.kpi .ic{width:30px;height:30px;border-radius:10px;background:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:center;font-size:15px}
+.kpi b{display:block;font-size:1.02rem;line-height:1.35;margin:9px 0 2px;color:var(--kf);word-break:break-word}
+.kpi span{font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+.kpi.k1{--kb:var(--t1);--kf:var(--t1b)}.kpi.k2{--kb:var(--t2);--kf:var(--t2b)}
+.kpi.k3{--kb:var(--t3);--kf:var(--t3b)}.kpi.k4{--kb:var(--t4);--kf:var(--t4b)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kpi .ic{background:rgba(255,255,255,.1)}}
+:root[data-theme="dark"] .kpi .ic{background:rgba(255,255,255,.1)}
+/* 卡片标题行：左标题，右小标签 */
+.card>h3{font-size:1.08rem}
+.hd2{display:flex;align-items:center;gap:8px;margin:0 0 2px}
+.hd2 h3{margin:0;display:flex;align-items:center;gap:8px}
+.hd2 .pill{margin-left:auto;flex:none;font-size:.72rem;color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:2px 10px;white-space:nowrap}
+/* 九项一览：色点 + 条 + 状态药丸 */
+.row{grid-template-columns:7.2em 1fr 2.8em;font-size:.95rem}
+.row>span:first-child{display:flex;align-items:center;gap:7px;font-weight:600}
+.row>span:first-child:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;opacity:.9}
+.row.mid>span:first-child:before{background:var(--muted)}.row.lo>span:first-child:before{background:var(--low)}
+.row .tr{height:12px;border-radius:6px}
+.lv{font-size:.72rem;padding:2px 0;border-radius:999px;font-weight:700}
+.lv.hi{background:var(--accent);color:var(--accent-fg)}
+.lv.mid{background:var(--soft);border:0;color:var(--muted)}
+.lv.lo{background:color-mix(in srgb,var(--low) 22%,var(--surface));color:var(--low)}
+.card{border-radius:20px;padding:18px 18px 16px;margin:16px 0}
+.chap{margin-top:34px}
+
+/* 甜甜圈 / 多环 / 图例 / 岗位表 / 金句 / 对照卡 */
+:root{--g1:#8d80ad;--g2:#7fa394;--g3:#c295a8;--g4:#7f93b8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#b3a6cc;--g2:#9fc4b1;--g3:#dba9bf;--g4:#9cb2d6}}
+:root[data-theme="dark"]{--g1:#b3a6cc;--g2:#9fc4b1;--g3:#dba9bf;--g4:#9cb2d6}
+.dn{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:10px 0 2px}
+.dnsvg{width:140px;height:140px;flex:none}
+.dc1{font-size:13px;font-weight:800;fill:var(--fg);font-family:var(--sans)}
+.dc2{font-size:17px;font-weight:800;fill:var(--accent2);font-family:var(--sans)}
+.lgd{flex:1 1 200px;min-width:0;display:grid;gap:7px}
+.lgr{display:grid;grid-template-columns:10px 1fr auto;gap:4px 8px;align-items:baseline;font-size:.9rem}
+.lgr i{width:10px;height:10px;border-radius:3px;align-self:center}
+.lgr b{font-weight:700}
+.lgr em{grid-column:2;font-style:normal;font-size:.76rem;color:var(--muted);line-height:1.4}
+.lgr span{font-weight:800;color:var(--fg);font-variant-numeric:tabular-nums}
+.row{grid-template-columns:6.6em 1fr 2.6em 2.6em}
+.row .pc{font-size:.78rem;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.jt{display:grid;gap:2px;margin:8px 0 2px}
+.jtr{display:grid;grid-template-columns:26px 1fr auto;gap:9px;align-items:center;padding:7px 2px;border-top:1px solid var(--line);font-size:.92rem}
+.jtr b{font-weight:600;min-width:0}
+.bd.sm{width:22px;height:22px;font-size:.72rem}
+.tier.t3{background:color-mix(in srgb,var(--accent) 20%,var(--surface));color:var(--accent2)}
+.tier.t2{background:color-mix(in srgb,var(--cl) 20%,var(--surface));color:color-mix(in srgb,var(--cl) 70%,var(--fg))}
+.tier.t1{background:var(--soft);color:var(--muted)}
+.band{background:linear-gradient(150deg,var(--accent),var(--accent2));color:#fffaf1;border-radius:20px;padding:22px 20px;margin:16px 0;text-align:center;box-shadow:0 16px 30px -18px rgba(90,75,115,.45)}
+.band p{font-family:var(--display);font-size:1.3rem;line-height:1.6;font-weight:700;margin:0}
+.band span{display:block;margin-top:10px;font-size:.8rem;opacity:.85}
+.vs{display:grid;gap:10px;margin:10px 0 2px}
+@media (min-width:520px){.vs{grid-template-columns:1fr 1fr}}
+.vsc{border-radius:16px;padding:12px 14px;border:1px solid var(--line)}
+.vsc.a{background:var(--soft)}
+.vsc.b{background:color-mix(in srgb,var(--accent) 13%,var(--surface));border-color:color-mix(in srgb,var(--accent) 30%,var(--line))}
+.vsc h4{margin:0 0 6px;font-size:.92rem;display:flex;align-items:center;gap:6px}
+.vsc.a h4{color:var(--muted)}.vsc.b h4{color:var(--accent2)}
+.vsc ul{margin:0;padding-left:1.1em;font-size:.9rem;line-height:1.7}
+.vsc.a li{color:var(--muted)}
+
+/* hero 重排 */
+.hero{padding:18px 18px 20px}
+.hero .htop{display:flex;align-items:center;gap:10px;margin-bottom:2px}
+.hero .htop .kicker{margin:0}
+.hero .hm{margin:0 0 0 auto;display:block}
+.hero .hm svg{width:60px;height:auto;filter:drop-shadow(0 4px 10px rgba(255,255,255,.3));animation:none}
+.pchips{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:10px 0 2px}
+.pchips span{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:3px 12px;font-size:.82rem;font-weight:700;letter-spacing:.02em}
+.pchips i{font-style:normal;opacity:.72;font-size:.9rem}
+.hero h1.long{font-size:1.32rem;line-height:1.8;margin:10px 0 0}
+.hero .why{background:rgba(255,255,255,.12);border-left:3px solid rgba(255,255,255,.55);border-radius:0 14px 14px 0;padding:11px 13px;margin:16px 0 0;font-size:.92rem;line-height:1.75;opacity:1}
+.hero .why .tagi{display:inline-block;font-size:.66rem;letter-spacing:.14em;background:rgba(255,255,255,.24);border-radius:999px;padding:2px 9px;margin-right:9px;font-weight:700;vertical-align:1px}
+.figbar{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.17);border-radius:16px 16px 0 0;padding:10px 13px;margin-top:14px}
+.figfact{background:rgba(255,255,255,.17);border-radius:0 0 16px 16px;margin:0;padding:0 13px 11px;font-size:.88rem;line-height:1.7;opacity:.95}
+.figbar .fen{font-size:.8rem;opacity:.75;margin-left:7px}
+.figbar .rm{width:48px;height:48px;flex:none}
+.rmt{font-size:12px;font-weight:800;fill:#fffaf1;font-family:var(--sans)}
+.figbar .fb2{min-width:0}
+.figbar b{display:inline;font-size:1.02rem;line-height:1.3}
+.figbar em{display:block;font-style:normal;font-size:.82rem;opacity:.86;margin-top:1px}
+.figbar .fl{display:block;font-size:.68rem;letter-spacing:.12em;opacity:.75;margin-bottom:2px}
+/* 生活中的你：独立白卡 */
+.lifec .lrows{margin-top:6px}
+.lrow{display:grid;grid-template-columns:36px 1fr;gap:11px;align-items:start;padding:11px 0;border-top:1px solid var(--line)}
+.lrow:first-child{border-top:0;padding-top:4px}
+.lic{width:36px;height:36px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:16px;background:color-mix(in srgb,var(--c) 20%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
+.ltx{font-family:var(--kai);font-size:1.01rem;line-height:1.85;min-width:0}
+.lifec h3{font-family:var(--kai);letter-spacing:.06em}
 </style>
 
 <header id="brand"></header>
@@ -146,9 +286,9 @@ const AB={
   wef:'创造性思维：报告里雇主排名第四，需求上升',ai:'AI 能批量出方案，但“想要一个什么样的新东西”，还得有人拿主意。',
   up:'每天写下一个“如果换种做法会怎样”。',exp:'本周把一件日常的事换一种做法，比如换条路线、换种说法，记下哪个更好。',job:'内容创作、设计、策划、品牌、广告、游戏这类要不断出新点子的工作',
   valley:'你不太靠“想新办法”解决问题，更习惯用成熟的做法。可靠，只是遇到没人做过的事容易卡住。可以找个点子多的人搭档，或者让 AI 先给你十个方向。'},
- D:{n:'判断拍板',role:'敢拍板的人',p:'信息不全时，也能判断往哪走，定了就推进',
+ D:{n:'判断决断',role:'敢下决定的人',p:'信息不全时，也能判断往哪走，定了就推进',
   wef:'与“韧性、灵活与敏捷”（报告里排名第二）相邻：局面不明时能先定、能调整',ai:'AI 擅长从旧数据里找规律。没有数据的新局面，得有人下判断。',
-  up:'做决定时写下：我押什么，什么证据会让我改主意。',exp:'记下 5 个预测，一周后对账。',job:'选品、投研、风控、增长、创业这类要在信息不全时拍板的工作',
+  up:'做决定时写下：我押什么，什么证据会让我改主意。',exp:'记下 5 个预测，一周后对账。',job:'选品、投研、风控、增长、创业这类要在信息不全时下决定的工作',
   valley:'信息不全时你不太愿意先押一个方向，倾向于再等等、再问问。稳，但有时会错过窗口。给自己一条规则：小事 5 分钟内必须定，大事设一个最晚期限。'},
  E:{n:'共情倾听',role:'懂人的人',p:'听得出话外音，让对方觉得被理解、被接住',
   wef:'共情与积极倾听：在报告的核心技能前十里',ai:'人想要的是“有人在乎我”，这件事很难外包给机器。',
@@ -195,7 +335,7 @@ const TENS=[
  {x:'B',y:'C',l:'拆开看清楚',r:'造点新的',tl:'你习惯先把事拆清楚、看明白。好处是稳，要防的是想得太细、迟迟不造新东西。',tm:'拆和造你拿得差不多平：既能看清问题，也能想出新办法。',tr:'你更爱想新点子、换玩法。好处是灵活，要防的是点子多、落地少。'},
  {x:'B',y:'H',l:'先想清楚',r:'先动手',tl:'你习惯先把事想透再动手。好处是少返工，要防的是想太久。',tm:'想和做你能平衡着来。',tr:'你习惯先动手，在做的过程里想清楚。好处是快，要防的是做了半天才发现方向错了。'},
  {x:'E',y:'F',l:'先听对方',r:'先推动事',tl:'你习惯先听、先懂对方。好处是人愿意跟你说实话，要防的是该推的时候没推。',tm:'听和推你拿得平：既能懂人，也能把人带到一起。',tr:'你更擅长把人拉到一起、把事推下去。好处是快，要防的是没听清对方就往前走。'},
- {x:'D',y:'G',l:'敢拍板',r:'肯兜底',tl:'你更擅长“定”：先押一个方向。要留意定了以后，后果有没有人接。',tm:'敢定也肯担，这两样你拿得差不多平。',tr:'你更擅长“担”：事交给你，你会负责到底。要留意别总是替别人的决定收拾。'},
+ {x:'D',y:'G',l:'敢决断',r:'肯兜底',tl:'你更擅长“定”：先押一个方向。要留意定了以后，后果有没有人接。',tm:'敢定也肯担，这两样你拿得差不多平。',tr:'你更擅长“担”：事交给你，你会负责到底。要留意别总是替别人的决定收拾。'},
  {x:'E',y:'I',l:'更看重人',r:'更看重自己的心意',tl:'做事时你先想到人：他们怎么想、愿不愿意。要留意别把自己真正想要的压没了。',tm:'为人和为己，你拿捏得挺平。',tr:'做事时你先问自己想不想。你有主心骨，要留意别人的感受也得照顾到。'}
 ];
 
@@ -252,14 +392,14 @@ function match(r){
  const un=Math.sqrt(u.reduce((s,x)=>s+x*x,0))||1;
  const sc=FIGS.map(f=>{const w=K.map(k=>{const i=f.top.indexOf(k);return i<0?0:FW_[i]});const wm=w.reduce((a,b)=>a+b,0)/N;const wc=w.map(x=>x-wm);
   const wn=Math.sqrt(wc.reduce((s,x)=>s+x*x,0));return{f,s:u.reduce((s,x,i)=>s+x*wc[i],0)/(un*wn)}}).sort((a,b)=>b.s-a.s);
- const f=sc[0].f,f2=sc[1].f;
+ const f=sc[0].f,f2=sc[1].f;const top3=sc.slice(0,3).map(x=>({f:x.f,p:Math.max(12,Math.min(96,Math.round(x.s*100)))}));
  const share=f.top.filter(k=>r.rank[k]<4);
  const gap=f.top.filter(k=>r.rank[k]>=4).sort((a,b)=>r.rank[b]-r.rank[a])[0];
  const mine=r.order.slice(0,3).find(k=>!f.top.includes(k));
  let why=share.length?`你们的共同点：${share.map(k=>AB[k].n).join('、')}。`:`你们没有重合的最强项，像在整体轮廓：都不是“样样平均”，而是有自己偏的那几项。`;
  if(gap)why+=`TA 还多一手「${AB[gap].n}」，你这一项偏低，想补的话可以${AB[gap].up.replace(/。$/,'')}。`;
  if(mine)why+=`你多的一手是「${AB[mine].n}」。`;
- return{f,f2,why}
+ return{f,f2,why,top3}
 }
 
 /* ===== 题目：18 道生活情境 + 6 道自然倾向题；每题 4 个选项 = 4 个不同维度 ===== */
@@ -643,7 +783,6 @@ const ABQ=[
   }
  }
 ];
-
 const PQ=[
  {
   "stem": "没人要求、也没有奖励，你还是会自己一遍遍去做的事，更像是：",
@@ -700,7 +839,6 @@ const PQ=[
   }
  }
 ];
-
 const SKIPS=['我戴耳塞忍着，不跟他说','别人定哪我去哪，我不操心','我不借，直接说手头不方便','先看别人怎么说，等有人安排我再动','我回个“抱抱”，明早再聊','我直接买：挑一部我觉得好的，买回来帮他们设置好','她需要我自然会来找我，我不主动问',null,'随大流，我不主动带他','我不投，直接婉拒','听医生和家里人的，我不表态','跟着大家走，我不抢着拿主意',null,null,'按他说的改，我不多说',null,'照着旧样子用，我不动它','低调观察，别人怎么做我怎么做'];
 const OPEN=14; /* 固定开场题：最贴近打工人的日常 */
 const MAXSKIP=3; /* 部分情境题多一个“都不是，我会：……”：选它这题不计分，最多 3 题。你是负责人、不能不管的题不给这个选项 */
@@ -742,9 +880,9 @@ function compute(){
  const tens=TENS.map(t=>{const d=raw[t.x]-raw[t.y];return{...t,pos:Math.max(6,Math.min(94,50-d*45)),txt:d>.15?t.tl:d<-.15?t.tr:t.tm}});
  const dm={};best.forEach(x=>{(dm[x.d]=dm[x.d]||{d:x.d,k:x.k,c:0}).c++});
  const discs=Object.values(dm).sort((a,b)=>b.c-a.c);
- const rr={m,l,n,raw,val,order,rank,lvl,t1,t2,t3,tl,shape,tens,discs,used,title:AB[t1].role+' × '+AB[t2].role};rr.fig=match(rr);return rr
+ const rr={m,l,n,raw,val,order,rank,lvl,t1,t2,t3,tl,shape,tens,discs,used,title:AB[t1].n};rr.fig=match(rr);return rr
 }
-function sentence(r){return `你最突出的两个本事：${AB[r.t1].p}；${AB[r.t2].p}。`}
+function sentence(r){return `你最强的一项是「${AB[r.t1].n}」，第二强是「${AB[r.t2].n}」。`}
 
 /* ===== 雷达图（SVG，页面内）===== */
 
@@ -763,6 +901,8 @@ const SUBJ=[
  {n:'新闻传播',g:'艺术传媒',top:['F','C','A']},{n:'设计学·交互设计',g:'艺术传媒',top:['C','E','H']},
  {n:'艺术·影视·音乐',g:'艺术传媒',top:['C','H','I']},
  {n:'临床医学·护理',g:'医学',top:['E','G','H']}];
+const JOBW=[{"A": "研究是从一个没人解释清楚的现象开始的，总得有人先问出那句为什么，你问得出来。", "B": "做研究就是把一个说不清的大问题，变成能做实验验证的小假设，你拆得动。", "I": "热点每周都在换，能一直做下去的人都有自己想弄明白的那条线，你有。"}, {"B": "模型跑不动的时候，要一层层查到底是数据、代码还是算力的问题，你查得清。", "H": "机器学习工程师真的要去改代码、跑通一遍，不是只在群里讨论，你肯动手。", "G": "训练失败、线上出故障，得有人守到它稳定下来，你守得住。"}, {"B": "搭智能体，就是教它把一件事拆成几步去办，这本来就是你的思路。", "H": "新框架一出先搭个能跑的小东西，边搭边改，你上手快。", "C": "同一个需求有好几种让 AI 去办的路子，你想得出不一样的那条。"}, {"D": "一桌方案摆着，总得有人定先做哪个、并且讲得出为什么，你定得了。", "E": "用户抱怨的背后，真正卡住他的是哪一步，你听得出来。", "F": "技术、业务、老板各要各的，得说成同一个方案，你说得拢。"}, {"C": "人和 AI 怎么打交道还没有标准答案，得有人先想出几种样子，你想得出。", "E": "哪一步会让用的人发慌，得有人站在他那一侧看，你站得住那个位置。", "H": "画完就得做成能点的原型，自己试一遍再改，你肯动手。"}, {"B": "标注的功夫在把规则写到不含糊，你拆得清标准。", "G": "大量重复的活里不走样，数据质量是一条条磨出来的，你磨得住。", "E": "出题和判对错时，要替用户想一句“这听着像不像人话”，你想得到。"}, {"I": "AI 安全是守底线的活，守什么、守到哪儿得自己清楚，你清楚。", "B": "顺着模型的每一步往下找哪里会出错，你找得动。", "A": "漏洞常藏在模型答得最顺的地方，得有人专门去追问，你爱追问。"}, {"I": "规则写成什么样，取决于写的人心里认什么，你认的东西清楚。", "D": "各方都有道理的时候，得有人定下一条能执行的规定，你定得下。", "E": "被规则影响到的那些人的处境，得有人听得见，你听得见。"}, {"F": "驻到客户那边，一屋子人意见不一，得有人把他们说到一块儿去，你说得拢。", "E": "客户嘴上要的和真正需要的常常不是一回事，你分得出来。", "H": "现场出了问题当场就得改，不能等回公司排期，你手快。"}, {"C": "AI 一口气能出一百版，决定哪一版有意思的还是人的想法，你的想法够特别。", "F": "你要的感觉得讲清楚，团队和 AI 才照着做，你讲得清。", "H": "自己上手试过工具，才知道什么能做到、什么还做不到，你愿意试。"}, {"E": "设计课先要知道学的人卡在哪一步、又不好意思问，你知道。", "F": "难懂的东西要讲成对方愿意听下去的话，你讲得动。", "C": "一门课能设计成什么样，玩法是人想出来的，你想得出新的。"}, {"E": "客户着急的时候，先接住情绪再谈解决，你接得住。", "G": "AI 答错了，后面的事得有人兜，不能让客户自己扛，你兜得住。", "F": "在客户和技术之间来回传话，还要两边都接受，你传得了。"}, {"H": "机器要在真实世界里动起来，人得泡在场地里一遍遍试，你泡得住。", "B": "动作不对的时候，要拆开看是感知、规划还是机械的问题，你拆得开。", "A": "东西到底怎么动起来，想拆开看明白的人适合干这个，你就是。"}, {"G": "最后结果要有人签字负责，这份担当是这类岗位的核心，你担得起。", "D": "AI 给了建议，用不用、后果谁担，还是人说了算，你敢说。", "E": "这一行的人真正在意什么，只有懂行的人知道，这是 AI 补不上的，你懂。"}, {"D": "信息永远不全，还是得定方向，你定得下来。", "F": "钱和人都是说来的，得把人说到愿意跟你干，你说得动。", "I": "做什么、不做什么，心里得有条自己的线，你有。"}, {"H": "穿上设备把动作做标准，这是手上的活儿，你不怵。", "G": "重复几百遍也不糊弄，数据好不好全看这个，你稳得住。", "B": "审数据要按标准一条条看，哪条不合格得说得清，你看得清。"}, {"B": "出题和打分要有一套标准，标准得有人拆明白，你拆得明白。", "A": "模型答得最顺的地方往往最该追问，你专挑这种地方问。", "G": "一轮轮跑测试、记录结果，枯燥，但你坐得住。"}, {"C": "工具大家都一样，出来的东西不一样才值钱，你的点子不一样。", "H": "想到就去生成、去剪，做出来才知道行不行，你动手快。", "A": "新玩法、新模型一直在冒，得有人一直翻一直试，你爱翻。"}, {"I": "没人给你派活，全靠自己清楚想做什么，你清楚。", "D": "接不接这一单、报多少钱，当天就得定，你定得快。", "C": "一个人干，得想得出别人没提供的那种服务，你想得出。"}, {"A": "读下去不痛苦的前提，是对一个问题能长期保持兴趣，你能。", "B": "读文献、做实验，本来就是拆问题的活，你拆得惯。", "I": "选方向时不随大流，这几年才不会白过，你不随大流。"}];
+const SUBW=[{"B": "写程序就是把一件事拆成机器能一步步执行的小步，你平时就这么想事。", "H": "计算机的代码得自己敲、自己跑才学得会，你本来就喜欢上手试。", "A": "学到后面总要问“这东西底下到底怎么跑的”，你追问的劲头够用。"}, {"B": "做数据是从一堆杂乱数字里拆出有用的那几个，拆这件事你在行。", "A": "分析的起点是盯住数据里反常的地方，你看到不对劲就想问为什么。", "C": "同一份数据能换好几种做法去试，你的点子够多，试得起。"}, {"B": "证明是把一个大结论拆成一步步站得住的小步，你习惯这样推。", "I": "数学和统计要坐很久冷板凳，没人盯着也得往下想，你心里有自己的那条线。", "A": "数学问的是“为什么必须是这样”，你对这种问题有真兴趣。"}, {"H": "电路和机器要上手焊、上手调才有感觉，你不怕动手。", "B": "机器不工作时得一级级排查是哪一环出的问题，这种活你拆得清。", "G": "一个参数调一整天是常事，你耐得住这种磨。"}, {"A": "物理、化学、生物都从一个“怎么会这样”的现象开始，起点刚好在你这儿。", "B": "把现象拆成能控制的变量再一个个验证是基本功，你擅长拆。", "H": "实验是手上的功夫，泡在实验室里才学得会，你坐得住也肯动手。"}, {"A": "人为什么这样想、这样记，认知科学一直在问，你也一直想知道。", "B": "要把“人怎么思考”拆成能测量的小问题，这一步靠拆。", "E": "研究的对象是人，对人的感受不敏感就看不出名堂，你敏感。"}, {"E": "心理学的基本功是听得出别人话里压着的情绪，你本来就听得出来。", "A": "人为什么这么做，心理学会追问到底，你有这股劲，读得完那么多研究。", "B": "要把说不清的感受变成能做研究的问题，你擅长把事情理清楚。"}, {"E": "教育先要看出学生卡在哪一步、又不敢问，你看得出来。", "F": "教育学的手艺是把难事讲到对方愿意听、也听得懂，你讲得动人。", "I": "教书得自己先信点什么，你心里有方向，站得住。"}, {"A": "社会学问的就是“习以为常的事为什么是这样”，田野就从你这种追问开始。", "E": "做研究要坐下来听别人讲自己的生活，听得进去才有材料，你听得进去。", "F": "进到一个陌生群体里，先得让人愿意跟你说话，你擅长开这个头。"}, {"I": "哲学问的是“什么值得”，你心里有自己的判断，答得出来。", "B": "把一句听着很对的话拆开、看它站不站得住，是哲学的日常，你拆得动。", "A": "别人觉得理所当然的地方，哲学还要再问一层，你也不嫌烦。"}, {"B": "法条和案情要一条条对着拆，差一个要件结论就变，你拆得清。", "D": "最后得给出一个结论，不能一直说两边都有道理，你敢下。", "G": "案子背后是别人的人生，扛得住的人才做得久，你扛得住。"}, {"B": "经济学是把复杂的市场拆成几个能算的因素，拆这件事你在行。", "D": "金融天天要在信息不全的时候下判断，你做得到。", "A": "钱为什么这样流动，经济学一直在问，你也好奇。"}, {"D": "管理就是在没有标准答案的时候把事定下来，你定得了。", "F": "事情要靠人去做，得说得动人，你说得动。", "G": "出了问题是管理者兜着，你扛得住这份责任。"}, {"D": "政策要在各方都有道理的时候选一个方向，你敢选。", "F": "要让不同部门、不同人群接受同一个方案，你把人说到一块儿去的本事用得上。", "G": "政策落地要盯很久才见效，你耐得住这个长。"}, {"F": "新闻的手艺是把复杂的事讲成大家读得下去的话，你讲得出来。", "C": "同一件事能不能找到别人没用过的讲法，高下就在这儿，你点子多。", "A": "报道靠的是一直追问事情背后还有什么，你习惯追问。"}, {"C": "设计是在没有标准答案的地方给出一个样子，你想得出样子。", "E": "好设计替用的人着想，知道他哪一步会犹豫，你看得出来。", "H": "画完要做出来能点的东西，手上功夫少不了，你肯做。"}, {"C": "艺术直接吃想法，你的点子就是作品本身。", "H": "要真的去拍、去画、去弹，手熟了才有东西，你肯练。", "I": "风格是从你自己想表达什么里长出来的，你有要表达的东西。"}, {"E": "病人除了病，还有害怕和难处，你接得住。", "G": "临床和护理又苦又长，靠的就是扛得住，你有这个底子。", "H": "手上的操作要练到稳，书上看不来，你练得下去。"}];
 const JOBS=[
  {n:'AI 研究员（大模型算法）',d:'提出新方法，做实验验证',top:['A','B','I'],f:'门槛高，多要硕士以上，看论文和项目经历。'},
  {n:'机器学习工程师',d:'把模型训练好、部署成能用的系统',top:['B','H','G'],f:'偏算力和分布式方向，要扎实的工程和系统基础。'},
@@ -784,6 +924,99 @@ const JOBS=[
  {n:'AI 内容创作（生图·视频·AIGC）',d:'用 AI 做图、做视频、做短剧',top:['C','H','A'],f:'今年春招出现了 AI 生图师、AI 抽卡师（AI 视频生成）、AIGC（AI 生成内容）导演等岗位，AI 剪辑师需求大涨，多在民营影视和短剧公司。'},
  {n:'自由职业·一人公司',d:'一个人靠 AI 工具接活、做小生意',top:['I','D','C']},
  {n:'读研·深造',d:'先把专业底子打深，再进 AI 方向',top:['A','B','I'],f:'AI 岗位要求里本科占四分之三，硕士占五分之一；算法和具身智能的技术岗多要硕士。'}];
+
+/* ===== 结果页新文案：每项最强天赋在工作/学习/休息里怎么用 AI（是常见用法，不是测出来的事实）===== */
+const SC={
+ C:{w:'做方案卡住了，让 AI 一口气出 30 个思路，你挑出最特别的那个再改。',l:'汇报没头绪，让 AI 用 5 种完全不同的角度写开头，你选最顺的。',r:'周末想玩点新的，让 AI 编一个你没试过的小游戏或一日行程。',q:'想给 TA 一个惊喜，让 AI 出 10 个没做过的约会点子，你挑最特别的那个。'},
+ A:{w:'AI 给了结论，你追问“依据是什么？还有别的可能吗？”，挖出第一眼没看到的问题。',l:'碰到不懂的概念，连问 5 个“为什么”，问到真懂为止。',r:'刷到一个冷知识，忍不住让 AI 讲背后的故事，一聊就是半小时。',q:'想懂 TA 为什么生气，你追问自己和 AI 好几轮，找出 TA 真正在意的点，再去问 TA 本人。'},
+ G:{w:'AI 做的第一版不能用，你改到能交为止，出了错自己兜。',l:'论文让 AI 帮了忙，每个数据、每句引用你都自己核对过。',r:'想学做饭或剪视频，让 AI 排好计划，你真的天天打卡完成。',q:'答应 TA 的事，用 AI 排好计划和提醒，说到做到；吵完架也是你先来修复。'},
+ D:{w:'AI 给了三个方案，你十分钟内定一个，并讲得出为什么选它。',l:'AI 列了十条复习建议，你一眼挑出最该先做的三条。',r:'选电影、选旅行路线，让 AI 列选项，你很快下决定不纠结。',q:'纠结纪念日去哪，让 AI 列选项，你很快下决定，不让 TA 来回选。'},
+ I:{w:'AI 推荐了一堆方向，你说得清哪条才是自己想做的，不盲跟。',l:'选课、定目标时拿 AI 当参谋，最后按自己真正想要的选。',r:'不会被推荐内容拽着刷，知道今天自己是想放松还是想充电。',q:'AI 帮你写了一段话，你会问自己“这是我想对 TA 说的吗”，不照搬。'},
+ F:{w:'同一件事让 AI 分别写成给老板、客户、同事的三种说法，每种都说到点上。',l:'小组作业里用 AI 整理大家的意见，把分歧讲成大家都能接受的方案。',r:'要约朋友，让 AI 起草一条让对方好答应的消息。',q:'有分歧时，让 AI 帮你想怎么说 TA 才听得进去，再用自己的话讲出来。'},
+ E:{w:'写给客户的话，让 AI 先站在对方角度写，你再改到像真人说的。',l:'帮同学改答辩稿，AI 写完你把不像人话的句子换掉。',r:'心情乱的时候说给 AI 听，帮自己理清，也分得出它哪句是在敷衍。',q:'TA 心情不好，让 AI 帮你想怎么回，再改成你真心的话，先听完再开口。'},
+ H:{w:'拿到新工具先动手试，把 AI 接进手头真实的活儿，边用边改。',l:'学不会的东西，让 AI 带着做个小项目，做着做着就会了。',r:'周末用 AI 做个小东西，比如一张海报或一个小网页，做完发朋友圈。',q:'想为 TA 做点什么，让 AI 教你做一道菜或一份小礼物，然后真的动手做出来。'},
+ B:{w:'大任务先拆成 4 步，一步步交给 AI，每步写清格式和标准，所以出来的东西比别人准。',l:'做题时让 AI 讲思路，你自己检查它每一步有没有漏洞。',r:'做旅行预算、整理家里开支，让 AI 出表格，你核对数字对不对。',q:'吵架后，让 AI 帮你理成“发生了什么、各自在意什么”，冷静了再去谈。'}};
+
+/* 每项天赋：一句小众、自己可能没注意的细节（用来取代“好奇洞察”这类抽象名字）*/
+const NICHE={
+ A:'在心里记下一个陌生的招牌或没听过的梗，睡前非要搜明白，搜到最后常常已经不是最初想查的那件事',
+ B:'把朋友发来的一大段语音，不自觉拆成“发生了什么、他的情绪、要我做什么”三块，才开始回',
+ C:'给备忘录、歌单、文件夹起名时总要多想一会儿，起完那个名字才觉得“对了”，哪怕只有自己看得到',
+ D:'在大家都不开口的饭点先说一句“就这家吧”，其实心里早把人数、预算和排队时间算过一遍',
+ E:'在朋友说“没事”时注意到他说话慢了半拍，不追问，换个话题，等他自己想说',
+ F:'在群里两个人快吵起来时，私下对两边各说一句话，让两边都觉得是自己先退了一步',
+ G:'对答应过的小事，哪怕对方早忘了也会找时间补上，不然心里总像挂着一件没收的衣服',
+ H:'拿到新东西不看说明书，先按几个键试试，卡住了才回头查，记得最牢的永远是手试出来的那几步',
+ I:'在大家都说好的东西面前停一下，问自己“我真的想要吗”，偶尔因此慢半拍，但很少后悔'};
+/* 第二强的天赋，加在第一强的场景后面（和 SC 同结构：w工作 l学习 r休息 q亲密关系）*/
+const MOD={
+ C:{w:'你还会想一个别人没想到的做法加进去',l:'你还会换个没人用过的方式把它讲出来',r:'你还会顺手想出一个新玩法',q:'你还会想点小惊喜让 TA 意外'},
+ A:{w:'你还会多问一句“为什么会这样”',l:'你还会顺着一个小疑问多查几层',r:'你还会不知不觉查到别的有趣的事',q:'你还会留意 TA 随口说的小细节'},
+ G:{w:'你还会一直盯到它真的做完',l:'你还会坚持到每一处都核对过',r:'你还会把这件事坚持下来',q:'你还会把答应的事认真做到'},
+ D:{w:'你还会很快定下先做哪个',l:'你还会先排出最重要的几件',r:'你还会很快决定“就这么办”',q:'你还会果断定下，不让 TA 来回犹豫'},
+ I:{w:'你还会先想想这是不是你真想做的',l:'你还会按自己真正想要的去选',r:'你还会清楚自己此刻真正想要什么',q:'你还会守住自己真实的想法'},
+ F:{w:'你还会顺便把相关的人拉到同一页',l:'你还会把大家的想法讲到一块去',r:'你还会顺手约上谈得来的人',q:'你还会把话说到让 TA 听得进去'},
+ E:{w:'你还会留意对方听完是什么表情',l:'你还会想到别人可能哪里看不懂',r:'你还会留意身边人此刻的状态',q:'你还会先听出 TA 话里没说的意思'},
+ H:{w:'你还会立刻上手试一遍',l:'你还会马上动手做一个出来验证',r:'你还会直接动手做出来',q:'你还会真的动手为 TA 做点什么'},
+ B:{w:'你还会把它拆成几步理清楚',l:'你还会把它拆成几块逐个击破',r:'你还会把它理成清清楚楚的几条',q:'你还会把事情捋清楚，再去谈'}};
+const PAIR={"AB": {"h": "听到新说法，能很快拆开、对着看明白，再用一句话讲给别人。", "w": "同事转来一篇很火的文章，你半小时后回了三行：它说了什么、哪一步没说清、值不值得跟。", "l": "学新东西你不背定义，先问它想解决什么，再对着旧办法看差在哪，记住的就不容易忘。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "刷到一个看不懂的说法，你顺着查到源头，中途常常拐进别的坑里，一下午就没了。", "q": "TA 说不清自己为什么烦，你问了几句，把它分成“这件事”和“那口气”，TA 才发现真正在意的是后者。", "y": "AI 说得头头是道，却不一定对，这是眼下最让人头疼的事之一。能追问、会拆开检查的人，就是把关的那一个。"}, "AC": {"h": "看到奇怪的东西，会追问它为什么长这样，还能马上想出换个样子会怎样。", "w": "别人照着模板做，你先问这块为什么一直这么做，问完顺手给了一个没人试过的版本。对自己“能搞出新东西”有信心的人，创造力表现更好（Haase 等, 2018）。一起用 AI 做的作品，大家做出来的东西越来越像，有自己味道的想法更难被抹平（Holzner 等, 2025）。", "l": "你学东西爱跑题，看着看着跑到另一个领域，回来反而想出了更好的用法。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "路上看到一个奇怪的招牌，你会想它是谁起的名，顺便想出三个更好玩的。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "TA 随口说过的一个愿望，你记下来，做成了 TA 没想到的样子。", "y": "AI 生成的东西越来越多，也越来越像。能追问出“为什么有意思”、再换个角度的人，能让产出有方向。"}, "AD": {"h": "了解到够用就果断往下走，不会一直停在“再查查”里。", "w": "一个方案你连问三句，关键那条清楚了就说“够了，开始”，不再往下查。一项毕业生追踪发现，爱挑“最好的那一个”的人起薪更高，但对工作更不满意（Iyengar 等, 2006），这只是一项研究的结果。", "l": "学新技能你先弄明白最该练哪一块，确认完就开练，不等把教程看完。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "想去哪玩，你刷十分钟攻略，看到一条关键信息就订下来，之后不再比价。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "TA 犹豫不定，你问两句就说“按这个来”，TA 事后常说幸好那天定了。", "y": "信息越来越多，反而更需要有人说“够了，就这样”。你边了解边下决定，能把 AI 的信息变成行动。"}, "AE": {"h": "能听出别人话里压着的那层意思，再问到最关键的那一句。", "w": "会后大家在聊方案，你一个人走去问那位全程没出声的同事：“刚才你是不是有别的看法？”在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "你的笔记里常写着“他当时在担心什么”，所以你比别人更早看懂分歧在哪。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "看剧时你会停下来想那个配角的处境，朋友说你想太多，你觉得这正是好看的地方。", "q": "TA 嘴上说“随便”，你听出那点犹豫，换个问法再问一次，TA 才说了实话。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 越来越会写得体的话，对方压在语气里的情绪它却读不出来。你好奇又会听，正好补上人和 AI 之间缺的这一环。"}, "AF": {"h": "两个人僵住的时候，能问出一句对方没想到的话，让气氛松下来。", "w": "两个人在会上谁也不让谁，你私下各问一句“你最担心的是什么”，下次他们竟坐到了一起。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "讨论冷场的时候，你问一个别人没想过的问题，大家就都有话说了。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "饭桌上有人被晾着，你随口问起他熟悉的事，他讲了半小时，大家听得入神。", "q": "TA 和家里闹别扭，你先问清两边各在怕什么，再替 TA 想了一句好开口的话。", "y": "AI 能把各方立场写得清清楚楚，却没法让僵住的人愿意再谈一次。你好奇又会协调，能把 AI 整理的信息变成大家都接受的共识。"}, "AG": {"h": "答应过要弄清楚的事，没人催也会一直查到有结果。", "w": "一个存疑的数字，别人说“差不多就行”，你追到原始出处核对完，才说“可以了”。这里的尽责不是爱操心，而是做事靠谱、有条理、说到做到。尽责的人在几乎所有职业结果上都做得更好（Wilmot & Ones, 2019）。", "l": "你有一摞没读完的资料，别人早忘了，你却按自己定的节奏一本本收尾。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "休息日你还惦记着没弄清的事，翻了一小时资料，终于笑着合上电脑。", "q": "你答应过“帮 TA 查清那件事”，三天后发去一份整理好的结果，TA 自己都快忘了问过。", "y": "AI 常给出看似合理却可能出错的答案，现在最缺的是肯核实到底的人。你追根究底又不撂挑子，能把 AI 的结果查到可信。"}, "AH": {"h": "好奇一个东西，就忍不住拆开或做一个试试，手上跑通了才算数。", "w": "新工具刚上线，你已经拿手头真实的活跑了一遍，回来说“这步好用，这步别碰”。习惯不等安排，自己先动手改变现状的人，任务表现略好（Zhang 等, 2022）。", "l": "看不懂的原理，你搭个最小的例子跑一遍，跑通了比看十遍讲解都清楚。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "家里东西坏了，你第一反应是拆开看看里面长什么样，修不修得好另说。", "q": "TA 提过一句想要的小东西，你查了做法，周末真的动手做了出来。", "y": "AI 能讲清原理，东西跑不跑得通，还得亲手试才知道。你好奇又动手，能很快把 AI 的想法变成真正能用的东西。"}, "AI": {"h": "好奇心来自自己，不跟热搜，一个小问题能钻进去好几天。", "w": "大家都在追热点，你却在做一件看似没用的小事，因为那是你真正想知道的。出于自己想做而做的人，表现平均更好，要求质量的任务里更明显（Cerasoli 等, 2014）。", "l": "你的书单上有几本和考试、升职都没关系的书，却是你读得最慢最久的。爱追问、想弄明白的人，智力测验分平均略高（Anglim 等, 2022）。", "r": "没人安排的下午，你沿着一个冷门问题一路查下去，没人让你查，你自己停不下来。", "q": "TA 问你想要什么礼物，你想了很久，说：“我想听你讲讲最近在想的事。”", "y": "AI 擅长顺着热点走，大家做出来的东西也越来越像。你的好奇来自自己想知道，用 AI 能挖得比别人更深、更不一样。"}, "BC": {"h": "脑子里一条线在拆“事情怎么运转”，另一条线在想“换掉一块会怎样”。", "w": "流程卡住时，你先画出它现在怎么跑，再把其中一环换掉，问题就绕过去了。对自己“能搞出新东西”有信心的人，创造力表现更好（Haase 等, 2018）。一起用 AI 做的作品，大家做出来的东西越来越像，有自己味道的想法更难被抹平（Holzner 等, 2025）。", "l": "学新东西你先搭一个自己的框架，再改成只有自己看得懂的版本，记得特别牢。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "玩游戏你爱研究机制，摸清之后就想办法用一种别人没用过的打法通关。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "吵完架你把事情理成一二三，然后写了张小纸条：“以后我们换个方式聊。”", "y": "AI 能拆也能发散，把两件事连起来、判断哪种做法真的行得通，还得有人来。你既会拆结构又会换玩法，正好做这一步。"}, "BD": {"h": "做决定前把利弊算得清清楚楚，真到下决定那一刻又快又稳。", "w": "你把三个方案的代价摆成一张表，看完只用一分钟就说“选第二个，这条我们输不起”。一项毕业生追踪发现，爱挑“最好的那一个”的人起薪更高，但对工作更不满意（Iyengar 等, 2006），这只是一项研究的结果。", "l": "复习时你先算哪部分最能提分，然后砍掉其余的，砍得干脆。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "买大件你列好参数就下单，朋友还在比价，你已经在用了。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "TA 两难时，你把两条路的后果都说清楚，再说“要我选我选这条”，TA 心里就踏实了。", "y": "AI 能列出所有优缺点，最后谁来拿主意、谁为结果负责，仍然只能是人。你拆得清又下得了决心，能在信息不全时把事定下来。"}, "BE": {"h": "听人倾诉时，既接得住情绪，又能把事情理出条理，说出他自己没理清的那一句。", "w": "客户说了一堆不满，你听完回一句“您最在意的其实是交付时间，对吗”，对方语气就软了。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "同学讲不明白的地方，你听出他卡在哪一步，再从那一步开始讲。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "心里乱的时候你会写下来，分成“我能做的”和“只能等的”，写完就睡得着了。", "q": "TA 一股脑说了很多，你帮 TA 理成几件事，TA 说“原来我烦的只有第二件”。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 能把事情拆成条目，却分不清对方这时候是要被听见，还是要被理清。你懂人又会拆，知道什么时候该听、什么时候该拆。"}, "BF": {"h": "争论时能把大家的话梳成“哪几点一致、哪一点不同”，气就消了一半。", "w": "甲方的要求前后对不上，你把它列成“必须有、可以商量、做不到”三栏发过去，对方回了一句“就按这个来”。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "一门课你听完就整理出一张图，班里传开了，连没来上课的人都来找你要。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "想买个大件，你列了三家的价格、保修和退货规则发在群里，朋友照着你那张表下了单。", "q": "TA 讲了一大段烦心事，你帮 TA 理成“哪些能改、哪些只能等”，TA 说“这样我就知道先做什么了”。", "y": "AI 能总结各方观点，却没法让观点不同的人愿意坐下来。你把分歧拆清楚再说服，能让人和人、团队和团队真的谈得拢。"}, "BG": {"h": "一件复杂的事压下来，先拆成清单一项项做，做不完的会写明还差什么。", "w": "一摊乱事压下来，你先拆成清单，谁做哪条写得清清楚楚，最后没人认领的那几条你自己收了。这里的尽责不是爱操心，而是做事靠谱、有条理、说到做到。尽责的人在几乎所有职业结果上都做得更好（Wilmot & Ones, 2019）。", "l": "你的复习计划细到每天几页，落下的那几天会补回来，不骗自己。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "搬家、报税这种麻烦事，你列个表一项项做完，做完那天心里特别踏实。", "q": "答应 TA 的事你会写进待办，拖久了也会说明还差什么、什么时候给。", "y": "AI 能把大任务拆成步骤，每一步有没有做完、出错谁来收，还得人盯到底。现在大家最想知道“谁来负责”，你拆得清也扛得住。"}, "BH": {"h": "拿到新东西一边动手试，一边在脑子里画结构，卡住时能说出问题大概在哪一步。", "w": "机器出了问题，你边拆边说“大概卡在第三步”，一试，果然。习惯不等安排，自己先动手改变现状的人，任务表现略好（Zhang 等, 2022）。", "l": "学不会的东西，你照着做一个最小的版本，哪一步做不下去，哪一步就是你没懂的。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "家里的收纳你重排过好几轮，每轮都比上一轮顺手一点。", "q": "TA 说某个东西不好用，你当场拆开看，找出是哪个零件的问题。", "y": "AI 能写出步骤，真正卡在哪一步，常要动手才发现。你边做边拆结构，能很快定位问题，让 AI 写的东西真正跑起来。"}, "BI": {"h": "大家在讨论选哪个时，你会拆开选项，问“哪一项是我真正在乎的”。", "w": "大家争着选哪个方案，你问了一句“我们到底想要什么”，讨论换了方向。出于自己想做而做的人，表现平均更好，要求质量的任务里更明显（Cerasoli 等, 2014）。", "l": "你会把学到的东西分成“对我有用”和“只是听着厉害”，后者再热也不碰。爱把事情想清楚的人，两种智力平均都略高：一种是遇到没见过的新问题，能现场想办法解决的能力；一种是靠学习和经验攒下来的知识和技能，比如词汇、常识（Schweitzer 等, 2025）。", "r": "刷手机刷到一半你会停下来问自己“这是在放松还是在躲事”，然后关掉。", "q": "TA 替你安排得很周到，你会说出自己真正想要的那个，而不是客气地接受。", "y": "AI 能给出很多选项，哪一项是我真正在乎的，只有自己知道。你拆开比较再按自己的方向选，不容易被工具带着跑。"}, "CD": {"h": "脑子里冒出一堆主意，几秒内就能挑出最值得试的那一个。", "w": "脑暴时你一口气冒出十几个点子，然后只留一个，说：“就做这个。”对自己“能搞出新东西”有信心的人，创造力表现更好（Haase 等, 2018）。一起用 AI 做的作品，大家做出来的东西越来越像，有自己味道的想法更难被抹平（Holzner 等, 2025）。", "l": "一道题你先试三种完全不同的解法，试到第二种就知道哪种走得通，剩下的不再碰。", "r": "你的收藏夹里存着一堆想试的新东西，真动手的永远只有一两个，不做的那些你也说得出为什么。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "TA 说“纪念日随便过”，你想了几个惊喜，挑最特别的那个，直接订了。", "y": "AI 一口气能给上百个点子，难的是挑一个、愿意试。你想得多又选得快，能把 AI 的“很多”变成“先做这个”。"}, "CE": {"h": "想点子时总想着“对方看到会是什么表情”，所以你的主意让人觉得被记住。", "w": "做方案时你会想“对方看到第一眼是什么感觉”，所以你的版本总让人更舒服。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "讲给别人听之前，你会换成他熟悉的例子，所以听你讲的人学得快。", "r": "你送的东西常常不贵，却正好是对方提过一次的。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "TA 低落的时候，你用一个只有你们俩懂的玩笑把气氛转了过来。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 能写出漂亮的创意，对方看到会是什么感觉，要懂人才想得到。人们更愿意和人打交道，你的点子带着对人的体贴。"}, "CF": {"h": "想出的点子，自带“怎么讲别人才愿意跟着试”的那一半。", "w": "你的提案里永远有一个让人眼前一亮的点，再加一句“它对你有什么好处”。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "同一个知识点你能给三种说法，总有一种让对方点头。", "r": "朋友出去玩懒得计划，你随口说了个有意思的玩法，大家立刻都想去。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "TA 不想出门，你把要做的事讲成一件好玩的事，TA 就起来了。", "y": "AI 能写出创意，让别人愿意跟着试，靠的是讲法和信任。你的点子自带说服力，能把想法变成大家一起做的事。"}, "CG": {"h": "点子很多，答应过要做的那个，做到一半不好玩了也会改着做完。", "w": "点子落地到最没意思的那一段，你没跑，把它做完了，所以别人愿意再把事交给你。对自己“能搞出新东西”有信心的人，创造力表现更好（Haase 等, 2018）。一起用 AI 做的作品，大家做出来的东西越来越像，有自己味道的想法更难被抹平（Holzner 等, 2025）。", "l": "你开过好几个坑，但每个学期总有一个被你认真填完。毅力，也就是长期咬住目标不放，对成绩有帮助（Credé 等, 2017）。", "r": "有个小东西你做了很久，热情过去了还在改，改到自己满意为止。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "答应给 TA 做的那件小事，做起来远比想的麻烦，你还是做完了。", "y": "AI 让出点子变得很容易，一路做完反而更稀缺。你有想法也肯做到底，正是现在最缺的那种人。"}, "CH": {"h": "点子不到一天就能变成手边一个粗糙的小成品，不做出来就觉得没成立。", "w": "开会讲不清的时候，你直接做个粗糙的小样放桌上，大家一看就懂了。对自己“能搞出新东西”有信心的人，创造力表现更好（Haase 等, 2018）。一起用 AI 做的作品，大家做出来的东西越来越像，有自己味道的想法更难被抹平（Holzner 等, 2025）。", "l": "学新工具你不看完教程，边想边做，第一个成品常常当天就出来。", "r": "你的相册里有个当晚做出来的小玩意，名字叫“先跑起来”。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "TA 随口提的一个想法，你当晚就做了个丑丑的版本给 TA 看，TA 笑了很久。", "y": "AI 能写想法，想法变成能拿在手里的东西，还要人动手。你想到就做出小样，能让大家先看到、再讨论。"}, "CI": {"h": "点子来自“我自己真想看到的东西”，别人觉得怪的，反而是你最舍不得的。", "w": "大家都在做稳妥的方案，你却坚持做了那个“我自己真想看到”的版本。对自己“能搞出新东西”有信心的人，创造力表现更好（Haase 等, 2018）。一起用 AI 做的作品，大家做出来的东西越来越像，有自己味道的想法更难被抹平（Holzner 等, 2025）。", "l": "你学东西不先问有没有用，只看它有没有打动你，所以能学得比别人久。", "r": "你做的小东西只给自己看，不发朋友圈，却做得很开心。艺术家在“对新体验开放”这项性格上，平均比非艺术家更高。这里的“开放”不是外向、放得开，而是愿意接触新鲜事和新想法、爱想象（Feist, 1998）。", "q": "TA 问“为什么送这个”，你说：“因为这是我们之间才有的东西。”", "y": "AI 容易给出大众喜欢的东西，大家做出来的也越来越像。你的点子带着个人风格，在一片相似里最容易被认出来。"}, "DE": {"h": "下决定之前，会先感觉一下在场每个人的感受，所以你的决定最少人不舒服。", "w": "定方案前你会先看一圈谁最为难，定完专门跟那个人说一句，事情就没人卡着。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "一起学的人跟不上，你会当场调整节奏，把要做的减到他能完成。", "r": "朋友里总是你拿主意去哪，但你记得谁不能吃辣、谁得早走。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "TA 说不出想去哪，你替 TA 定了，定的是 TA 上次提过的那家。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 能给方案，下决定时顾及在场的人，只有懂人的人做得好。人们更愿意和人打交道，你下的决定让人信得过。"}, "DF": {"h": "大家争到僵住时，你说一句“那就这样吧”，大家居然都点头了。", "w": "争到僵住时你说一句“那就这样吧”，还顺手给每个人留了台阶，大家居然都点头了。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "报名截止前一小时，你定了要报的那门课，还顺手劝动了两个犹豫的同学一起报。", "r": "打球组队你很快定好谁打哪个位置，有人不服，你两句话就说服了他。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "两个人闹别扭，你先定下“今晚先不争这个”，再把话讲到 TA 听得进去。", "y": "AI 能列出方案，僵持时有人说“就这样”，大家还愿意点头，靠的是信任。你能把一屋子人的意见收成一个决定。"}, "DG": {"h": "定下的事不反悔，中途不顺也认下来改着往下走，不推翻重来。", "w": "你定的方向中途出了问题，你没推翻重来，认下来改着往下走，最后交了出去。一项毕业生追踪发现，爱挑“最好的那一个”的人起薪更高，但对工作更不满意（Iyengar 等, 2006），这只是一项研究的结果。", "l": "定了的学习计划你很少改，哪怕某一周很难，也只是放慢，不取消。毅力，也就是长期咬住目标不放，对成绩有帮助（Credé 等, 2017）。", "r": "你决定的事会写下来，比如每周去一次球场，下雨也去。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "吵完架，TA 还没开口，你先说：“今晚我们把话说开。”", "y": "AI 能给建议，谁来为结果负责，仍然是人。你下了决定就扛到底，这正是 AI 替代不了的那一份责任。"}, "DH": {"h": "比起开长会，更习惯先做一版看看，对错一目了然，决定也就有了。", "w": "比起开会争论，你先做一版摆上桌，对错一目了然，决定也就有了。习惯不等安排，自己先动手改变现状的人，任务表现略好（Zhang 等, 2022）。", "l": "新方法你不先问靠不靠谱，先按它做一次，做完就知道要不要继续。", "r": "想换个布置，你当天就搬，不满意再搬回来，比想半个月快得多。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "TA 犹豫要不要买，你说“先试个最小的”，试完两个人都知道答案了。", "y": "AI 能分析利弊，先做一版看看，往往比分析更快有结论。你下决定后马上动手，能把“想清楚再做”变成“做着做着就清楚”。"}, "DI": {"h": "下决定前会安静几秒，先问自己图的是什么，然后很快定下来。", "w": "别人在讨论听谁的，你安静了几秒，先想清楚自己图的是什么，然后说出来。出于自己想做而做的人，表现平均更好，要求质量的任务里更明显（Cerasoli 等, 2014）。", "l": "别人劝你考个热门证书，你算了算自己要去的地方，说了句“用不上”，就没报。", "r": "你很快知道今天想放松还是想充电，不被推荐带着走。长期犹豫不决的人，往往也更容易焦虑、情绪起伏大，和情绪稳不稳联系最紧（Di Fabio 等, 2013）。所以定了就不回头，本身就是本事。", "q": "TA 问“你到底想不想去”，你说：“我想。”答得很清楚。", "y": "AI 容易被热门带着走，你清楚自己图的是什么，也敢很快做出选择。众人都往一个方向涌的时候，这种独立判断最值钱。"}, "EF": {"h": "先听出对方话里压着的那层顾虑，再用他听得进去的方式把话递回去。", "w": "写给客户的话，你先听出他真正担心的是什么，再用他听得进去的方式递过去。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "有人嘴上说没事，你看出他其实卡着，私下问一句，再帮他跟大家说一声。", "r": "朋友之间有点小芥蒂，你一句玩笑，把两边的台阶都搭好了。", "q": "TA 说“我没事”，你听出语气里还压着半句话，再轻轻回一句。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 能写出得体的话，真正说到对方心里，要先听出没说的意思。人们更愿意和人打交道，你懂人又会说，让对方觉得“他懂我”。"}, "EG": {"h": "听过的难处你会记着，过几天还会主动问一句“后来怎么样了”。", "w": "同事扛不住的时候，你接过一部分，还记得第二天问一句“今天好点没”。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "一起备考的人想放弃，你没劝，只是每天照常约他，最后两个人都走到了考场。毅力，也就是长期咬住目标不放，对成绩有帮助（Credé 等, 2017）。", "r": "朋友随口说过的难处你会记着，过阵子还主动问一句“后来怎么样了”。", "q": "TA 难过时你不讲大道理，只是陪着，第二天该做的事你也都替 TA 做了。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 不会记得别人上周说的难处，更不会回头问一句。你听到并记着，会跟进到事情解决，让人觉得被当回事。"}, "EH": {"h": "表达关心不靠说，而是顺手做一点具体的事，比如记得对方不吃什么。", "w": "听出同事扛不住，你没说安慰的话，直接把他手上最烦的那块活接了过来。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "同学听不懂，你画个例子给他，比讲十遍都管用。", "r": "你记得每个朋友的口味，聚会上那盘菜是照着最挑的那位做的。", "q": "TA 生病了，你话不多，但药、粥、挂号都安排好了。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 能说安慰的话，却没法顺手做一件小事，让人觉得被照顾。你的关心落到行动上，是 AI 给不了的那一种在场。"}, "EI": {"h": "很能感受别人的情绪，也分得清哪些是他的、哪些是你的，不会被淹没。", "w": "听完同事抱怨，你共情了，也清楚哪些是 TA 的事、哪些是你的。在助人类工作里，共情高的人更不容易被工作掏空心力，也不容易对服务对象变得麻木、爱答不理，成就感还更高（Martingano 等, 2026）。", "l": "你会帮同学，但不会为了帮忙把自己的进度拖垮。", "r": "一个人待着时你不觉得空，那是你把自己攒回来的时间。", "q": "TA 希望你一直在，你说得出自己需要一点独处，而且说得让 TA 不觉得被推开。能读准伴侣心情的人，感情满意度平均略高（Sened 等, 2017）。", "y": "AI 不会被情绪淹没，但也感受不到对方。你能感受别人又不被带走，可以长期陪在人身边，不容易累垮。"}, "FG": {"h": "把几个人拉到同一个方向后不会甩手，一路跟到做完，出问题先顶上。", "w": "你把几个人拉到一个方向后没甩手，一路跟到做完，出了问题第一个顶上。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "你拉了几个人一起打卡背单词，到最后还在坚持的是你，谁掉队了你还去问一句。毅力，也就是长期咬住目标不放，对成绩有帮助（Credé 等, 2017）。", "r": "你组的局总能成，因为定下来之后，订位、提醒、收钱都是你在做。", "q": "TA 和你有分歧，你把话讲清楚，也把答应的修复做到了。", "y": "AI 能写沟通稿，把人拉到同一个方向并跟到落地，要被信任的人来做。现在大家最关心“谁来负责”，你正好是那个人。"}, "FH": {"h": "说服别人不靠讲道理，而是先做一个小样给对方看，看到实物，顾虑就少了。", "w": "说服别人你不讲道理，先做一个小样放到他面前，看到实物，顾虑少了一半。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "讲不通的概念，你当场做个演示，大家立刻明白。", "r": "朋友说想学做某道菜，你直接做一次给他看，他回去就上手了。", "q": "TA 对你的提议不放心，你先做个小版本，TA 试过之后就答应了。", "y": "AI 能写很会说服的话，一个小样却比听十遍道理更有用。你说服人靠做出来给人看，这是 AI 的文字替代不了的。"}, "FI": {"h": "能让人跟着你走，却不靠压人，因为你每次开口都清楚自己图什么。", "w": "你让别人跟着你走，不靠压人，因为大家感觉得到你真的想要。带得动人的你，社交和表达能力往往也很出众（Judge 等, 2002）。大模型的说服效果已经和真人差不多（Hölbling 等, 2025），让人愿意一起往前走才是你的优势。", "l": "你不会为了合群去附和，但说清楚理由之后，反而是你那条被大家采纳。", "r": "别人叫你去凑热闹，你会直说“我今天不想去”，还不让气氛变僵。", "q": "有分歧时，TA 说“你怎么想”，你坦率说出口，而且让 TA 听得进去。", "y": "AI 能模仿说服的口气，让一屋子人真心跟着走的，是你自己那份想做。人们更愿意追随有真实想法的人，带队和做社群时最明显。"}, "GH": {"h": "别人还在讨论怎么做时，你已经做出第一版，并且改到真的能用。", "w": "别人还在讨论怎么做，你已经做出第一版，并且改到真的能用。习惯不等安排，自己先动手改变现状的人，任务表现略好（Zhang 等, 2022）。", "l": "你交的那一版是改了好几遍之后的，别人交的常常是第一遍。毅力，也就是长期咬住目标不放，对成绩有帮助（Credé 等, 2017）。", "r": "你答应要修的东西，周末真的修好了，还顺手把旁边那个也收拾了。", "q": "TA 家里的事你接下来就办完了，没让 TA 再催第二遍。", "y": "AI 能给出第一版，把它改到真的能用，需要有人亲手收尾。你肯做到最后一步，正是 AI 时代最缺的那种交付。"}, "GI": {"h": "答应的事一定做到，而且很少答应自己不在乎的事，所以你的“好”字有分量。", "w": "你很少答应自己不在乎的事，但答应了就做到底，所以你的“好”字有分量。出于自己想做而做的人，表现平均更好，要求质量的任务里更明显（Cerasoli 等, 2014）。", "l": "你的目标清单上只有几项，每一项都写着“为什么我要它”。毅力，也就是长期咬住目标不放，对成绩有帮助（Credé 等, 2017）。", "r": "别人劝你再拼一点，你照旧把周末留给自己定下的那件小事，一周不落。", "q": "TA 说“你真的会做吗”，你说：“我答应过的，就会做。”", "y": "AI 能完成很多任务，哪些值得做到底，要有人来选。你只答应自己在乎的事，又肯扛到底，适合需要长期投入的事。"}, "HI": {"h": "喜欢自己动手做出来，想亲眼看看“我想要的那个东西，到底能不能被做出来”。", "w": "你做东西不是为了给谁看，而是想看看“我想要的那个”到底能不能做出来。出于自己想做而做的人，表现平均更好，要求质量的任务里更明显（Cerasoli 等, 2014）。", "l": "你的项目文件夹里，有一个只给自己做的小东西，名字是“只为我”。", "r": "做到一半没人看好，你也没停，因为你想看的是自己能不能做成。", "q": "TA 想要的东西买不到，你说“那我做一个”，然后真的做了出来。", "y": "AI 能写代码和方案，“我想要的那个东西能不能做出来”，还要自己去试。你自己动手验证，是一个人也能做出东西的底气。"}};
+/* 20 个岗位：w=这个岗位看重什么；s=第一步怎么做（和 JOBS 同序）*/
+const JOBX=[
+ ['要会提问题、拆难题，一个想法要验证很多遍。','跟着论文，把一个开源模型复现一遍。'],
+ ['要把模型训练好、部署稳，细节一个不能错。','用公开数据训练一个小模型，做成能打开的网页。'],
+ ['要把一件事拆成几步，让 AI 自己规划着办。','用现成框架做一个能查资料、写总结的小智能体。'],
+ ['要想清楚做什么、先做哪块，还要带人落地。','挑一个身边的小问题，写一页“用 AI 怎么解”。'],
+ ['要设计人和 AI 怎么对话、怎么用着顺手。','找一个 AI 产品，画出你觉得更顺手的对话流程。'],
+ ['要细心、守标准，判断 AI 的答案对不对。','先接一两个标注或质检的小任务，熟悉规则。'],
+ ['要想办法找出模型会出什么问题。','用各种问法试一个模型，把它出错的地方记下来。'],
+ ['要在各方利益之间找平衡、定规则。','选一个 AI 争议话题，写一页各方立场和你的建议。'],
+ ['要驻到客户那里，把 AI 真正用进业务。','帮一家小店或一个社团，用 AI 解决一个真实的小麻烦。'],
+ ['靠品味和把关，让 AI 出的内容真正能用。','定一个主题，让 AI 出一组内容，你挑出来改到能发。'],
+ ['要设计怎么教、怎么学才有效。','用 AI 给一个知识点排一条学习路线，找朋友试学。'],
+ ['要带客户用好 AI，出了问题兜得住。','给一个 AI 工具写份“新手怎么用”，找人试用。'],
+ ['要让 AI 动手干物理世界的活，反复调试。','先用开源仿真环境，跑通一个机器人的小任务。'],
+ ['懂行业，再用 AI 干活，对结果负责。','把你专业里一件重复的活交给 AI 做一遍，并检查结果。'],
+ ['要选方向、搭团队、扛结果。','先做一个最小的 AI 小服务，找 5 个人试用。'],
+ ['要按标准做动作、录数据，要细心有耐心。','先看清合同和培训要求，再试岗一两天。'],
+ ['要给大模型出题、打分、找漏洞。','给一个模型出 20 道有难度的题，记录它错在哪。'],
+ ['靠点子和手感，用 AI 做图、做视频。','做 3 条 AI 短视频或一组图，发出去看反馈。'],
+ ['一个人靠 AI 工具接活，得会找方向，也得会扛事。','选一个小需求，用 AI 接一单练手。'],
+ ['先把专业底子打深，再进 AI 方向。','找 3 位目标方向的老师，读他们最近的论文。']];
+
+/* ===== 基础天赋的组合解读 + 做事坐标 ===== */
+const FAM={'逻辑数学':'想','研究':'想','艺术':'想','开放':'想','内省':'想','人际':'人','社会':'人','宜人':'人','外向':'人','企业':'人','实用':'做','身体动觉':'做','条理':'做','尽责':'做'};
+const FAMN={想:'想法',人:'人际',做:'做事'};
+const FAMPAIR={
+ '想人':'既有想法，又能讲给人听。点子不会烂在自己脑子里，这在 AI 时代很值钱：AI 出点子不缺，缺的是把点子讲通、让人愿意跟的人。',
+ '想做':'想得到，也做得出。很多人只占一头，你两头都有，所以容易把一个想法真的做成东西。',
+ '人做':'既能带人，也能落地。这种人在团队里最稀缺：AI 能出方案，但把人和事一起推到终点，还得靠人。'};
+const FAMONE={想:'你的强项集中在“想”这一头：爱琢磨、点子多。要小心想得多做得少，找个能落地的搭档会很搭。',人:'你的强项集中在“人”这一头：懂人、能带人。要小心被别人的节奏带着走，记得留时间给自己的事。',做:'你的强项集中在“做”这一头：肯动手、靠得住。要小心埋头做而忘了抬头看方向，隔一阵问问自己“这事值不值得”。'};
+function comboText(r){
+ const ax=basicAxes(r).sort((a,b)=>b.v-a.v),top=ax.slice(0,3),set=[...new Set(top.map(o=>FAM[o.n]||'想'))];
+ let t;
+ if(set.length===1)t=FAMONE[set[0]];
+ else if(set.length===3)t='三类都有：'+top.map(o=>o.n).join('、')+'分属“想、人、做”，是少见的全面型。好处是哪都能去；要小心什么都会一点、没有一样最亮，最好早点选一个主战场。';
+ else t=FAMPAIR[['想','人','做'].filter(x=>set.includes(x)).join('')];
+ return{top,t,set}}
+const QUAD={
+ 'tl':['带人探新路','你偏向“和人打交道”，又爱“探方向、出点子”。你擅长在人群里提出新方向，让人愿意跟着试。常见的去处：产品、内容创意、教育设计、AI 业务负责人。'],
+ 'tr':['自己钻新东西','你偏向“和技术、事情打交道”，又爱“探方向、出点子”。你擅长一个人琢磨新技术、新玩法，把没人试过的东西做出来。常见的去处：AI 应用开发、研究、AI 创作。'],
+ 'bl':['稳住人和事','你偏向“和人打交道”，又擅长“决断、扛结果”。你擅长把人组织起来、把事办到底，出了问题兜得住。常见的去处：客户成功、运营、部署交付。'],
+ 'br':['把事做扎实','你偏向“和技术、事情打交道”，又擅长“决断、扛结果”。你擅长把一件具体的事反复打磨到可靠。常见的去处：工程、评测、数据质量。']};
+function coordSVG(r){
+ const W=360,H=320,cx=W/2,cy=H/2,ax=W/2-70,ay=H/2-44,[x,y]=xy(userVec(r));
+ const px=cx+Math.max(-1,Math.min(1,x*1.8))*ax,py=cy-Math.max(-1,Math.min(1,y*1.8))*ay;
+ const star=(c,R,rr)=>Array.from({length:10},(_,i)=>{const a=-Math.PI/2+i*Math.PI/5,q=i%2?rr:R;return(c[0]+Math.cos(a)*q).toFixed(1)+','+(c[1]+Math.sin(a)*q).toFixed(1)}).join(' ');
+ const qk=(y>=0?'t':'b')+(x<0?'l':'r'),QC={tl:'var(--cw)',tr:'var(--cq)',bl:'var(--cl)',br:'var(--cr)'},nr=Math.hypot(x,y)<.12;
+ let s=`<svg class="radar" viewBox="0 0 ${W} ${H}" role="img" aria-label="做事坐标，星号是你的位置">`;
+ [['tl',8,8],['tr',cx,8],['bl',8,cy],['br',cx,cy]].forEach(q=>{s+=`<rect x="${q[1]}" y="${q[2]}" width="${cx-8}" height="${cy-8}" fill="${QC[q[0]]}" fill-opacity="${!nr&&q[0]===qk?.28:.09}"/>`});
+ s+=`<rect x="8" y="8" width="${W-16}" height="${H-16}" rx="10" fill="none" stroke="var(--line)"/><line x1="${cx}" y1="14" x2="${cx}" y2="${H-14}" stroke="var(--line)" stroke-dasharray="3 4"/><line x1="14" y1="${cy}" x2="${W-14}" y2="${cy}" stroke="var(--line)" stroke-dasharray="3 4"/>`;
+ s+=`<text x="${cx}" y="28" text-anchor="middle" font-size="12" class="tr2">探方向 · 出点子</text><text x="${cx}" y="${H-14}" text-anchor="middle" font-size="12" class="tr2">决断 · 扛结果</text>`;
+ s+=`<text x="16" y="${cy-8}" font-size="12" class="tr2">和人</text><text x="16" y="${cy+8}" font-size="12" class="tr2">打交道</text><text x="${W-16}" y="${cy-8}" text-anchor="end" font-size="12" class="tr2">和技术</text><text x="${W-16}" y="${cy+8}" text-anchor="end" font-size="12" class="tr2">事情打交道</text>`;
+ [['tl',70,60],['tr',W-70,60],['bl',70,H-50],['br',W-70,H-50]].forEach(q=>{s+=`<text x="${q[1]}" y="${q[2]}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--muted)" opacity=".7">${QUAD[q[0]][0]}</text>`});
+ s+=`<polygon points="${star([px,py],15,6.5)}" fill="var(--good)" stroke="var(--surface)" stroke-width="2"/><text x="${px.toFixed(1)}" y="${(py+28).toFixed(1)}" text-anchor="middle" font-size="13" font-weight="800" fill="var(--good)">你</text>`;
+ const near=Math.hypot(x,y)<.12;
+ return{svg:s+'</svg>',q:(y>=0?'t':'b')+(x<0?'l':'r'),near,x,y}}
 function wvec(top){const w=K.map(k=>{const i=top.indexOf(k);return i<0?0:FW_[i]});const m=w.reduce((a,b)=>a+b,0)/N;return w.map(x=>x-m)}
 function userVec(r){const m=r.order.reduce((s,k)=>s+r.raw[k],0)/N;return K.map(k=>r.raw[k]-m)}
 const dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),nrm=a=>Math.sqrt(dot(a,a))||1;
@@ -794,7 +1027,7 @@ function rankFit(r,list){const u=userVec(r),un=nrm(u);
 function fitBars(list,n){const mx=list[0].s,mn=list[list.length-1].s;
  return list.slice(0,n).map(o=>{const t=(o.s-mn)/((mx-mn)||1),w=Math.round(30+70*t*t*t);
   return `<div class="fb"><div class="fn"><b>${esc(o.it.n)}</b>${o.it.g?`<em>${esc(o.it.g)}</em>`:''}</div><span class="tr"><i style="width:${w}%"></i></span><div class="fw">${esc(o.why)}</div></div>`}).join('')}
-/* 岗位地图：横轴 = 和人打交道 ↔ 和技术打交道；纵轴 = 探方向、出点子 ↔ 拍板、扛结果。9 项各归一边 */
+/* 岗位地图：横轴 = 和人打交道 ↔ 和技术打交道；纵轴 = 探方向、出点子 ↔ 决断、扛结果。9 项各归一边 */
 function xy(v){const g=ks=>ks.reduce((s,k)=>s+v[K.indexOf(k)],0)/ks.length;
  const n=nrm(v);return[(g(['B','H'])-g(['E','F']))/n,(g(['A','C','I'])-g(['D','G']))/n]}
 function jobMap(r,ranked){
@@ -805,8 +1038,11 @@ function jobMap(r,ranked){
  for(let t=0;t<60;t++)for(let a=0;a<P.length;a++)for(let b=a+1;b<P.length;b++){const dx=P[b].x-P[a].x,dy=P[b].y-P[a].y,d=Math.hypot(dx,dy)||.1;if(d<22){const f=(22-d)/2/d;P[a].x-=dx*f;P[a].y-=dy*f;P[b].x+=dx*f;P[b].y+=dy*f}}
  const top=new Set(ranked.slice(0,5).map(o=>o.i)),mex=cx+me[0]/mx*ax,mey=cy-me[1]/my*ay;
  let s=`<svg class="radar" viewBox="0 0 ${W} ${H}" role="img" aria-label="AI 岗位的位置图，星号是你">`;
+ {const uq=(mey<cy?'t':'b')+(mex<cx?'l':'r'),QC={tl:'var(--cw)',tr:'var(--cq)',bl:'var(--cl)',br:'var(--cr)'};
+  [['tl',8,8],['tr',cx,8],['bl',8,cy],['br',cx,cy]].forEach(q=>{s+=`<rect x="${q[1]}" y="${q[2]}" width="${cx-8}" height="${cy-8}" fill="${QC[q[0]]}" fill-opacity="${q[0]===uq?.24:.08}"/>`});
+  [['tl',cx-10,62],['tr',cx+10,62],['bl',cx-10,H-48],['br',cx+10,H-48]].forEach(q=>{s+=`<text x="${q[1]}" y="${q[2]}" text-anchor="${q[0][1]==='l'?'end':'start'}" font-size="11" font-weight="700" fill="var(--muted)" opacity=".75">${QUAD[q[0]][0]}</text>`})}
  s+=`<rect x="8" y="8" width="${W-16}" height="${H-16}" rx="10" fill="none" stroke="var(--line)"/><line x1="${cx}" y1="14" x2="${cx}" y2="${H-14}" stroke="var(--line)" stroke-dasharray="3 4"/><line x1="14" y1="${cy}" x2="${W-14}" y2="${cy}" stroke="var(--line)" stroke-dasharray="3 4"/>`;
- s+=`<text x="${cx}" y="26" text-anchor="middle" font-size="12" class="tr2">探方向 · 出点子</text><text x="${cx}" y="${H-14}" text-anchor="middle" font-size="12" class="tr2">拍板 · 扛结果</text>`;
+ s+=`<text x="${cx}" y="26" text-anchor="middle" font-size="12" class="tr2">探方向 · 出点子</text><text x="${cx}" y="${H-14}" text-anchor="middle" font-size="12" class="tr2">决断 · 扛结果</text>`;
  s+=`<text x="16" y="${cy-8}" font-size="12" class="tr2">和人</text><text x="16" y="${cy+8}" font-size="12" class="tr2">打交道</text><text x="${W-16}" y="${cy-8}" text-anchor="end" font-size="12" class="tr2">和技术</text><text x="${W-16}" y="${cy+8}" text-anchor="end" font-size="12" class="tr2">事情打交道</text>`;
  P.forEach(o=>{const t=top.has(o.i);s+=`<circle cx="${o.x.toFixed(1)}" cy="${o.y.toFixed(1)}" r="10" fill="${t?'var(--accent)':'var(--surface)'}" stroke="${t?'var(--accent)':'var(--muted)'}" stroke-width="1.5"/><text x="${o.x.toFixed(1)}" y="${(o.y+4).toFixed(1)}" text-anchor="middle" font-size="11" font-weight="700" fill="${t?'var(--accent-fg)':'var(--fg)'}">${o.i+1}</text>`});
  const st=[0,1,2,3,4].map(i=>{const a=-Math.PI/2+i*2*Math.PI/5;return[(mex+Math.cos(a)*(i%2?0:0)).toFixed(1)]});
@@ -890,9 +1126,9 @@ async function shareCanvas(r){
   try{const svg=mug({cap:true,face:'happy',c:mugC()}).replace('<svg','<svg xmlns="http://www.w3.org/2000/svg" width="160" height="176"');
    const im=new Image();im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);await new Promise((res,rej)=>{im.onload=res;im.onerror=rej});x.drawImage(im,630,10,100,110)}catch(e){}}
  x.fillStyle='#fffaf1';x.textBaseline='alphabetic';
- x.font=`700 24px ${F}`;x.fillText('我的AI 天赋',50,70);
+ x.font=`700 24px ${F}`;x.fillText('我最强的一项',50,70);
  {let fs=52;x.font=`900 ${fs}px ${S}`;const w0=x.measureText(r.title).width;if(w0>520){fs=Math.floor(52*520/w0);x.font=`900 ${fs}px ${S}`}x.fillText(r.title,50,150)}
- x.font=`500 28px ${F}`;x.fillText(`${AB[r.t1].n} × ${AB[r.t2].n}`,50,200);
+ x.font=`500 28px ${F}`;x.fillText(`第二强：${AB[r.t2].n}`,50,200);
  x.font=`500 26px ${S}`;
  const wrap=(t,fx,fy,mw,lh,max)=>{let line='',y=fy,n=0;for(const ch of t){if(x.measureText(line+ch).width>mw){x.fillText(line,fx,y);y+=lh;line=ch;if(++n>=max)return y}else line+=ch}x.fillText(line,fx,y);return y+lh};
  wrap(sentence(r),50,250,650,38,2);
@@ -954,6 +1190,47 @@ function mug(o={}){
  <path d="M24,120 l2,-5 l2,5 l5,2 l-5,2 l-2,5 l-2,-5 l-5,-2 Z" fill="url(#${id}h)" opacity=".9" ${o.prop?'style="display:none"':''}/></svg>`}
 const mugC=()=>{const cs=getComputedStyle(document.documentElement),g=n=>cs.getPropertyValue(n).trim();return{ink:g('--mink'),paper:g('--mpaper'),visor:g('--mvisor'),glow:g('--mglow'),water:g('--mwater'),acc:g('--accent'),latte:g('--mlatte')}};
 
+
+/* ===== 四类分布甜甜圈（第一、二张参考图的做法：环 + 中心结论 + 带百分比的图例）===== */
+const GRP=[{n:'思考问题',ks:['A','B','C'],c:'var(--g1)',d:'好奇洞察、分析拆解、创意构想'},
+ {n:'与人相处',ks:['E','F'],c:'var(--g2)',d:'共情倾听、说服协调'},
+ {n:'把事做成',ks:['D','G','H'],c:'var(--g3)',d:'判断决断、担当韧性、动手现场'},
+ {n:'与自己相处',ks:['I'],c:'var(--g4)',d:'内在方向'}];
+function groupStat(r){
+ const v=GRP.map(g=>({...g,v:g.ks.reduce((a,k)=>a+r.val[k],0)/g.ks.length}));
+ const t=v.reduce((a,x)=>a+x.v,0)||1;
+ v.forEach(x=>x.p=Math.round(x.v/t*100));
+ const d=100-v.reduce((a,x)=>a+x.p,0);if(d)v.sort((a,b)=>b.p-a.p)[0].p+=d;
+ return v.slice().sort((a,b)=>b.p-a.p)}
+function groupDonut(r){
+ const v=groupStat(r),R=52,C=2*Math.PI*R;let off=0;
+ const segs=v.map(x=>{const len=C*x.p/100,s=`<circle cx="70" cy="70" r="${R}" fill="none" stroke="${x.c}" stroke-width="20" stroke-dasharray="${len-2} ${C-len+2}" stroke-dashoffset="${-off}" transform="rotate(-90 70 70)" stroke-linecap="butt"/>`;off+=len;return s}).join('');
+ return `<div class="dn"><svg viewBox="0 0 140 140" class="dnsvg" aria-hidden="true">${segs}
+  <text x="70" y="64" text-anchor="middle" class="dc1">${esc(v[0].n)}</text>
+  <text x="70" y="82" text-anchor="middle" class="dc2">${v[0].p}%</text></svg>
+  <div class="lgd">${v.map(x=>`<div class="lgr"><i style="background:${x.c}"></i><b>${esc(x.n)}</b><em>${esc(x.d)}</em><span>${x.p}%</span></div>`).join('')}</div></div>`}
+/* ===== AI 人物相似度：同心多环（第一张参考图 Resonance 的做法）===== */
+function figRings(r){
+ const t3=r.fig.top3||[],cs=['var(--g1)','var(--g3)','var(--g2)'],R=[54,41,28],C=R.map(x=>2*Math.PI*x);
+ const arcs=t3.map((x,i)=>`<circle cx="70" cy="70" r="${R[i]}" fill="none" stroke="var(--soft)" stroke-width="11"/><circle cx="70" cy="70" r="${R[i]}" fill="none" stroke="${cs[i]}" stroke-width="11" stroke-linecap="round" stroke-dasharray="${C[i]*x.p/100} ${C[i]}" transform="rotate(-90 70 70)"/>`).join('');
+ return `<div class="dn"><svg viewBox="0 0 140 140" class="dnsvg" aria-hidden="true">${arcs}</svg>
+ <div class="lgd">${t3.map((x,i)=>`<div class="lgr"><i style="background:${cs[i]}"></i><b>${esc(x.f.n)}</b><em>${esc(x.f.tag)}</em><span>${x.p}%</span></div>`).join('')}</div></div>`}
+/* ===== 全部岗位表（第二张参考图的表格 + 状态药丸）===== */
+function jobTable(r,jobs){
+ const mx=jobs[0].s,mn=jobs[jobs.length-1].s,by={};
+ jobs.forEach(o=>{const t=(o.s-mn)/((mx-mn)||1);by[o.i]={t,tier:t>=.75?'很对路':t>=.4?'对路':'可以试',cls:t>=.75?'t3':t>=.4?'t2':'t1'}});
+ return `<div class="jt">${JOBS.map((it,i)=>`<div class="jtr"><span class="bd sm">${i+1}</span><b>${esc(it.n)}</b><em class="tier ${by[i].cls}">${by[i].tier}</em></div>`).join('')}</div>`}
+/* ===== AI 干得了 / 还得你来 ===== */
+const MINE={A:'决定该问什么，哪里不对劲',B:'把问题拆对，再检查它答得对不对',C:'决定哪个点子值得做出来',D:'没有标准答案时，定下一个方向',E:'让对方觉得真有个人在听',F:'让一屋子人愿意一起往前走',G:'出了事站出来兜住',H:'到现场动手，把东西做出来',I:'想清楚什么值得做'};
+
+
+/* hero 里的小圆环：显示和最像那位的接近程度 */
+function ringMini(p){const R=20,C=2*Math.PI*R;
+ return `<svg viewBox="0 0 48 48" class="rm" aria-hidden="true"><circle cx="24" cy="24" r="${R}" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="5"/><circle cx="24" cy="24" r="${R}" fill="none" stroke="#fffaf1" stroke-width="5" stroke-linecap="round" stroke-dasharray="${C*p/100} ${C}" transform="rotate(-90 24 24)"/><text x="24" y="28" text-anchor="middle" class="rmt">${p}%</text></svg>`}
+/* 生活中的你：图标 + 文字两栏 */
+function lifeRows(r){const P=PAIR[[r.t1,r.t2].sort().join('')];
+ return `<div class="lrows">${[['💼','w'],['📚','l'],['☕','r'],['💞','q']].map(x=>`<div class="lrow sc-${x[1]}"><div class="lic">${x[0]}</div><div class="ltx">${esc(P[x[1]])}</div></div>`).join('')}</div>`}
+
 /* ===== 渲染 ===== */
 const BAR=()=>`<div class="bar"><i style="width:${Math.round(pi/(PAGES.length-1)*100)}%"></i></div>`;
 function go(d){pi=Math.max(0,Math.min(PAGES.length-1,pi+d));render();window.scrollTo(0,0)}
@@ -967,7 +1244,7 @@ function render(){
   $('#cok').onclick=chk;$('#code').onkeydown=e=>{if(e.key==='Enter')chk()};return}
  if(p.t==='intro'){
   A.innerHTML=`<div class="mugbox">${mug({cap:true,face:'smile'})}</div><p class="kicker tc">AI 时代 · 抢不走的那部分</p><h1 class="tc">AI时代不可替代的<span class="hl">个人天赋</span>测试</h1><div class="pills"><span>${NQ} 道题</span><span>约 6 分钟</span><span>9 项 AI 天赋图</span></div>
-  <p>AI 越来越能干，哪些本事还得靠人？这个测试把经典天赋理论里反复出现的特质，对着 AI 时代雇主最看重的能力，归成 9 个维度：好奇洞察、分析拆解、创意构想、判断拍板、共情倾听、说服协调、担当韧性、动手现场、内在方向。你在哪几项高、哪几项低，会画成一张属于你的 AI 天赋图。</p>
+  <p>AI 越来越能干，哪些本事还得靠人？这个测试把经典天赋理论里反复出现的特质，对着 AI 时代雇主最看重的能力，归成 9 个维度：好奇洞察、分析拆解、创意构想、判断决断、共情倾听、说服协调、担当韧性、动手现场、内在方向。你在哪几项高、哪几项低，会画成一张属于你的 AI 天赋图。</p>
   <div class="card"><b>怎么答</b><p>一共 ${NQ} 道题，约 6 分钟。每道题有 4 个选项，选一个<b>最像你</b>的，再选一个<b>最不像你</b>的。没有对错，也没有好坏。“最不像你”可以不选，只选“最像你”也能做完；两个都选，结果会更准一些。</p>
   <p>有些题多一个“都不是，我会：……”的选项，选它这题就不计分，最多 ${MAXSKIP} 题。其余照样选相对最像和最不像的两个。</p></div>
   <p class="muted">这是一个帮你看清自己的小测试，不是诊断，也不是招聘评估。图里的高低是你自己九项之间的相对高低，不是跟别人比。</p>
@@ -998,10 +1275,17 @@ function qView(q){
  paint()
 }
 const aiBlock=k=>{const w=AIW[k],d=AB[k];return `<div class="cl"><b>${esc(d.n)}</b><p style="margin:2px 0">${esc(w.why)}</p>${w.q?`<div class="q">“${esc(w.q.t)}”<div class="o">${w.q.o?esc(w.q.o)+'<br>':''}—— ${esc(w.q.who)}，${esc(w.q.src)}${w.q.zh?'（中文原话）':'（中文为大意）'}</div></div>`:''}<p class="muted" style="margin:2px 0">雇主榜单对照：${esc(d.wef)}</p></div>`};
+/* 学科：一句话说清这一科在干什么，再接上你的特点，不单独点天赋名 */
+function subjTxt(W,top,r){
+ if(!W)return '和你整体的天赋组合比较搭。';
+ const k=top.slice().sort((x,y)=>r.rank[x]-r.rank[y]).find(x=>W[x]);
+ return k?esc(W[k]):'和你整体的天赋组合比较搭。';
+}
 function rView(){
  R=compute();const r=R,A=$('#app');
  const d1=AB[r.t1],d2=AB[r.t2],d3=AB[r.t3],dl=AB[r.tl];
- const bars=r.order.map(k=>`<div class="row ${r.lvl(k)}"><span>${esc(AB[k].n)}</span><span class="tr"><i style="width:${r.val[k]}%"></i></span><span class="lv ${r.lvl(k)}">${{hi:'高',mid:'中',lo:'低'}[r.lvl(k)]}</span></div>`).join('');
+ const vtot=K.reduce((a,x)=>a+r.val[x],0)||1;
+ const bars=r.order.map(k=>`<div class="row ${r.lvl(k)}"><span>${esc(AB[k].n)}</span><span class="tr"><i style="width:${r.val[k]}%"></i></span><span class="pc">${Math.round(r.val[k]/vtot*100)}%</span><span class="lv ${r.lvl(k)}">${{hi:'高',mid:'中',lo:'低'}[r.lvl(k)]}</span></div>`).join('');
  const fwv=(()=>{
   const nm={'语言':'语言智能','逻辑—数学':'逻辑—数学智能','空间':'空间智能','身体—动觉':'身体—动觉智能','音乐':'音乐智能','人际':'人际智能','内省':'内省智能','自然观察':'自然观察智能','实用型 R':'实用型兴趣','研究型 I':'研究型兴趣','艺术型 A':'艺术型兴趣','社会型 S':'社会型兴趣','企业型 E':'企业型兴趣','传统型 C':'传统型兴趣'};
   const by={},off=new Set();K.forEach(k=>by[k]=new Set());
@@ -1009,37 +1293,57 @@ function rView(){
    if(g.items)g.items.forEach(([n,d])=>{if(d)by[d].add(n);else off.add(n)});
    else{const n=nm[g.n]||g.n;if(g.d.length)g.d.forEach(d=>by[d].add(n));else off.add(n)}}));
   return r.order.map(k=>{const c=r.lvl(k);
-   return `<div class="row ${c}"><span>${esc(AB[k].n)}</span><span class="tr"><i style="width:${r.val[k]}%"></i></span><span class="lv ${c}">${{hi:'高',mid:'中',lo:'低'}[c]}</span></div><div style="margin:0 0 10px">${[...by[k]].map(n=>`<span class="tag ${c==='hi'?'hit':''}">${esc(n)}</span>`).join('')}</div>`}).join('')})();
+   const tot=K.reduce((a,x)=>a+r.val[x],0)||1;return `<div class="row ${c}"><span>${esc(AB[k].n)}</span><span class="tr"><i style="width:${r.val[k]}%"></i></span><span class="pc">${Math.round(r.val[k]/tot*100)}%</span><span class="lv ${c}">${{hi:'高',mid:'中',lo:'低'}[c]}</span></div><div style="margin:0 0 10px">${[...by[k]].map(n=>`<span class="tag ${c==='hi'?'hit':''}">${esc(n)}</span>`).join('')}</div>`}).join('')})();
  const subj=rankFit(r,SUBJ),jobs=rankFit(r,JOBS);
+ const cb=comboText(r),co=coordSVG(r);
+ const jmx=jobs[0].s,jmn=jobs[jobs.length-1].s;
+ const pairOf=r=>PAIR[[r.t1,r.t2].sort().join('')];
+ const scm=r=>`<div class="scs">${[['💼','工作','w'],['📚','学习','l'],['☕','休息','r'],['💞','亲密关系','q']].map(x=>`<div class="sc sc-${x[2]}"><span>${esc({w:'在工作中，',l:'在学习中，',r:'在休息时，',q:'在亲密关系中，'}[x[2]]+pairOf(r)[x[2]])}</span></div>`).join('')}</div>`;
+ const scn=(k,sm)=>`<div class="scs">${[['💼','工作','w'],['📚','学习','l'],['☕','休息','r'],['💞','亲密关系','q']].map(x=>`<div class="sc sc-${x[2]}${sm?' sm':''}"><b>${x[0]} ${x[1]}</b><span>${esc(SC[k][x[2]])}</span></div>`).join('')}</div>`;
  const mapl=K.length&&r.order.map(k=>{const c=r.lvl(k);return `<div class="ml ${c}"><b>${esc(AB[k].n)}</b><span>${traitsBy()[k].map(t=>`<i>${esc(t)}</i>`).join('')}</span></div>`}).join('');
  A.innerHTML=`
- <nav class="jump" id="jump"><a data-t="t1">天赋圈</a><a data-t="t2">学什么</a><a data-t="t3">做什么</a><a data-t="t4">像谁</a><a data-t="t5">细读</a></nav>
- <div class="card" id="t1"><h3>AI 天赋</h3><p class="say">AI 时代雇主看重的 9 项本事。${esc(r.shape[1])}</p>${radarClean(r)}${bars}
-  <p class="muted">长短是你自己九项之间的相对高低，不是跟别人比的分数。</p></div>
- <div class="hero"><div class="hm">${mug({face:'happy',prop:r.t1,level:.5+.4*(r.val[r.t1]||50)/100})}</div><p class="kicker">你的AI 天赋</p><h1>${esc(r.title)}</h1><p class="sub">${esc(d1.n)} × ${esc(d2.n)}</p>
-  <p class="s">${esc(sentence(r))}</p><p class="s" style="margin-top:12px">放到 AI 圈里，你的做事风格最像 <b>${esc(r.fig.f.n)}</b>：${esc(r.fig.f.tag)}。</p><span class="shape">${esc(r.shape[0])}</span></div>
- <p class="muted" style="text-align:center">${esc(SLOGAN)}</p>
- <div class="card"><h3>基础天赋</h3><p class="say">更底层的 14 种天赋（心理学和职业测评里常见的特质），由上面九项换算而来。</p>${basicRadar(r)}
-  <p class="say" style="margin-top:10px">每一项 AI 天赋，靠这些基础天赋撑着：</p><div class="mls">${mapl}</div></div>
- <div class="card" id="t2"><h3>适合学什么</h3><p class="say">和你的天赋最对路的学科，从上往下排。</p>${fitBars(subj,6)}
-  <p class="muted">也可以看看：${subj.slice(6,9).map(o=>esc(o.it.n)).join('、')}。</p></div>
- <div class="card" id="t3"><h3>适合做什么 AI 工作</h3><p class="say">${JOBS.length} 个 AI 岗位和人生选择按“做事方式”摆在一张图上，星号是你，涂色的是最对路的 5 个。</p>${jobMap(r,jobs)}
-  ${jobs.slice(0,5).map(o=>`<div class="jb"><span class="bd">${o.i+1}</span><div><b>${esc(o.it.n)}</b><div class="fw">${esc(o.it.d)}</div>${o.it.f?`<div class="ft">${esc(o.it.f)}</div>`:''}</div></div>`).join('')}
-  <div class="lg">${jobs.slice(5).map(o=>`<span><b>${o.i+1}</b>${esc(o.it.n)}</span>`).join('')}</div></div>
- <div id="t4">
- <div class="card"><h3>AI 圈里，谁和你最像</h3><p class="fh"><b>${esc(r.fig.f.n)}</b><span>${esc(r.fig.f.en)}</span></p><p class="say">${esc(r.fig.f.tag)}</p>
-  <p class="who">${esc(r.fig.f.fact.split('。')[0])}。</p>
-  <ul class="pts">${r.fig.f.pts.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
-  <div class="cmp"><div><em>你最突出</em>${r.order.slice(0,3).map(k=>`<i class="${r.fig.f.top.includes(k)?'on':''}">${esc(AB[k].n)}</i>`).join('')}</div><div><em>${esc(r.fig.f.n.split('·').pop())}</em>${r.fig.f.top.map(k=>`<i class="${r.order.slice(0,3).includes(k)?'on':''}">${esc(AB[k].n)}</i>`).join('')}</div></div>
-  <p class="src">出处：${esc(r.fig.f.src)}</p>
-  <p class="say">再像一点的另一位：${esc(r.fig.f2.n)}（${esc(r.fig.f2.tag)}）</p></div>
+ <nav class="jump" id="jump"><a data-t="t1">天赋</a><a data-t="t2">坐标</a><a data-t="t3">方向</a><a data-t="t4">学科</a></nav>
+ <div class="chap"><i>1</i><b>你的天赋</b><span>你自己都没注意的小细节</span></div>
+ <div class="kpis">
+  <div class="kpi k1"><div class="ic">🥇</div><b>${esc(AB[r.t1].n)}</b><span>最强的一项</span></div>
+  <div class="kpi k2"><div class="ic">🥈</div><b>${esc(AB[r.t2].n)}</b><span>第二强</span></div>
+  <div class="kpi k3"><div class="ic">📐</div><b>${esc(r.shape[0])}</b><span>天赋形状</span></div>
+  <div class="kpi k4"><div class="ic">👤</div><b>${esc(r.fig.f.n)}</b><span>AI 圈里最像你的</span></div>
  </div>
- <div id="t5"></div>
- <div class="card"><h3>细读你的天赋</h3>
-  ${r.order.slice(0,3).map(k=>{const d=AB[k],w=AIW[k];return `<div class="cl"><b>${esc(d.n)}</b><p>${esc(d.p)}。</p><p class="muted">放在 AI 时代看：${esc(w.why.split('。')[0])}。</p>${w.q?`<div class="q">“${esc(w.q.t)}”<div class="o">—— ${esc(w.q.who)}，${esc(w.q.src)}</div></div>`:''}</div>`}).join('')}
-  <div class="cl"><b>最不突出：${esc(dl.n)}</b><p class="muted">${esc(dl.valley.split('。')[0])}。可以找搭档补，也可以先从小事练起。</p></div></div>
- <div class="card"><h3>你身上的拉扯</h3>${r.tens.map(t=>`<div class="tens"><span>${t.l}</span><span class="tk"><i style="left:${t.pos}%"></i></span><span>${t.r}</span></div>`).join('')}
-  ${[...r.tens].sort((a,b)=>Math.abs(b.pos-50)-Math.abs(a.pos-50)).slice(0,2).map(t=>`<p class="say">${esc(t.txt)}</p>`).join('')}</div>
+ <div class="hero" id="t1">
+  <div class="htop"><p class="kicker">你的 AI 天赋</p><div class="hm">${mug({face:'happy',prop:r.t1,level:.5+.4*(r.val[r.t1]||50)/100})}</div></div>
+  <div class="pchips"><span>${esc(d1.n)}</span><i>×</i><span>${esc(d2.n)}</span></div>
+  <h1 class="long">${esc(pairOf(r).h)}</h1>
+  <p class="why"><b class="tagi">AI 时代</b>${esc(pairOf(r).y)}</p>
+  <div class="figbar">${ringMini(r.fig.top3&&r.fig.top3[0]?r.fig.top3[0].p:70)}<div class="fb2"><span class="fl">AI 圈里，谁和你最像</span><b>${esc(r.fig.f.n)}</b><span class="fen">${esc(r.fig.f.en)}</span><em>${esc(r.fig.f.tag)}</em></div></div>
+  <p class="figfact">${esc(r.fig.f.fact.split('。')[0])}。</p>
+ </div>
+ <div class="card lifec"><div class="hd2"><h3>生活中的你</h3><span class="pill">4 个场景</span></div>${lifeRows(r)}</div>
+ <details class="muted" style="margin:6px 0 14px;font-size:.82rem;line-height:1.6"><summary style="cursor:pointer;text-align:center">参考文献</summary><ul style="padding-left:1.2em;margin:8px 0"><li>Anglim 等 (2022). 人格与智力关系的元分析（二阶）.</li><li>Cerasoli, Nicklin & Ford (2014). 内在动机与绩效的元分析. Psychological Bulletin, 140(4), 980–1008.</li><li>Credé 等 (2017). 毅力（grit）与尽责性、学业表现的元分析.</li><li>Di Fabio 等 (2013). 犹豫不决与人格、情绪智力. Journal of Career Assessment.</li><li>Feist (1998). 人格与科学、艺术创造力的元分析.</li><li>Haase 等 (2018). 创意自我效能与创造力指标关系的元分析.</li><li>Hölbling, Maier & Feuerriegel (2025). 大模型说服力的元分析. Scientific Reports.</li><li>Holzner, Maier & Feuerriegel (2025). 生成式 AI 与创意表现的元分析.</li><li>Iyengar 等 (2006). 最大化者与求职结果. Psychological Science.</li><li>Judge 等 (2002). 人格与领导力的元分析.</li><li>Martingano 等 (2026). 不同类型共情与职业倦怠的元分析.</li><li>Schweitzer 等 (2025). 认知需求与智力的元分析. Journal of Intelligence, 13(11), 142.</li><li>Sened 等 (2017). 共情准确度与恋爱满意度的元分析.</li><li>Wilmot & Ones (2019). 尽责性与职业结果的二阶元分析. PNAS.</li><li>Zhang 等 (2022). 主动性人格的元分析. Frontiers in Psychology.</li></ul></details>
+ <div class="chap" id="t2"><i>2</i><b>天赋全景</b><span>九项高低，和更底层的 14 种天赋</span></div>
+ <div class="card"><div class="hd2"><h3>九项一览</h3><span class="pill">9 项 · 相对高低</span></div><p class="say">AI 时代雇主看重的 9 项本事。${esc(r.shape[1])}</p>${radarClean(r)}${bars}
+  <p class="muted">长短和百分比，说的都是这九项在你自己身上的相对高低，不是跟别人比的分数。</p></div>
+ <div class="card"><div class="hd2"><h3>你偏哪一类</h3><span class="pill">四类分布</span></div><p class="say">九项按“在做什么”分成四类，比例是你自己四类之间的高低。</p>${groupDonut(r)}</div>
+ <div class="card"><div class="hd2"><h3>AI 圈里和你像的三位</h3><span class="pill">按九项算</span></div><p class="say">百分比是你和这三位在九项上的接近程度，不是本人真实性格。</p>${figRings(r)}</div>
+ <div class="card"><div class="hd2"><h3>基础天赋</h3><span class="pill">14 种特质</span></div><p class="say">更底层的 14 种天赋（心理学和职业测评里常见的特质），由上面九项换算而来。</p>${basicRadar(r)}
+  <p class="say" style="margin-top:12px">你最突出的三项：<b>${cb.top.map(o=>esc(o.n)).join('、')}</b>（${cb.set.map(f=>FAMN[f]).join('、')}类）</p><p class="co">${esc(cb.t)}</p>
+</div>
+ <div class="chap" id="t3"><i>3</i><b>适合你的方向</b><span>AI 职业坐标、5 个方向、学科</span></div>
+ <div class="card"><div class="hd2"><h3>AI 职业坐标</h3><span class="pill">${JOBS.length} 个岗位</span></div><p class="say">${JOBS.length} 个 AI 岗位按“做事方式”摆在一张图上，星号是你，涂紫色的是最对路的 5 个。</p>${jobMap(r,jobs)}
+  <p class="say" style="margin-top:8px"><b>${co.near?'你靠近中间':'你落在「'+QUAD[co.q][0]+'」'}</b></p><p class="co">${co.near?'你靠近坐标中间，哪一边都能去，看当下需要什么。想往哪边走，就把那一边的天赋多练一练。':esc(QUAD[co.q][1])}</p>
+  <p class="say" style="margin-top:12px">全部 ${JOBS.length} 个岗位，和编号对照：</p>${jobTable(r,jobs)}</div>
+ <div class="card"><div class="hd2"><h3>适合你的 5 个 AI 方向</h3><span class="pill">按你的九项排序</span></div><p class="say">按你的九项天赋排的，越靠前越对路。</p>
+  ${jobs.slice(0,5).map((o,n5)=>{o.n5=n5;const t=(o.s-jmn)/((jmx-jmn)||1),tier=t>=.75?'很对路':t>=.4?'对路':'可以试',jx=JOBX[o.i];
+   return `<div class="jc t${t>=.75?3:t>=.4?2:1}"><div class="jh"><span class="bd">${o.i+1}</span><b>${esc(o.it.n)}</b><em class="tier">${tier}</em></div><div class="fw">${esc(o.it.d)}</div>
+   <p class="jy"><span class="lb">💡 适合你</span>${subjTxt(JOBW[o.i],o.it.top,r)}</p><p class="js"><span class="lb">🚀 第一步</span>${esc(jx[1])}</p></div>`}).join('')}</div>
+ <div class="card" id="t4"><div class="hd2"><h3>适合钻研的学科</h3><span class="pill">3 个</span></div><p class="say">和你的天赋最对路、值得往深里钻的 3 个学科。</p>
+  ${subj.slice(0,3).map(o=>`<div class="fb"><div class="fn"><b>${esc(o.it.n)}</b>${o.it.g?`<em>${esc(o.it.g)}</em>`:''}</div><div class="rs">${subjTxt(SUBW[o.i],o.it.top,r)}</div></div>`).join('')}
+  <p class="muted">也可以看看：${subj.slice(3,6).map(o=>esc(o.it.n)).join('、')}。</p>
+</div>
+ <div class="card"><div class="hd2"><h3>AI 干得了的，和还得你来的</h3><span class="pill">这个测试的主张</span></div>
+  <div class="vs"><div class="vsc a"><h4>🤖 AI 已经很能干</h4><ul><li>一口气出十个初版</li><li>查资料、整理成表</li><li>改格式、润色措辞</li><li>按清单重复执行</li></ul></div>
+  <div class="vsc b"><h4>🙋 还得你来</h4><ul><li>${esc(MINE[r.t1])}</li><li>${esc(MINE[r.t2])}</li><li>最后对结果负责</li></ul></div></div></div>
+ <div class="band"><p>${esc(d1.n)} + ${esc(d2.n)}，<br>是 AI 补不上的那一块。</p><span>${esc(SLOGAN)}</span></div>
  <div class="card"><h3>${esc(CTA.title)}</h3><p>${esc(CTA.text)}</p>
   <div class="btns"><button class="cta" id="shr" style="margin-top:6px">保存我的 AI 天赋图</button><button class="ghost" id="cpy">复制分享文案</button>${CTA.link?`<a class="ghost" style="text-decoration:none;color:inherit;display:inline-block" href="${esc(CTA.link)}" target="_blank" rel="noopener">了解更多</a>`:''}</div>
   <p class="muted" id="shm"></p></div>
@@ -1047,7 +1351,7 @@ function rView(){
  $('#prev').onclick=()=>go(-1);
  document.querySelectorAll('#jump a').forEach(el=>el.onclick=()=>{const t=document.getElementById(el.dataset.t);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
  $('#again').onclick=()=>{ans=fresh();R=null;pi=PAGES.findIndex(p=>p.t==='intro');render();window.scrollTo(0,0)};
- const text=`我的AI 天赋：${r.title}（${d1.n} × ${d2.n}）。最高「${d1.n}」，最低「${dl.n}」。AI 圈里最像我的是${r.fig.f.n}。\n${SLOGAN}`;
+ const text=`我的 AI 天赋，最强的一项是「${d1.n}」，第二强是「${d2.n}」，最弱的是「${dl.n}」。AI 圈里最像我的是${r.fig.f.n}。\n${SLOGAN}`;
  $('#cpy').onclick=async()=>{try{await navigator.clipboard.writeText(text);$('#shm').textContent='已复制，去发给朋友吧。'}catch(e){$('#shm').textContent='复制没成功，长按下面这段手动复制：\n'+text}};
  $('#shr').onclick=async()=>{
   const m=$('#shm');m.textContent='正在生成图片…';
