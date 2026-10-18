@@ -253,6 +253,21 @@ details.more{margin-top:10px;padding:8px 12px;border-radius:12px;background:var(
 .lic{width:36px;height:36px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:16px;background:color-mix(in srgb,var(--c) 20%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
 .ltx{font-family:var(--kai);font-size:1.01rem;line-height:1.85;min-width:0}
 .lifec h3{font-family:var(--kai);letter-spacing:.06em}
+
+/* ===== 大屏适配：只作用于结果页 ===== */
+@media (min-width:760px){
+ body.wide main,body.wide #brand,body.wide footer{max-width:720px}
+ body.wide .hero h1.long{font-size:1.5rem}
+}
+@media (min-width:1080px){
+ body.wide main,body.wide #brand,body.wide footer{max-width:1060px}
+ body.wide #app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:22px;align-items:start}
+ body.wide #app>*{min-width:0}
+ body.wide #app>.jump,body.wide #app>.chap,body.wide #app>.kpis,body.wide #app>details,body.wide #app>.band,body.wide #app>.navrow,body.wide #app>.ctac{grid-column:1/-1}
+ body.wide #app>.hero,body.wide #app>.lifec{margin-top:12px}
+ body.wide .kpis{grid-template-columns:repeat(4,1fr)}
+ body.wide .vs{grid-template-columns:1fr 1fr}
+}
 </style>
 
 <header id="brand"></header>
@@ -1235,7 +1250,7 @@ function lifeRows(r){const P=PAIR[[r.t1,r.t2].sort().join('')];
 const BAR=()=>`<div class="bar"><i style="width:${Math.round(pi/(PAGES.length-1)*100)}%"></i></div>`;
 function go(d){pi=Math.max(0,Math.min(PAGES.length-1,pi+d));render();window.scrollTo(0,0)}
 function render(){
- const p=PAGES[pi],A=$('#app');
+ const p=PAGES[pi],A=$('#app');document.body.classList.toggle('wide',p.t==='result');
  $('#brand').innerHTML=mug({cap:true,face:'smile',cls:'lg0'}).replace('<svg','<svg width="38" height="42"')+'<span class="nm">马克杯 · 刻度</span><span class="tg">原创自测</span>';
  $('#loading').innerHTML=mug({cap:true,face:'blink'});
  if(p.t==='gate'){
@@ -1344,7 +1359,7 @@ function rView(){
   <div class="vs"><div class="vsc a"><h4>🤖 AI 已经很能干</h4><ul><li>一口气出十个初版</li><li>查资料、整理成表</li><li>改格式、润色措辞</li><li>按清单重复执行</li></ul></div>
   <div class="vsc b"><h4>🙋 还得你来</h4><ul><li>${esc(MINE[r.t1])}</li><li>${esc(MINE[r.t2])}</li><li>最后对结果负责</li></ul></div></div></div>
  <div class="band"><p>${esc(d1.n)} + ${esc(d2.n)}，<br>是 AI 补不上的那一块。</p><span>${esc(SLOGAN)}</span></div>
- <div class="card"><h3>${esc(CTA.title)}</h3><p>${esc(CTA.text)}</p>
+ <div class="card ctac"><h3>${esc(CTA.title)}</h3><p>${esc(CTA.text)}</p>
   <div class="btns"><button class="cta" id="shr" style="margin-top:6px">保存我的 AI 天赋图</button><button class="ghost" id="cpy">复制分享文案</button>${CTA.link?`<a class="ghost" style="text-decoration:none;color:inherit;display:inline-block" href="${esc(CTA.link)}" target="_blank" rel="noopener">了解更多</a>`:''}</div>
   <p class="muted" id="shm"></p></div>
  <div class="navrow"><button class="ghost" id="prev">上一页</button><button class="ghost" id="again">再测一遍</button></div>`;
